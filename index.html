@@ -366,7 +366,7 @@
     <button class="filter-btn" data-filter="commercial">Commercial</button>
     <button class="filter-btn" data-filter="hospitality">Hospitality</button>
   </div>
-  <div class="grid" id="projectGrid" data-reveal></div>
+  <div class="grid" id="projectGrid"></div>
 </section>
 
 <!-- ABOUT -->
@@ -905,8 +905,14 @@
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('in'); });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
   document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+  // safety net: never leave a section permanently invisible if the observer
+  // misses it for any reason (e.g. odd viewport/layout timing on mobile)
+  setTimeout(() => {
+    document.querySelectorAll('[data-reveal]:not(.in)').forEach(el => el.classList.add('in'));
+  }, 2500);
 </script>
 
 </body>
