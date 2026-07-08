@@ -777,15 +777,20 @@
         </div>`;
       if(previewVideo){
         const vid = card.querySelector('video');
-        card.addEventListener('mouseenter', () => {
+        const showVid = () => {
           vid.style.opacity = '1';
           vid.currentTime = 0;
           vid.play().catch(()=>{});
-        });
-        card.addEventListener('mouseleave', () => {
+        };
+        const hideVid = () => {
           vid.style.opacity = '0';
           vid.pause();
-        });
+        };
+        card.addEventListener('mouseenter', showVid);
+        card.addEventListener('mouseleave', hideVid);
+        card.addEventListener('touchstart', showVid, { passive:true });
+        card.addEventListener('touchend', hideVid, { passive:true });
+        card.addEventListener('touchcancel', hideVid, { passive:true });
       }
       card.addEventListener('click', () => openModal(p));
       grid.appendChild(card);
