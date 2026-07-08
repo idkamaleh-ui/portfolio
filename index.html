@@ -53,7 +53,22 @@
     transition:width .4s ease;
   }
   nav ul li a:hover::after{ width:100%; }
-  .nav-toggle{ display:none; }
+  .nav-toggle{ display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:101; padding:6px; }
+  .nav-toggle span{ width:24px; height:1px; background:currentColor; transition:transform .3s ease, opacity .3s ease; }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  .mobile-menu{
+    position:fixed; inset:0; z-index:99; background:var(--ink);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px;
+    opacity:0; pointer-events:none; transition:opacity .35s ease;
+  }
+  .mobile-menu.open{ opacity:1; pointer-events:all; }
+  .mobile-menu a{
+    font-family:'Cormorant Garamond', serif; font-size:32px; color:var(--ivory);
+    font-style:italic; font-weight:400;
+  }
 
   /* HERO */
   .hero{
@@ -275,13 +290,21 @@
 
   @media (max-width:900px){
     nav ul{ display:none; }
+    .nav-toggle{ display:flex; }
     .intro, .about-grid, .contact-grid{ grid-template-columns:1fr; }
     .intro .drop{ font-size:80px; }
     .grid{ grid-template-columns:1fr 1fr; }
-    section{ padding:100px 24px; }
-    nav{ padding:24px; }
+    section{ padding:90px 24px; }
+    nav{ padding:22px 24px; }
     .service-row{ grid-template-columns:1fr; gap:10px; }
     .service-row .desc{ max-width:none; }
+    .hero-content{ padding:0 24px 56px; flex-direction:column; align-items:flex-start; gap:24px; }
+    .hero-sub{ max-width:none; }
+    .stats{ flex-wrap:wrap; gap:32px 40px; }
+    .filters{ flex-wrap:wrap; }
+    .about-grid{ gap:44px; }
+    .contact-grid{ gap:56px; }
+    footer{ padding:28px 24px; flex-wrap:wrap; gap:8px; }
   }
   @media (max-width:560px){
     .grid{ grid-template-columns:1fr; }
@@ -301,7 +324,17 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-toggle" id="navToggle">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" style="padding:0;">
@@ -430,6 +463,20 @@
 </div>
 
 <script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
   // hero video crossfade cycle
   const heroVideos = document.querySelectorAll('.hero video');
   let heroIndex = 0;
