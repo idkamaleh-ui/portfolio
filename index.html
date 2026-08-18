@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahmoud Kamaleh — Portfolio</title>
+<meta name="description" content="MK Interior Design Studio — interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.">
+<title>MK Interior Design Studio — Interior Design, London Ontario</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     --ink: #15161B;
     --ink-2: #1E2027;
     --gold: #A6875A;
-    --taupe: #8C8371;
+    --taupe: #9C917C;
     --line: rgba(21,22,27,0.14);
     --line-dark: rgba(239,235,228,0.16);
     --bg: #000000;
@@ -42,8 +43,13 @@
     color:#efebe4;
   }
   nav .logo{
-    font-family:'Cormorant Garamond', serif; font-size:22px; letter-spacing:0.08em; font-weight:500;
+    font-family:'Cormorant Garamond', serif; font-size:20px; letter-spacing:0.06em; font-weight:500;
+    white-space:nowrap; flex-shrink:0;
+    display:flex; align-items:center; gap:10px;
   }
+  nav .logo img{ height:28px; width:auto; display:block; }
+  footer .brand{ display:flex; align-items:center; gap:8px; }
+  footer .brand img{ height:18px; width:auto; display:block; }
   nav ul{ display:flex; gap:44px; list-style:none; }
   nav ul li a{
     font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:400;
@@ -54,6 +60,8 @@
     transition:width .4s ease;
   }
   nav ul li a:hover::after{ width:100%; }
+  nav ul li a.active{ color:var(--gold); }
+  nav ul li a.active::after{ width:100%; background:var(--gold); }
   .nav-toggle{ display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:101; padding:6px; }
   .nav-toggle span{ width:24px; height:1px; background:currentColor; transition:transform .3s ease, opacity .3s ease; }
   .nav-toggle.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
@@ -161,6 +169,33 @@
     border-left:2px solid var(--gold); padding-left:24px; margin:36px 0; line-height:1.5;
   }
   .stats{ display:flex; gap:56px; margin-top:40px; }
+
+  /* CREDIBILITY LINE (Home) */
+  .credibility-line{
+    display:flex; justify-content:center; gap:80px; flex-wrap:wrap;
+    padding:70px 60px; border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark);
+  }
+  .credibility-line .stat{ text-align:center; }
+  .credibility-line .num{ font-family:'Cormorant Garamond', serif; font-size:40px; color:var(--gold); font-weight:400; }
+  .credibility-line .label{ font-size:11px; color:var(--taupe); letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
+
+  /* CLOSING CTA (Home) */
+  .closing-cta{
+    text-align:center; padding:150px 60px;
+  }
+  .closing-cta p{
+    font-size:clamp(28px, 3.6vw, 44px); font-style:italic; font-weight:300; color:var(--ivory); margin-bottom:32px;
+  }
+  .closing-cta a{
+    display:inline-block; padding:16px 40px; border:1px solid var(--gold);
+    font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ivory);
+    transition:background .35s, color .35s;
+  }
+  .closing-cta a:hover{ background:var(--gold); color:var(--ink); }
+  @media (max-width:900px){
+    .credibility-line{ gap:40px; padding:56px 24px; }
+    .closing-cta{ padding:100px 24px; }
+  }
   .stat .num{ font-family:'Cormorant Garamond', serif; font-size:44px; color:var(--gold); font-weight:400; }
   .stat .label{ font-size:11px; color:var(--taupe); letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
 
@@ -284,9 +319,9 @@
   }
   .lightbox-backdrop.open{ opacity:1; pointer-events:all; }
   .lightbox-stage{ position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
-  #lbMedia{ max-width:100%; max-height:100%; }
+  #lbMedia{ width:100%; height:calc(100vh - 64px); display:flex; align-items:center; justify-content:center; }
   #lbMedia img, #lbMedia video{
-    max-width:100%; max-height:calc(100vh - 64px); width:auto; height:auto; object-fit:contain; display:block; margin:0 auto;
+    width:100%; height:100%; object-fit:contain; display:block; margin:0 auto;
   }
   .lb-close{
     position:absolute; top:0; right:0; font-size:13px; color:var(--ivory); cursor:pointer;
@@ -317,6 +352,10 @@
   [data-reveal]{ opacity:0; transform:translateY(24px); transition:opacity .9s ease, transform .9s ease; }
   [data-reveal].in{ opacity:1; transform:translateY(0); }
 
+  @media (max-width:1300px){
+    nav ul{ gap:24px; }
+    nav{ padding:34px 40px; }
+  }
   @media (max-width:900px){
     nav ul{ display:none; }
     .nav-toggle{ display:flex; }
@@ -346,12 +385,14 @@
 <body>
 
 <nav>
-  <div class="logo">Mahmoud Kamaleh</div>
+  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
   <ul>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="site.html">On Site</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="consultation.html">Start a Project</a></li>
   </ul>
   <div class="nav-toggle" id="navToggle">
     <span></span><span></span><span></span>
@@ -359,10 +400,12 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#work">Work</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="site.html">On Site</a>
+  <a href="contact.html">Contact</a>
+  <a href="consultation.html">Start a Project</a>
 </div>
 
 <!-- HERO -->
@@ -373,17 +416,17 @@
   <video data-src="hero-5.mp4" poster="hero-5-poster.jpg" muted playsinline preload="none"></video>
   <div class="hero-content">
     <div>
-      <span class="hero-eyebrow">Portfolio</span>
-      <h1>A portfolio of<br>quiet confidence</h1>
+      <span class="hero-eyebrow">Interior Design Studio</span>
+      <h1>Interiors of<br>quiet confidence</h1>
     </div>
-    <p class="hero-sub">Interior design and 3D visualization across homes, hospitality and commercial spaces — 100+ projects in 12+ cities and 4 countries since 2016.</p>
+    <p class="hero-sub">Interior design and 3D visualization for homes, hospitality and commercial spaces — designed with restraint, carried through to a finished, built result.</p>
   </div>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
-  <span class="intro-tag">Philosophy</span>
-  <p data-reveal><span class="drop">I</span> design and visualize spaces that don't chase trends — taking a project from concept render through to a finished, built space with proportion, honest materials and a restrained hand carried through every stage.</p>
+  <span class="intro-tag">Approach</span>
+  <p data-reveal><span class="drop">M</span>aterial, proportion and light — held in restraint, carried from first concept through to a finished space.</p>
 </section>
 
 <!-- WORK -->
@@ -398,115 +441,25 @@
   <div class="grid" id="projectGrid"></div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label"><span class="rule"></span><span>About</span></div>
-  <div class="about-grid" data-reveal>
-    <div class="about-photo">
-      <img src="mahmoud-portrait.jpg" alt="Portrait of Mahmoud Kamaleh" loading="lazy" decoding="async">
-    </div>
-    <div class="about-copy">
-      <p>I'm Mahmoud Kamaleh, an interior designer working across residential, hospitality and commercial spaces. This portfolio brings together the projects I've designed, rendered and, in many cases, seen through to a finished, built space — from first concept to final fit-out.</p>
-      <div class="quote">"A space isn't finished when the render looks good — it's finished when it's built, lived in and works exactly as intended."</div>
-      <p>Based in London, Ontario, Canada, working with clients on homes, boutique hospitality and considered commercial spaces internationally.</p>
-      <div class="stats">
-        <div class="stat"><div class="num">100+</div><div class="label">Projects</div></div>
-        <div class="stat"><div class="num">2016</div><div class="label">Since</div></div>
-        <div class="stat"><div class="num">12+</div><div class="label">Cities</div></div>
-        <div class="stat"><div class="num">4</div><div class="label">Countries</div></div>
-      </div>
-    </div>
+<!-- CREDIBILITY -->
+<section class="dark" style="padding-top:0; padding-bottom:0;">
+  <div class="credibility-line" data-reveal>
+    <div class="stat"><div class="num">100+</div><div class="label">Projects</div></div>
+    <div class="stat"><div class="num">10+</div><div class="label">Years</div></div>
+    <div class="stat"><div class="num">12+</div><div class="label">Cities</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">Countries</div></div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-label"><span class="rule"></span><span>Services</span></div>
-  <div class="services-list" data-reveal>
-    <div class="service-row">
-      <span class="num">01</span>
-      <span class="name">Full Interior Design</span>
-      <span class="desc">Concept through to installation — layout, material palette, lighting, furniture and styling.</span>
-    </div>
-    <div class="service-row">
-      <span class="num">02</span>
-      <span class="name">Design Consultation</span>
-      <span class="desc">A single working session to solve a layout problem or set direction for your own project.</span>
-    </div>
-    <div class="service-row">
-      <span class="num">03</span>
-      <span class="name">Renovation Planning</span>
-      <span class="desc">Space planning and material specification for structural renovations, alongside your architect.</span>
-    </div>
-    <div class="service-row">
-      <span class="num">04</span>
-      <span class="name">Styling &amp; Sourcing</span>
-      <span class="desc">Furniture, art and object sourcing for a finished space that still feels considered.</span>
-    </div>
-  </div>
+<!-- CLOSING CTA -->
+<section class="dark closing-cta">
+  <p class="serif" data-reveal>Have a space in mind?</p>
+  <a href="consultation.html" data-reveal>Start a Project →</a>
 </section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <div class="contact-grid">
-    <div class="contact-info" data-reveal>
-      <h2>Let's design<br>your next space</h2>
-      <a class="email" href="mailto:Id.kamaleh@gmail.com">Id.kamaleh@gmail.com</a>
-      <div class="contact-detail">London, Ontario, Canada<br>+1 548 468 0887</div>
-      <div class="social-list">
-        <a href="https://www.instagram.com/_mk_creative_studio_/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/in/m-kamaleh/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-    <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-reveal>
-      <input type="hidden" name="form-name" value="contact">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <div class="field">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Your name" required>
-      </div>
-      <div class="field">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="you@email.com" required>
-      </div>
-      <div class="field">
-        <label>Project brief</label>
-        <textarea name="message" placeholder="Tell me about your space..." required></textarea>
-      </div>
-      <button class="submit" type="submit">Send Enquiry</button>
-      <p id="formStatus" style="display:none; margin-top:16px; font-size:13px; color:var(--gold); letter-spacing:0.02em;"></p>
-    </form>
-  </div>
-</section>
-
-<script>
-  (function(){
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-    if(!form) return;
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const data = new FormData(form);
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      }).then(() => {
-        form.reset();
-        form.style.display = 'none';
-        status.textContent = "Thanks — your message is on its way. I'll be in touch soon.";
-        status.style.display = 'block';
-      }).catch(() => {
-        status.textContent = "Something went wrong sending that. Please email Id.kamaleh@gmail.com directly.";
-        status.style.display = 'block';
-      });
-    });
-  })();
-</script>
 
 <footer>
-  <span>© 2026 Mahmoud Kamaleh</span>
-  <span>London, Ontario, Canada</span>
+  <span class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio logo">© 2026 MK Interior Design Studio</span>
+  <span>Canada · US · UAE</span>
 </footer>
 
 <div class="modal-backdrop" id="modalBackdrop">
@@ -615,7 +568,6 @@
         { type:"image", src:"efreez-22.jpg", tag:"Design Render — Product Display" },
         { type:"image", src:"efreez-23.jpg", tag:"Design Render — Vanity Mirror" },
         { type:"image", src:"efreez-24.jpg", tag:"Design Render — Arch Detail" },
-        { type:"image", src:"efreez-materials-board.jpg", tag:"Material Palette" },
         { type:"image", src:"efreez-materials-flatlay.jpg", tag:"Material Palette" },
         { type:"video", src:"efreez-walkthrough-2.mp4", tag:"Design Walkthrough" },
       ],
@@ -637,21 +589,17 @@
         { type:"image", src:"lakeside-chandelier-detail.jpg", tag:"Design Render — Chandelier Detail" },
         { type:"image", src:"lakeside-shelving-detail.jpg", tag:"Design Render — Shelving Detail" },
         { type:"image", src:"lakeside-bar-detail.jpg", tag:"Design Render — Bar Counter Detail" },
+        { type:"video", src:"lakeside-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
       desc:"A double-height great room for a lakeside residence set against a mountain backdrop — a sculptural woven-glass ribbon chandelier drifts above a circular arrangement of boucle sofas and a pair of calacatta viola marble coffee tables on hammered-bronze bases. Warm walnut millwork, brushed brass detailing and a book-matched marble dining table carry the material story through to an open kitchen with a sculpted brass hood, all framed by floor-to-ceiling glazing onto the water." },
     { title:"Lakehouse Retreat", cat:"residential", loc:"Ontario, Canada", year:"2026",
       media:[
         { type:"image", src:"lake-cover.jpg", tag:"Design Render — Living Room" },
         { type:"video", src:"lake-hover-preview.mp4", tag:"Design Walkthrough" },
-        { type:"video", src:"lake-video-1.mp4", tag:"Site Video" },
         { type:"image", src:"lake-1.jpg", tag:"Design Render — Living Room" },
-        { type:"image", src:"lake-2.jpg", tag:"Design Render — Living Room" },
         { type:"image", src:"lake-3.jpg", tag:"Design Render — Kitchen" },
         { type:"image", src:"lake-4.jpg", tag:"Design Render — Detail" },
-        { type:"video", src:"lake-render-clip.mp4", tag:"Render Clip" },
-        { type:"video", src:"lake-night-render.mp4", tag:"Night Render" },
         { type:"image", src:"lake-3dsmax.jpg", tag:"3D Modeling Process" },
-        { type:"video", src:"lake-3d-screen-recording.mp4", tag:"3D Modeling Screen Recording" },
         { type:"video", src:"lake-full-walkthrough.mp4", tag:"Full Walkthrough" },
       ],
       desc:"A lakeside retreat on the shores of Ontario, designed around uninterrupted water views — green-veined marble, dark walnut millwork and sculptural brass fixtures throughout. Full process shown here from 3D model through lighting studies to a complete rendered walkthrough." },
@@ -693,47 +641,6 @@
         { type:"video", src:"wo-video-1.mp4", tag:"Site Video" },
       ],
       desc:"Full design and fit-out project management for a flower boutique and café in Sharjah. A blush-pink micro-cement shell, fluted travertine millwork and a sculpted stone counter set against arched glazing and brass detailing — carried from concept render through on-site fit-out to the finished, opened space." },
-    { title:"Private Residence — Primary Suite", cat:"residential", loc:"Las Vegas, USA", year:"2026",
-      media:[
-        { type:"image", src:"mersho-bedroom-1.jpg", tag:"Design Render — Bed Wall" },
-        { type:"image", src:"mersho-bedroom-2.jpg", tag:"Design Render — Entry Hall" },
-        { type:"image", src:"mersho-bedroom-3.jpg", tag:"Design Render — Overview" },
-        { type:"image", src:"mersho-bedroom-4.jpg", tag:"Design Render — Bed Wall Detail" },
-        { type:"image", src:"mersho-bedroom-5.jpg", tag:"Design Render — Seating & Terrace" },
-        { type:"image", src:"mersho-bedroom-6.jpg", tag:"Design Render — Walk-In Closet" },
-        { type:"image", src:"mersho-bedroom-7.jpg", tag:"Design Render — Entry Foyer" },
-        { type:"image", src:"mersho-bedroom-8.jpg", tag:"Design Render — Bed Wall, Wide" },
-        { type:"video", src:"mersho-bedroom-walkthrough.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"The primary suite of a private residence — a sculptural bronze-leaf ceiling installation floats above a sunken bed platform framed in book-matched onyx and mirror-polished bronze, with a private lounge, glass-fronted sneaker closet and floor-to-ceiling glazing framing a mountain and waterfront view.",
-      role:"Role: Design Lead / 3D Visualization. Completed while employed at Hedgeford & Berkley Inc. Portfolio presented solely to prospective clients or employers to demonstrate personal skills. Copyright and project ownership remain with the original owner." },
-    { title:"Private Residence — Entertaining Suite", cat:"residential", loc:"Las Vegas, USA", year:"2026",
-      media:[
-        { type:"image", src:"party-room-cover.jpg", tag:"Design Render — Lounge Overview" },
-        { type:"image", src:"party-room-1.jpg", tag:"Design Render — Lounge Overview" },
-        { type:"image", src:"party-room-2.jpg", tag:"Design Render — Overhead" },
-        { type:"image", src:"party-room-3.jpg", tag:"Design Render — Dining Table" },
-        { type:"image", src:"party-room-4.jpg", tag:"Design Render — Dining, Waterfront View" },
-        { type:"image", src:"party-room-5.jpg", tag:"Design Render — Bar Detail" },
-        { type:"image", src:"party-room-6.jpg", tag:"Design Render — Seating Area" },
-        { type:"image", src:"party-room-7.jpg", tag:"Design Render — Dining & Lounge" },
-        { type:"image", src:"party-room-8.jpg", tag:"Design Render — Lounge, Mountain View" },
-        { type:"image", src:"party-room-9.jpg", tag:"Design Render — Lounge Corner" },
-        { type:"image", src:"party-room-10.jpg", tag:"Design Render — Fireside Lounge" },
-        { type:"video", src:"party-room-walkthrough.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"An entertaining suite within a private residence — a sculptural, hand-hammered brass ceiling folds down into a mirrored fan-form bar backlit with crystal, anchored by an oversized bouclé cloud sofa and a 16-seat marble dining table set beneath a rain of pendant lighting. Full-height glazing opens the room onto a dramatic mountain-and-water backdrop.",
-      role:"Role: Design Lead / 3D Visualization. Completed while employed at Hedgeford & Berkley Inc. Portfolio presented solely to prospective clients or employers to demonstrate personal skills. Copyright and project ownership remain with the original owner." },
-    { title:"Private Residence — Car Lounge", cat:"residential", loc:"Las Vegas, USA", year:"2026",
-      media:[
-        { type:"image", src:"carlounge-1.jpg", tag:"Design Render — Overview" },
-        { type:"image", src:"carlounge-2.jpg", tag:"Design Render — Frontal View" },
-        { type:"image", src:"carlounge-3.jpg", tag:"Design Render — Overhead" },
-        { type:"image", src:"carlounge-4.jpg", tag:"Design Render — Detail" },
-        { type:"video", src:"carlounge-walkthrough.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"A private car lounge — a double-height, hammered-bronze gallery wrapped in curved display shelving for art and books, centred on a sunken glass turntable that stages a hypercar beneath a suspended Formula 1 livery. Sculptural rope lighting arcs overhead, with curved velvet seating framing the space on either side.",
-      role:"Role: Design Lead / 3D Visualization. Completed while employed at Hedgeford & Berkley Inc. Portfolio presented solely to prospective clients or employers to demonstrate personal skills. Copyright and project ownership remain with the original owner." },
     { title:"Efreez Beauty Salon — Sharjah", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
       media:[
         { type:"image", src:"efreez-cover.jpg", tag:"Design Render — Reception" },
@@ -773,6 +680,8 @@
         { type:"image", src:"desert-poolside.jpg", tag:"Design Render — Poolside" },
         { type:"image", src:"desert-living-room.jpg", tag:"Design Render — Living Room" },
         { type:"image", src:"desert-dusk.jpg", tag:"Design Render — Exterior, Dusk" },
+        { type:"image", src:"desert-lounge-fireplace.jpg", tag:"Design Render — Lounge, Fireplace" },
+        { type:"image", src:"desert-dining.jpg", tag:"Design Render — Dining Room" },
         { type:"video", src:"desert-walkthrough-1.mp4", tag:"Design Walkthrough" },
         { type:"video", src:"desert-walkthrough-2.mp4", tag:"Design Walkthrough" },
       ],
@@ -791,6 +700,23 @@
         { type:"video", src:"dressing-video-1.mp4", tag:"Site Video" },
       ],
       desc:"A private walk-in dressing room designed as a jewellery box in its own right — smoked oak joinery, brushed brass trim and a glass-topped display island for watches, sunglasses and accessories, finished with a sculptural floral chandelier overhead." },
+    { title:"Walnut Lakeview Residence — Open Living", cat:"residential", loc:"Location TBD", year:"2026",
+      media:[
+        { type:"image", src:"openplan-living.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"openplan-dining-kitchen.jpg", tag:"Design Render — Dining & Kitchen, Lake View" },
+        { type:"image", src:"openplan-kitchen-island.jpg", tag:"Design Render — Kitchen Island" },
+        { type:"image", src:"openplan-office.jpg", tag:"Design Render — Home Office" },
+        { type:"video", src:"openplan-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"An open-plan living, dining and kitchen concept wrapped floor-to-ceiling in dark walnut panelling — a sculptural linear pendant traces above a travertine coffee table and low-slung sectional, while the dining table sits beneath a pair of interlocking ring chandeliers framed by uninterrupted lake and hillside views. A travertine-clad kitchen island and a glass-fronted display wall carry the material story through to a quiet, curtain-lined home office." },
+    { title:"Cliffside Italian Restaurant — Concept", cat:"hospitality", loc:"Amalfi Coast, Italy", year:"2026",
+      media:[
+        { type:"image", src:"cliffrest-cover.jpg", tag:"Concept Render — Terrace, Dusk" },
+        { type:"image", src:"cliffrest-aerial.jpg", tag:"Concept Render — Aerial, Sunset" },
+        { type:"image", src:"cliffrest-terrace.jpg", tag:"Concept Render — Staircase & Dock" },
+        { type:"video", src:"cliffrest-walkthrough.mp4", tag:"Concept Walkthrough" },
+      ],
+      desc:"A cliffside restaurant concept carved into the limestone coastline — a glass-fronted dining room set inside a natural cave opens onto a curved infinity pool that spills into the sea below, fed by a cascading cliffside waterfall. A softly lit stone staircase winds down through olive and pine to a private yacht dock, framing every table with an uninterrupted sunset horizon." },
     { title:"Orla Salon", cat:"commercial", loc:"Al Mizhar, Dubai, UAE", year:"2026",
       media:[
         { type:"image", src:"orla-real-2.jpg", tag:"Completed — Pedicure Lounge" },
@@ -813,7 +739,7 @@
         { type:"image", src:"orla-real-1.jpg", tag:"Completed — Styling Chair" },
       ],
       desc:"Full design and fit-out for Orla, a beauty salon in the Al Mizhar (Merdif) area of Dubai — a soft, arched concrete-and-travertine shell built around a sculptural stone reception desk, with dedicated nail bar, styling and wash stations, private treatment rooms, a boutique dressing area and a pouf-lined pedicure lounge framed by a rattan-and-greenery screen. Shown here from full 360° design renders through to the finished, opened salon." },
-    { title:"The London Cottage", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
+    { title:"The London Cottage — Interior", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
       media:[
         { type:"image", src:"cottage-int-1.jpg", tag:"Design Render — Living Room" },
         { type:"image", src:"cottage-int-2.jpg", tag:"Design Render — Living Room" },
@@ -824,7 +750,11 @@
         { type:"image", src:"cottage-int-7.jpg", tag:"Design Render — Dining" },
         { type:"image", src:"cottage-int-8.jpg", tag:"Design Render — Living Room, Overhead" },
         { type:"image", src:"cottage-int-9.jpg", tag:"Design Render — Dining, Wide" },
-        { type:"video", src:"cottage-int-walkthrough.mp4", tag:"Interior Walkthrough" },
+        { type:"video", src:"cottage-int-walkthrough-2.mp4", tag:"Interior Walkthrough" },
+      ],
+      desc:"The interior concept for a modern cottage-style residence in London, Ontario — a double-height living and dining volume in charcoal stone, warm oak and marble, anchored by a sculptural wave-form pendant light developed from concept sketch through to finished render." },
+    { title:"The London Cottage — Exterior", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
+      media:[
         { type:"image", src:"cottage-ext-1.jpg", tag:"Design Render — Exterior, Dusk" },
         { type:"image", src:"cottage-ext-2.jpg", tag:"Design Render — Front Elevation" },
         { type:"image", src:"cottage-ext-3.jpg", tag:"Design Render — Front Elevation" },
@@ -833,7 +763,7 @@
         { type:"image", src:"cottage-ext-6.jpg", tag:"Design Render — Rear Elevation" },
         { type:"video", src:"cottage-ext-walkthrough.mp4", tag:"Exterior Walkthrough" },
       ],
-      desc:"A full interior and exterior concept for a modern cottage-style residence in London, Ontario — a double-height living and dining volume in charcoal stone, warm oak and marble, anchored by a sculptural wave-form pendant light developed from concept sketch through to finished render. Outside, a low-slung dark-clad form with cedar-lined soffits, ribbon lighting and a spiral stair to a rooftop terrace sits within a lush, palm-edged garden." },
+      desc:"The exterior concept for a modern cottage-style residence in London, Ontario — a low-slung dark-clad form with cedar-lined soffits, ribbon lighting and a spiral stair to a rooftop terrace, sitting within a lush, palm-edged garden." },
     { title:"Classic to Smart Bedroom", cat:"residential", loc:"Private Residence", year:"2024",
       media:[
         { type:"image", src:"bedroom-cover.jpg", tag:"Design Render — Modern Concept" },
@@ -871,20 +801,27 @@
         { type:"image", src:"kit-fitout-3.jpg", tag:"Fit-Out in Progress" },
       ],
       desc:"A dated 1990s kitchen — laminate cabinetry, an orange glass splashback — stripped back and rebuilt as a dark walnut and calacatta-marble kitchen with a book-matched marble island, brass detailing and a fluted-panel dining nook. Shown from the original kitchen through demolition, design render and on-site fit-out." },
-    { title:"Sergio Residence", cat:"residential", loc:"Los Angeles, USA", year:"2026",
+    { title:"Stone & Timber Residence — Exterior", cat:"residential", loc:"Location TBD", year:"2026",
       media:[
-        { type:"image", src:"sergio-1.jpg", tag:"Design Render — Master Bedroom" },
-        { type:"image", src:"sergio-2.jpg", tag:"Design Render — Master Bedroom" },
-        { type:"image", src:"sergio-3.jpg", tag:"Design Render — Master Bedroom" },
-        { type:"image", src:"sergio-4.jpg", tag:"Design Render — Bathroom" },
-        { type:"image", src:"sergio-5.jpg", tag:"Design Render — Bathroom" },
-        { type:"image", src:"sergio-6.jpg", tag:"Design Render — Bathroom" },
-        { type:"image", src:"sergio-7.jpg", tag:"Design Render — Bathroom" },
-        { type:"image", src:"sergio-8.jpg", tag:"Design Render — Bathroom" },
-        { type:"image", src:"sergio-9.jpg", tag:"Design Render — Walk-In Closet" },
-        { type:"image", src:"sergio-10.jpg", tag:"Design Render — Walk-In Closet" },
+        { type:"image", src:"stonewood-ext-1.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"stonewood-ext-cover.jpg", tag:"Design Render — Facade Detail" },
+        { type:"image", src:"stonewood-ext-detail.jpg", tag:"Design Render — Material Detail" },
       ],
-      desc:"A master suite concept for a coastal Los Angeles home — bedroom, walk-in closet and spa-style bathroom designed as one continuous material story in warm oak, travertine and brushed bronze, opening onto ocean and palm views." },
+      desc:"An exterior concept for a modern residence built around a striking material contrast — a sharply canted black-edged roofline shelters a facade of book-matched limestone, vertical cedar screening and coursed fieldstone, framed by full-height glazing and a soft, palm-edged landscape." },
+    { title:"House Exterior Design", cat:"residential", loc:"Location TBD", year:"2026",
+      media:[
+        { type:"image", src:"hero-1-poster.jpg", tag:"Design Render — Streetscape" },
+        { type:"image", src:"gable-ext-street.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"gable-ext-rain.jpg", tag:"Design Render — Evening Rain" },
+      ],
+      desc:"A dusk exterior study for a modern gable residence, defined by twin steep-pitched black standing-seam roofs, full-height black-framed glazing and a stacked fieldstone base with warm uplighting. Shown across streetscape and front-elevation views, with a rain-soaked evening scene capturing the facade's glow reflected in the pavement." },
+    { title:"Niagara Falls Hotel & Resort Concept", cat:"hospitality", loc:"Niagara Falls, Ontario, Canada", year:"2026",
+      media:[
+        { type:"image", src:"niagara-hotel-aerial-day.jpg", tag:"Concept Render — Aerial, Daylight" },
+        { type:"image", src:"niagara-hotel-yacht.jpg", tag:"Concept Render — Cliffside View" },
+        { type:"image", src:"niagara-hotel-aerial-night.jpg", tag:"Concept Render — Aerial, Dusk" },
+      ],
+      desc:"A cliffside hotel and resort concept perched directly above the Horseshoe Falls, its terraced, undulating balconies stepping down the escarpment toward a cantilevered observation deck suspended over the gorge. Shown across daylight and dusk aerials and a cliffside view from the water, showcasing the building's sculptural form against the falls and surrounding cityscape." },
   ];
 
   const grid = document.getElementById('projectGrid');
@@ -900,7 +837,7 @@
         <div class="card-overlay">
           <span class="tag">${p.cat}</span>
           <h3>${p.title}</h3>
-          <p>${p.loc} — ${p.year}</p>
+          <p>${p.loc.includes('TBD') ? 'Concept' : p.loc} — ${p.year}</p>
         </div>`;
       if(previewVideo){
         const vid = card.querySelector('video');
@@ -957,7 +894,7 @@
 
   function openModal(p){
     currentProject = p;
-    document.getElementById('modalMeta').textContent = `${p.loc} · ${p.year} · ${p.cat.toUpperCase()}`;
+    document.getElementById('modalMeta').textContent = `${p.loc.includes('TBD') ? 'Concept' : p.loc} · ${p.year} · ${p.cat.toUpperCase()}`;
     document.getElementById('modalTitle').textContent = p.title;
     document.getElementById('modalDesc').textContent = p.desc;
     const roleEl = document.getElementById('modalRole');
