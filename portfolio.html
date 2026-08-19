@@ -939,8 +939,14 @@
   function renderLightbox(){
     const item = currentProject.media[lbIndex];
     lbMedia.innerHTML = item.type === 'video'
-      ? `<video src="${item.src}" controls playsinline autoplay loop></video>`
+      ? `<video src="${item.src}" muted controls controlsList="novolume" playsinline autoplay loop></video>`
       : `<img src="${item.src}" alt="${currentProject.title}">`;
+    if(item.type === 'video'){
+      // Belt-and-suspenders: force it back to muted no matter how a browser
+      // or OS-level control tries to unmute it, so audio never plays here.
+      const lbVid = lbMedia.querySelector('video');
+      lbVid.addEventListener('volumechange', () => { lbVid.muted = true; });
+    }
     const tagEl = document.getElementById('lbTag');
     tagEl.textContent = item.tag || '';
     tagEl.style.display = item.tag ? 'block' : 'none';
