@@ -456,10 +456,10 @@
 
 <!-- HERO -->
 <section class="hero" style="padding:0;">
-  <video class="active" src="hero-1.mp4" poster="hero-1-poster.jpg" muted playsinline autoplay preload="auto"></video>
-  <video data-src="hero-2.mp4" poster="hero-2-poster.jpg" muted playsinline preload="none"></video>
-  <video data-src="hero-3.mp4" poster="hero-3-poster.jpg" muted playsinline preload="none"></video>
-  <video data-src="hero-5.mp4" poster="hero-5-poster.jpg" muted playsinline preload="none"></video>
+  <video class="active" src="hero-1.mp4" muted playsinline autoplay preload="auto"></video>
+  <video data-src="hero-2.mp4" muted playsinline preload="none"></video>
+  <video data-src="hero-3.mp4" muted playsinline preload="none"></video>
+  <video data-src="hero-5.mp4" muted playsinline preload="none"></video>
   <div class="hero-content">
     <div>
       <span class="hero-eyebrow">Interior Design Studio</span>
@@ -603,8 +603,17 @@
       if(idx === i){
         ensureLoaded(v);
         v.classList.add('active');
-        v.currentTime = 0;
-        v.play().catch(()=>{});
+        // Safe to reset time only once metadata is actually loaded — on a
+        // slow connection, setting currentTime too early can silently stall
+        // playback until the next user interaction on some mobile browsers.
+        if(v.readyState >= 1) v.currentTime = 0;
+        const tryPlay = () => v.play().catch(()=>{});
+        tryPlay();
+        // Retry the moment the browser reports it actually has enough
+        // buffered data to play smoothly — this is what makes the video
+        // take over from the poster image as soon as it's ready, instead
+        // of waiting for the next `ended` event or a manual refresh.
+        v.addEventListener('canplay', tryPlay, { once:true });
       } else {
         v.classList.remove('active');
       }
