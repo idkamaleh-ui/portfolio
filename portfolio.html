@@ -179,6 +179,20 @@
   .credibility-line .num{ font-family:'Cormorant Garamond', serif; font-size:40px; color:var(--gold); font-weight:400; }
   .credibility-line .label{ font-size:11px; color:var(--taupe); letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
 
+  /* PAGE HERO (for About / Services / Site / Consultation / Portfolio) */
+  .page-hero{
+    padding:180px 60px 80px; border-bottom:1px solid var(--line-dark);
+  }
+  .page-hero .hero-eyebrow{ display:block; margin-bottom:18px; }
+  .page-hero h1{
+    font-family:'Cormorant Garamond', serif; font-weight:300; font-style:italic;
+    font-size:clamp(38px, 5vw, 64px); line-height:1.1; max-width:780px;
+  }
+  .page-hero p{
+    margin-top:22px; max-width:560px; font-size:15px; line-height:1.8;
+    color:rgba(239,235,228,0.75); font-weight:300;
+  }
+
   /* CLOSING CTA (Home) */
   .closing-cta{
     text-align:center; padding:150px 60px;
@@ -192,10 +206,10 @@
     transition:background .35s, color .35s;
   }
   .closing-cta a:hover{ background:var(--gold); color:var(--ink); }
-
   @media (max-width:900px){
     .credibility-line{ gap:40px; padding:56px 24px; }
     .closing-cta{ padding:100px 24px; }
+    .page-hero{ padding:130px 24px 56px; }
   }
   .stat .num{ font-family:'Cormorant Garamond', serif; font-size:44px; color:var(--gold); font-weight:400; }
   .stat .label{ font-size:11px; color:var(--taupe); letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
@@ -289,7 +303,6 @@
   @media (max-width:560px){
     .footer-grid{ grid-template-columns:1fr; }
   }
-
   footer{
     padding:36px 60px; display:flex; justify-content:space-between;
     font-size:11px; color:rgba(239,235,228,0.5); letter-spacing:0.08em;
@@ -431,8 +444,8 @@
 <nav>
   <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
   <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="site.html">On Site</a></li>
@@ -454,53 +467,22 @@
   <a href="consultation.html">Start a Project</a>
 </div>
 
-<!-- HERO -->
-<section class="hero" style="padding:0;">
-  <video class="active" src="hero-1.mp4" poster="hero-1-poster.jpg" muted playsinline autoplay preload="auto"></video>
-  <video data-src="hero-2.mp4" poster="hero-2-poster.jpg" muted playsinline preload="none"></video>
-  <video data-src="hero-3.mp4" poster="hero-3-poster.jpg" muted playsinline preload="none"></video>
-  <video data-src="hero-5.mp4" poster="hero-5-poster.jpg" muted playsinline preload="none"></video>
-  <div class="hero-content">
-    <div>
-      <span class="hero-eyebrow">Interior Design Studio</span>
-      <h1>Interiors of<br>quiet confidence</h1>
-    </div>
-    <p class="hero-sub">Interior design and 3D visualization for homes, hospitality and commercial spaces — designed with restraint, carried through to a finished, built result.</p>
+<div class="page-hero">
+  <span class="hero-eyebrow">Portfolio</span>
+  <h1>Selected work, in full.</h1>
+  <p>Every project shown here, from first concept render through to the finished, built space.</p>
+</div>
+
+<!-- WORK -->
+<section id="work" class="dark">
+  <div class="section-label"><span class="rule"></span><span>Selected Work</span></div>
+  <div class="filters" data-reveal>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="residential">Residential</button>
+    <button class="filter-btn" data-filter="commercial">Commercial</button>
+    <button class="filter-btn" data-filter="hospitality">Hospitality</button>
   </div>
-</section>
-
-<!-- INTRO -->
-<section class="intro">
-  <span class="intro-tag">Approach</span>
-  <p data-reveal><span class="drop">M</span>aterial, proportion and light — held in restraint, carried from first concept through to a finished space.</p>
-</section>
-
-<!-- FEATURED WORK -->
-<section id="work" class="dark" style="padding-top:60px;">
-  <div class="section-label"><span class="rule"></span><span>Featured Work</span></div>
   <div class="grid" id="projectGrid"></div>
-  <div style="text-align:center; margin-top:56px;" data-reveal>
-    <a href="portfolio.html" class="closing-cta-btn" style="display:inline-block; padding:16px 40px; border:1px solid var(--gold); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ivory); transition:background .35s, color .35s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';" onmouseout="this.style.background='';this.style.color='var(--ivory)';">View Full Portfolio →</a>
-  </div>
-</section>
-
-<!-- ON-SITE -->
-<section class="dark" style="padding-top:0;">
-  <div class="section-label"><span class="rule"></span><span>Behind the Renders</span></div>
-  <div class="grid" id="onSiteGrid" style="margin-bottom:56px;"></div>
-  <div style="text-align:center;" data-reveal>
-    <a href="site.html" style="display:inline-block; padding:16px 40px; border:1px solid var(--gold); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ivory); transition:background .35s, color .35s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';" onmouseout="this.style.background='';this.style.color='var(--ivory)';">View All On-Site Work →</a>
-  </div>
-</section>
-
-<!-- CREDIBILITY -->
-<section class="dark" style="padding-top:0; padding-bottom:0;">
-  <div class="credibility-line" data-reveal>
-    <div class="stat"><div class="num">100+</div><div class="label">Projects</div></div>
-    <div class="stat"><div class="num">10+</div><div class="label">Years</div></div>
-    <div class="stat"><div class="num">12+</div><div class="label">Cities</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">Countries</div></div>
-  </div>
 </section>
 
 <!-- CLOSING CTA -->
@@ -587,39 +569,6 @@
     });
   });
 
-  // hero video crossfade cycle — videos 2-4 are not fetched until just before
-  // they're needed, so the page only pays for hero-1's weight on first load
-  const heroVideos = document.querySelectorAll('.hero video');
-  let heroIndex = 0;
-  function ensureLoaded(v){
-    if(v.dataset.src){
-      v.src = v.dataset.src;
-      v.removeAttribute('data-src');
-      v.load();
-    }
-  }
-  function playHero(i){
-    heroVideos.forEach((v, idx) => {
-      if(idx === i){
-        ensureLoaded(v);
-        v.classList.add('active');
-        v.currentTime = 0;
-        v.play().catch(()=>{});
-      } else {
-        v.classList.remove('active');
-      }
-    });
-    // start fetching the next clip in the background while this one plays
-    ensureLoaded(heroVideos[(i + 1) % heroVideos.length]);
-  }
-  heroVideos.forEach((v, idx) => {
-    v.addEventListener('ended', () => {
-      heroIndex = (idx + 1) % heroVideos.length;
-      playHero(heroIndex);
-    });
-  });
-  playHero(0);
-
   const projects = [
     { title:"Flo Boutique", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
       media:[
@@ -674,14 +623,237 @@
         { type:"video", src:"lakeside-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
       desc:"A double-height great room for a lakeside residence set against a mountain backdrop — a sculptural woven-glass ribbon chandelier drifts above a circular arrangement of boucle sofas and a pair of calacatta viola marble coffee tables on hammered-bronze bases. Warm walnut millwork, brushed brass detailing and a book-matched marble dining table carry the material story through to an open kitchen with a sculpted brass hood, all framed by floor-to-ceiling glazing onto the water." },
+    { title:"Lakehouse Retreat", cat:"residential", loc:"Ontario, Canada", year:"2026",
+      media:[
+        { type:"image", src:"lake-cover.jpg", tag:"Design Render — Living Room" },
+        { type:"video", src:"lake-hover-preview.mp4", tag:"Design Walkthrough" },
+        { type:"image", src:"lake-1.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"lake-3.jpg", tag:"Design Render — Kitchen" },
+        { type:"image", src:"lake-4.jpg", tag:"Design Render — Detail" },
+        { type:"image", src:"lake-3dsmax.jpg", tag:"3D Modeling Process" },
+        { type:"video", src:"lake-full-walkthrough.mp4", tag:"Full Walkthrough" },
+      ],
+      desc:"A lakeside retreat on the shores of Ontario, designed around uninterrupted water views — green-veined marble, dark walnut millwork and sculptural brass fixtures throughout. Full process shown here from 3D model through lighting studies to a complete rendered walkthrough." },
+    { title:"Al Quti Group Corridor", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
+      media:[
+        { type:"image", src:"corridor-cover.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-1.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-2.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-4.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-3.jpg", tag:"Design Render — Detail" },
+        { type:"video", src:"corridor-video-1.mp4", tag:"Site Video" },
+      ],
+      desc:"Corridor and unit-entry design for Al Quti Group in Sharjah — walnut-panelled doorways, brass trim and warm sconce lighting set against a textured wool carpet, designed to feel closer to a boutique hotel than a typical residential hallway." },
+    { title:"White Orchid", cat:"commercial", loc:"Sharjah, UAE", year:"2025",
+      media:[
+        { type:"image", src:"white-orchid-cover.jpg", tag:"Completed — Storefront" },
+        { type:"image", src:"wo-real-6.jpg", tag:"Completed — Storefront" },
+        { type:"image", src:"wo-real-1.jpg", tag:"Completed — Interior" },
+        { type:"image", src:"wo-real-2.jpg", tag:"Completed — Interior" },
+        { type:"image", src:"wo-real-7.jpg", tag:"Completed — Interior" },
+        { type:"image", src:"wo-real-3.jpg", tag:"Completed — Opening Day" },
+        { type:"image", src:"wo-real-4.jpg", tag:"Completed — Terrace" },
+        { type:"image", src:"wo-real-5.jpg", tag:"Completed — Terrace" },
+        { type:"image", src:"white-orchid-1.jpg", tag:"Design Render" },
+        { type:"image", src:"white-orchid-8.jpg", tag:"Design Render" },
+        { type:"image", src:"white-orchid-3.jpg", tag:"Design Render" },
+        { type:"image", src:"white-orchid-7.jpg", tag:"Design Render" },
+        { type:"image", src:"white-orchid-2.jpg", tag:"Design Render" },
+        { type:"image", src:"white-orchid-5.jpg", tag:"Design Render" },
+        { type:"image", src:"white-orchid-6.jpg", tag:"Design Render" },
+        { type:"image", src:"white-orchid-4.jpg", tag:"Design Render" },
+        { type:"image", src:"wo-fitout-1.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"wo-fitout-2.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"wo-fitout-3.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"wo-fitout-4.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"wo-fitout-5.jpg", tag:"Fit-Out in Progress" },
+        { type:"video", src:"wo-walkthrough-1.mp4", tag:"Site Walkthrough" },
+        { type:"video", src:"wo-walkthrough-2.mp4", tag:"Site Walkthrough" },
+        { type:"video", src:"wo-video-1.mp4", tag:"Site Video" },
+      ],
+      desc:"Full design and fit-out project management for a flower boutique and café in Sharjah. A blush-pink micro-cement shell, fluted travertine millwork and a sculpted stone counter set against arched glazing and brass detailing — carried from concept render through on-site fit-out to the finished, opened space." },
+    { title:"Efreez Beauty Salon — Sharjah", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
+      media:[
+        { type:"image", src:"efreez-cover.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"efreez-7.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"efreez-9.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"efreez-3.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-4.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-6.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-13.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-5.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"efreez-8.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"efreez-10.jpg", tag:"Design Render — Pedicure Lounge" },
+        { type:"image", src:"efreez-12.jpg", tag:"Design Render — Overview" },
+        { type:"image", src:"efreez-2.jpg", tag:"Design Render — Moroccan Bath" },
+        { type:"image", src:"efreez-1.jpg", tag:"Design Render — Treatment Room" },
+        { type:"image", src:"efreez-11.jpg", tag:"Design Render — Treatment Room" },
+        { type:"video", src:"efreez-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"The first Efreez Beauty Salon location, in Sharjah — a soft, arched, gallery-like plan in plaster, travertine and perforated cane screens, with a dedicated Moroccan bath, nail bar, pedicure lounge and private treatment rooms, tied together by a single sculptural olive tree at its centre." },
+    { title:"Waterfront Residence — Great Room", cat:"residential", loc:"Location TBD", year:"2026",
+      media:[
+        { type:"image", src:"waterfront-cover.jpg", tag:"Design Render — Living Room, Water View" },
+        { type:"image", src:"waterfront-living-2.jpg", tag:"Design Render — Living Room, Fireplace" },
+        { type:"image", src:"waterfront-living-3.jpg", tag:"Design Render — Living Room, Water View" },
+        { type:"image", src:"waterfront-living-overhead-1.jpg", tag:"Design Render — Living Room, Overhead" },
+        { type:"image", src:"waterfront-living-overhead-2.jpg", tag:"Design Render — Living Room, Overhead" },
+        { type:"image", src:"waterfront-dining-1.jpg", tag:"Design Render — Dining Room" },
+        { type:"image", src:"waterfront-dining-2.jpg", tag:"Design Render — Dining, Fireplace Beyond" },
+        { type:"image", src:"waterfront-hallway.jpg", tag:"Design Render — Hallway" },
+        { type:"image", src:"waterfront-niche-detail.jpg", tag:"Design Render — Wall Niche Detail" },
+        { type:"video", src:"waterfront-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A double-height waterfront great room built around a double-sided fireplace shared between living and dining. Fluted walnut millwork, hand-carved travertine wall panels and a run of sculptural ring chandeliers carry the material language from the dining table through to a sunken, rug-lined lounge, all framed by floor-to-ceiling glazing onto water, palms and rolling hills." },
+    { title:"Desert Modern Residence", cat:"residential", loc:"Palm Springs, California, USA", year:"2026",
+      media:[
+        { type:"image", src:"desert-cover.jpg", tag:"Design Render — Aerial, Pool & Pavilion" },
+        { type:"image", src:"desert-poolside.jpg", tag:"Design Render — Poolside" },
+        { type:"image", src:"desert-living-room.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"desert-dusk.jpg", tag:"Design Render — Exterior, Dusk" },
+        { type:"image", src:"desert-lounge-fireplace.jpg", tag:"Design Render — Lounge, Fireplace" },
+        { type:"image", src:"desert-dining.jpg", tag:"Design Render — Dining Room" },
+        { type:"video", src:"desert-walkthrough-1.mp4", tag:"Design Walkthrough" },
+        { type:"video", src:"desert-walkthrough-2.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A low-slung desert-modern residence set among olive trees and rugged mountains — a hand-troweled plaster shell opens fully behind a deep timber pergola, dissolving the line between an indoor lounge and dining pavilion and a stone-decked pool terrace. Warm travertine paving, oversized terracotta urns and a sculptural fireplace carry the material story from golden-hour daylight through to a glowing, lantern-lit dusk." },
+    { title:"Private Dressing Room", cat:"residential", loc:"Ontario, Canada", year:"2026",
+      media:[
+        { type:"image", src:"dressing-cover.jpg", tag:"Design Render — Overview" },
+        { type:"image", src:"dressing-6.jpg", tag:"Design Render — Overview" },
+        { type:"image", src:"dressing-7.jpg", tag:"Design Render — Overview" },
+        { type:"image", src:"dressing-8.jpg", tag:"Design Render — Overview" },
+        { type:"image", src:"dressing-1.jpg", tag:"Design Render — Detail" },
+        { type:"image", src:"dressing-4.jpg", tag:"Design Render — Jewellery Island" },
+        { type:"image", src:"dressing-5.jpg", tag:"Design Render — Jewellery Island" },
+        { type:"image", src:"dressing-2.jpg", tag:"Design Render — Detail" },
+        { type:"image", src:"dressing-3.jpg", tag:"Design Render — Detail" },
+        { type:"video", src:"dressing-video-1.mp4", tag:"Site Video" },
+      ],
+      desc:"A private walk-in dressing room designed as a jewellery box in its own right — smoked oak joinery, brushed brass trim and a glass-topped display island for watches, sunglasses and accessories, finished with a sculptural floral chandelier overhead." },
+    { title:"Walnut Lakeview Residence — Open Living", cat:"residential", loc:"Location TBD", year:"2026",
+      media:[
+        { type:"image", src:"openplan-living.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"openplan-dining-kitchen.jpg", tag:"Design Render — Dining & Kitchen, Lake View" },
+        { type:"image", src:"openplan-kitchen-island.jpg", tag:"Design Render — Kitchen Island" },
+        { type:"image", src:"openplan-office.jpg", tag:"Design Render — Home Office" },
+        { type:"video", src:"openplan-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"An open-plan living, dining and kitchen concept wrapped floor-to-ceiling in dark walnut panelling — a sculptural linear pendant traces above a travertine coffee table and low-slung sectional, while the dining table sits beneath a pair of interlocking ring chandeliers framed by uninterrupted lake and hillside views. A travertine-clad kitchen island and a glass-fronted display wall carry the material story through to a quiet, curtain-lined home office." },
+    { title:"Cliffside Italian Restaurant — Concept", cat:"hospitality", loc:"Amalfi Coast, Italy", year:"2026",
+      media:[
+        { type:"image", src:"cliffrest-cover.jpg", tag:"Concept Render — Terrace, Dusk" },
+        { type:"image", src:"cliffrest-aerial.jpg", tag:"Concept Render — Aerial, Sunset" },
+        { type:"image", src:"cliffrest-terrace.jpg", tag:"Concept Render — Staircase & Dock" },
+        { type:"video", src:"cliffrest-walkthrough.mp4", tag:"Concept Walkthrough" },
+      ],
+      desc:"A cliffside restaurant concept carved into the limestone coastline — a glass-fronted dining room set inside a natural cave opens onto a curved infinity pool that spills into the sea below, fed by a cascading cliffside waterfall. A softly lit stone staircase winds down through olive and pine to a private yacht dock, framing every table with an uninterrupted sunset horizon." },
+    { title:"Orla Salon", cat:"commercial", loc:"Al Mizhar, Dubai, UAE", year:"2026",
+      media:[
+        { type:"image", src:"orla-real-2.jpg", tag:"Completed — Pedicure Lounge" },
+        { type:"image", src:"orla-render-9.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"orla-render-1.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"orla-pano-5.jpg", tag:"Design Render — Reception, 360°" },
+        { type:"image", src:"orla-pano-1.jpg", tag:"Design Render — Treatment Room, 360°" },
+        { type:"image", src:"orla-render-5.jpg", tag:"Design Render — Treatment Room" },
+        { type:"image", src:"orla-render-6.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"orla-render-10.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"orla-render-3.jpg", tag:"Design Render — Wash & Styling" },
+        { type:"image", src:"orla-render-11.jpg", tag:"Design Render — Styling Chairs" },
+        { type:"image", src:"orla-pano-3.jpg", tag:"Design Render — Salon Floor, 360°" },
+        { type:"image", src:"orla-render-2.jpg", tag:"Design Render — Boutique & Dressing" },
+        { type:"image", src:"orla-render-7.jpg", tag:"Design Render — Boutique & Dressing" },
+        { type:"image", src:"orla-render-4.jpg", tag:"Design Render — Pedicure Lounge" },
+        { type:"image", src:"orla-render-8.jpg", tag:"Design Render — Pedicure Lounge" },
+        { type:"image", src:"orla-pano-2.jpg", tag:"Design Render — Lounge, 360°" },
+        { type:"image", src:"orla-pano-4.jpg", tag:"Design Render — Lounge, 360°" },
+        { type:"image", src:"orla-real-1.jpg", tag:"Completed — Styling Chair" },
+      ],
+      desc:"Full design and fit-out for Orla, a beauty salon in the Al Mizhar (Merdif) area of Dubai — a soft, arched concrete-and-travertine shell built around a sculptural stone reception desk, with dedicated nail bar, styling and wash stations, private treatment rooms, a boutique dressing area and a pouf-lined pedicure lounge framed by a rattan-and-greenery screen. Shown here from full 360° design renders through to the finished, opened salon." },
+    { title:"The London Cottage — Interior", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
+      media:[
+        { type:"image", src:"cottage-int-1.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"cottage-int-2.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"cottage-int-3.jpg", tag:"Concept Study — Dining & Kitchen" },
+        { type:"image", src:"cottage-int-4.jpg", tag:"Concept Study — Pendant Lighting" },
+        { type:"image", src:"cottage-int-5.jpg", tag:"Design Render — Kitchen Island" },
+        { type:"image", src:"cottage-int-6.jpg", tag:"Design Render — Kitchen" },
+        { type:"image", src:"cottage-int-7.jpg", tag:"Design Render — Dining" },
+        { type:"image", src:"cottage-int-8.jpg", tag:"Design Render — Living Room, Overhead" },
+        { type:"image", src:"cottage-int-9.jpg", tag:"Design Render — Dining, Wide" },
+        { type:"video", src:"cottage-int-walkthrough-2.mp4", tag:"Interior Walkthrough" },
+      ],
+      desc:"The interior concept for a modern cottage-style residence in London, Ontario — a double-height living and dining volume in charcoal stone, warm oak and marble, anchored by a sculptural wave-form pendant light developed from concept sketch through to finished render." },
+    { title:"The London Cottage — Exterior", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
+      media:[
+        { type:"image", src:"cottage-ext-1.jpg", tag:"Design Render — Exterior, Dusk" },
+        { type:"image", src:"cottage-ext-2.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"cottage-ext-3.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"cottage-ext-4.jpg", tag:"Design Render — Entrance Detail" },
+        { type:"image", src:"cottage-ext-5.jpg", tag:"Design Render — Garage & Side Elevation" },
+        { type:"image", src:"cottage-ext-6.jpg", tag:"Design Render — Rear Elevation" },
+        { type:"video", src:"cottage-ext-walkthrough.mp4", tag:"Exterior Walkthrough" },
+      ],
+      desc:"The exterior concept for a modern cottage-style residence in London, Ontario — a low-slung dark-clad form with cedar-lined soffits, ribbon lighting and a spiral stair to a rooftop terrace, sitting within a lush, palm-edged garden." },
+    { title:"Classic to Smart Bedroom", cat:"residential", loc:"Private Residence", year:"2024",
+      media:[
+        { type:"image", src:"bedroom-cover.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-before-1.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-before-2.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-before-3.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-before-4.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-render-1.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-render-2.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-render-3.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-fitout-1.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-2.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-3.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-4.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-5.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-6.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-7.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-completed-1.jpg", tag:"Completed" },
+        { type:"image", src:"bed-completed-2.jpg", tag:"Completed" },
+        { type:"video", src:"bed-walkthrough-1.mp4", tag:"Completed Walkthrough" },
+        { type:"video", src:"bed-walkthrough-2.mp4", tag:"Completed Walkthrough" },
+      ],
+      desc:"A full bedroom transformation from an ornate, classical scheme — gilded cornicing, carved wood furniture, crystal chandeliers — into a smart, contemporary suite with fluted timber panelling, hidden lighting and integrated smart-home features. Shown here from the original space through concept renders, on-site fit-out, to the finished room." },
+    { title:"Bohra Residence Kitchen", cat:"residential", loc:"Sharjah, UAE", year:"2024",
+      media:[
+        { type:"image", src:"kitchen-cover.jpg", tag:"Design Render" },
+        { type:"image", src:"kit-before-1.jpg", tag:"Before — Existing Kitchen" },
+        { type:"image", src:"kit-before-2.jpg", tag:"Before — Existing Kitchen" },
+        { type:"image", src:"kit-before-3.jpg", tag:"Demolition" },
+        { type:"image", src:"kit-render-1.jpg", tag:"Design Render" },
+        { type:"image", src:"kit-render-2.jpg", tag:"Design Render" },
+        { type:"image", src:"kit-render-3.jpg", tag:"Design Render" },
+        { type:"image", src:"kit-fitout-1.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"kit-fitout-2.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"kit-fitout-3.jpg", tag:"Fit-Out in Progress" },
+      ],
+      desc:"A dated 1990s kitchen — laminate cabinetry, an orange glass splashback — stripped back and rebuilt as a dark walnut and calacatta-marble kitchen with a book-matched marble island, brass detailing and a fluted-panel dining nook. Shown from the original kitchen through demolition, design render and on-site fit-out." },
+    { title:"Stone & Timber Residence — Exterior", cat:"residential", loc:"Location TBD", year:"2026",
+      media:[
+        { type:"image", src:"stonewood-ext-1.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"stonewood-ext-cover.jpg", tag:"Design Render — Facade Detail" },
+        { type:"image", src:"stonewood-ext-detail.jpg", tag:"Design Render — Material Detail" },
+      ],
+      desc:"An exterior concept for a modern residence built around a striking material contrast — a sharply canted black-edged roofline shelters a facade of book-matched limestone, vertical cedar screening and coursed fieldstone, framed by full-height glazing and a soft, palm-edged landscape." },
+    { title:"House Exterior Design", cat:"residential", loc:"Location TBD", year:"2026",
+      media:[
+        { type:"image", src:"hero-1-poster.jpg", tag:"Design Render — Streetscape" },
+        { type:"image", src:"gable-ext-street.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"gable-ext-rain.jpg", tag:"Design Render — Evening Rain" },
+      ],
+      desc:"A dusk exterior study for a modern gable residence, defined by twin steep-pitched black standing-seam roofs, full-height black-framed glazing and a stacked fieldstone base with warm uplighting. Shown across streetscape and front-elevation views, with a rain-soaked evening scene capturing the facade's glow reflected in the pavement." },
+    { title:"Niagara Falls Hotel & Resort Concept", cat:"hospitality", loc:"Niagara Falls, Ontario, Canada", year:"2026",
+      media:[
+        { type:"image", src:"niagara-hotel-aerial-day.jpg", tag:"Concept Render — Aerial, Daylight" },
+        { type:"image", src:"niagara-hotel-yacht.jpg", tag:"Concept Render — Cliffside View" },
+        { type:"image", src:"niagara-hotel-aerial-night.jpg", tag:"Concept Render — Aerial, Dusk" },
+      ],
+      desc:"A cliffside hotel and resort concept perched directly above the Horseshoe Falls, its terraced, undulating balconies stepping down the escarpment toward a cantilevered observation deck suspended over the gorge. Shown across daylight and dusk aerials and a cliffside view from the water, showcasing the building's sculptural form against the falls and surrounding cityscape." },
   ];
-
-  const onSiteVideos = [
-    { title:"Efreez BC", loc:"Dubai, UAE", src:"efreez-bc-walkthrough.mp4", desc:"The completed Efreez salon retail wall — arched backlit shelving displaying product across a marble-topped counter." },
-    { title:"FLO FS", loc:"Location TBD", src:"flo-fs-walkthrough.mp4", desc:"On-site walkthrough of the Flo Boutique fit-out, nearing completion." },
-    { title:"WO FS", loc:"Sharjah, UAE", src:"wo-fs-walkthrough.mp4", desc:"On-site walkthrough of the White Orchid fit-out, in final finishing stages." },
-  ];
-
 
   const grid = document.getElementById('projectGrid');
   function renderProjects(filter){
@@ -721,27 +893,12 @@
   }
   renderProjects('all');
 
-  // ON-SITE featured videos — simple hover-to-play cards linking to the full On Site page
-  const onSiteGrid = document.getElementById('onSiteGrid');
-  onSiteVideos.forEach(v => {
-    const card = document.createElement('a');
-    card.href = 'site.html';
-    card.className = 'card';
-    card.innerHTML = `
-      <video src="${v.src}" muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
-      <div class="card-overlay">
-        <span class="tag">On-Site</span>
-        <h3>${v.title}</h3>
-        <p>${v.loc.includes('TBD') ? 'On-Site Walkthrough' : v.loc}</p>
-      </div>`;
-    const vid = card.querySelector('video');
-    vid.addEventListener('loadeddata', () => { vid.currentTime = 0.1; }, { once:true });
-    const play = () => { vid.currentTime = 0; vid.play().catch(()=>{}); };
-    const pause = () => vid.pause();
-    card.addEventListener('mouseenter', play);
-    card.addEventListener('mouseleave', pause);
-    card.addEventListener('touchstart', play, { passive:true });
-    onSiteGrid.appendChild(card);
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjects(btn.dataset.filter);
+    });
   });
 
   const backdrop = document.getElementById('modalBackdrop');
