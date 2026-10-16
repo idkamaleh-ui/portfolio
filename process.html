@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="How MK Interior Design Studio works, from site review and layout to 3D, live design sessions, walkthroughs, drawings and site coordination. Thirteen stages, one studio, shown through real projects.">
 <title>Work Process — MK Interior Design Studio</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -212,6 +215,75 @@
   .phases span.on{ color:var(--ivory); }
   .phases span.on b{ color:var(--gold); }
   @media (max-width:900px){ .phases{ top:auto; bottom:auto; position:relative; right:auto; flex-direction:row; flex-wrap:wrap; gap:10px 18px; padding:0 24px; margin-top:-24px; display:none; } }
+
+  /* ===== PROCESS INDEX ===== */
+  .howto{ padding:80px 60px 40px; }
+  .howto h3, .projnav h3{ font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--taupe); font-weight:400; margin-bottom:22px; }
+  .howto p.big{ max-width:820px; font-family:'Cormorant Garamond',serif; font-size:clamp(22px,2.4vw,30px); line-height:1.5; margin-bottom:40px; }
+  .howto p.big em{ color:var(--gold); }
+  .stage-grid{ list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); border-top:1px solid var(--line-dark); }
+  .stage-grid li{ display:flex; gap:12px; align-items:baseline; padding:14px 4px; border-bottom:1px solid var(--line-dark); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:rgba(239,235,228,.75); }
+  .stage-grid li span{ font-family:'Cormorant Garamond',serif; font-size:16px; letter-spacing:0; color:var(--gold); }
+  .projnav{ padding:40px 60px 80px; border-bottom:1px solid var(--line-dark); }
+  .projnav ol{ list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px; }
+  .projnav a{ display:flex; justify-content:space-between; align-items:center; gap:14px; padding:16px 18px; border:1px solid var(--line-dark); transition:border-color .3s, background .3s; }
+  .projnav a:hover{ border-color:var(--gold); background:rgba(166,135,90,.06); }
+  .projnav a b{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:20px; }
+  .projnav a small{ font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe); text-align:right; }
+  .projnav a i{ font-style:normal; font-family:'Cormorant Garamond',serif; color:var(--gold); font-size:15px; margin-right:10px; }
+
+  /* ===== PROJECT CHAPTERS ===== */
+  .chap{ padding:100px 60px 110px; border-bottom:1px solid var(--line-dark); scroll-margin-top:0; }
+  .chap-head{ display:grid; grid-template-columns:1fr minmax(280px,.8fr); gap:20px 60px; align-items:end; margin-bottom:34px; }
+  .chap-num{ font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+  .chap h2{ font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic; font-size:clamp(36px,4.4vw,64px); line-height:1.05; }
+  .chap-meta{ font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); margin-top:14px; }
+  .chap-sum{ font-size:15.5px; line-height:1.85; color:rgba(239,235,228,.8); }
+  .chips{ display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:18px; scrollbar-width:none; }
+  .chips::-webkit-scrollbar{ display:none; }
+  .chips button{ flex-shrink:0; font-family:'Jost',sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; padding:10px 14px; border:1px solid var(--line-dark); background:transparent; color:rgba(239,235,228,.6); cursor:pointer; transition:all .3s; display:flex; gap:8px; align-items:baseline; }
+  .chips button span{ font-family:'Cormorant Garamond',serif; font-size:14px; letter-spacing:0; color:var(--gold); }
+  .chips button.on{ border-color:var(--gold); color:var(--ivory); background:rgba(166,135,90,.12); }
+  .chap-body{ display:grid; grid-template-columns:1fr 320px; gap:44px; align-items:start; }
+  .panel{ position:sticky; top:110px; transition:opacity .35s; }
+  .panel.swap{ opacity:0; }
+  .panel .pn{ font-family:'Cormorant Garamond',serif; font-size:56px; line-height:1; color:var(--gold); font-weight:300; }
+  .panel h3{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:30px; line-height:1.15; margin:12px 0 16px; }
+  .panel p{ font-size:14.5px; line-height:1.8; color:rgba(239,235,228,.78); }
+  .panel ul{ list-style:none; margin-top:20px; padding-top:16px; border-top:1px solid var(--line-dark); display:flex; flex-direction:column; gap:9px; }
+  .panel li{ font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--taupe); display:flex; gap:12px; }
+  .panel li::before{ content:''; width:14px; height:1px; background:var(--gold); margin-top:7px; flex-shrink:0; }
+  .panel .tools{ display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
+  .panel .tools span{ font-size:10px; letter-spacing:.12em; text-transform:uppercase; padding:5px 10px; border:1px solid rgba(166,135,90,.45); color:var(--gold); }
+  .prog{ position:absolute; left:0; right:0; bottom:0; height:3px; background:rgba(255,255,255,.15); z-index:5; }
+  .prog b{ display:block; height:100%; width:0; background:var(--gold); }
+  .cap .stg{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  .arr{ position:absolute; top:50%; transform:translateY(-50%); z-index:6; width:52px; height:52px; border-radius:50%; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.55); color:var(--ivory); font-size:30px; line-height:1; cursor:pointer; opacity:0; transition:opacity .25s, border-color .25s, color .25s; display:flex; align-items:center; justify-content:center; padding-bottom:4px; backdrop-filter:blur(6px); }
+  .arr.prev{ left:16px; } .arr.next{ right:16px; }
+  .frame:hover .arr{ opacity:1; }
+  .arr:hover{ border-color:var(--gold); color:var(--gold); }
+  .frame{ touch-action:pan-y; -webkit-user-select:none; user-select:none; }
+  .frame-ui{ position:absolute; right:14px; bottom:16px; z-index:6; display:flex; gap:8px; }
+  .frame-ui button{ font-family:'Jost',sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; padding:9px 14px; background:rgba(0,0,0,.6); color:var(--ivory); border:1px solid rgba(255,255,255,.18); cursor:pointer; backdrop-filter:blur(6px); }
+  .frame-ui button:hover{ border-color:var(--gold); color:var(--gold); }
+  .paused{ position:absolute; left:14px; bottom:16px; z-index:5; font-size:10px; letter-spacing:.18em; text-transform:uppercase; padding:7px 12px; background:rgba(0,0,0,.6); opacity:0; transition:opacity .3s; }
+  .show.hold .paused{ opacity:1; }
+  .slide{ transition:opacity .6s ease !important; }
+  .slide.pair figcaption{ top:16px; }
+  @media (hover:none){ .arr{ opacity:.9; } .paused{ display:none; } }
+  @media (hover:none) and (max-width:600px){ .arr{ width:42px; height:42px; font-size:24px; } }
+  @media (max-width:1100px){
+    .chap{ padding:80px 40px 90px; } .howto{ padding:64px 40px 30px; } .projnav{ padding:30px 40px 64px; }
+    .chap-head{ grid-template-columns:1fr; }
+    .chap-body{ grid-template-columns:1fr; gap:30px; }
+    .panel{ position:static; display:grid; grid-template-columns:auto 1fr; column-gap:22px; }
+    .panel .pn{ grid-row:span 2; font-size:46px; }
+    .panel h3{ margin:4px 0 8px; }
+    .panel p, .panel ul, .panel .tools{ grid-column:1 / -1; }
+  }
+  @media (max-width:900px){
+    .chap{ padding:64px 24px 72px; } .howto{ padding:56px 24px 24px; } .projnav{ padding:24px 24px 56px; }
+  }
 </style>
 </head>
 <body>
@@ -248,7 +320,7 @@
   <div class="hero-inner">
     <span class="eyebrow">Work Process</span>
     <h1>From an empty shell to a finished, built space.</h1>
-    <p class="hero-sub">Thirteen stages, one studio. This page walks through exactly how we work, using real projects in Canada, the UAE and Saudi Arabia: layouts, 3D models, live design sessions, walkthrough films, construction drawings and site coordination.</p>
+    <p class="hero-sub">Thirteen stages, one studio. This page walks through real projects in Canada, the UAE and Saudi Arabia, one at a time: layouts, 3D models, live design sessions, walkthrough films, construction drawings and site coordination.</p>
     <div class="hero-stats">
       <div><div class="num">13</div><div class="lbl">Stages, A to Z</div></div>
       <div><div class="num">10+</div><div class="lbl">Years of practice</div></div>
@@ -264,27 +336,17 @@
   <div class="scroll-cue">Scroll</div>
 </header>
 
-<section class="index">
-  <p>Bring us in for one stage, or for the whole journey. <em>Every slideshow below is real work</em>, and every caption explains what you are looking at.</p>
-  <ol id="indexList"></ol>
+<section class="howto">
+  <p class="big">Thirteen stages, one studio. Below, <em>each project tells its own story</em>: the stages it went through, in order, with a caption on every image and film.</p>
+  <h3>How we work</h3>
+  <ol class="stage-grid"><li><span>01</span>Brief & Site Review</li><li><span>02</span>Space Planning & Layout</li><li><span>03</span>Concept & Mood</li><li><span>04</span>Materials & Finishes</li><li><span>05</span>3D Modeling</li><li><span>06</span>Live Design Session</li><li><span>07</span>Walkthrough Films</li><li><span>08</span>Photorealistic Renderings</li><li><span>09</span>Marketing Films & 3D Ads</li><li><span>10</span>Selections, Schedules & Quantities</li><li><span>11</span>Construction & Shop Drawings</li><li><span>12</span>Site Coordination & Project Management</li><li><span>13</span>Handover: Design to Reality</li></ol>
+</section>
+<section class="projnav">
+  <h3>Projects in this presentation</h3>
+  <ol><li><a href="#elixir"><b><i>01</i>Elixir Artistic Perfumery</b><small>Othaim Circle, Saudi Arabia</small></a></li><li><a href="#flo"><b><i>02</i>Flo Boutique</b><small>Sharjah, UAE</small></a></li><li><a href="#efreez-dubai"><b><i>03</i>Efreez Salon</b><small>Dubai, UAE</small></a></li><li><a href="#efreez-sharjah"><b><i>04</i>Efreez Salon</b><small>Sharjah, UAE</small></a></li><li><a href="#lakehouse"><b><i>05</i>Lakehouse Retreat</b><small>Ontario, Canada</small></a></li><li><a href="#lakeside"><b><i>06</i>Lakeside Residence</b><small>Ontario, Canada</small></a></li><li><a href="#white-orchid"><b><i>07</i>White Orchid</b><small>Sharjah, UAE</small></a></li><li><a href="#kitchen"><b><i>08</i>The Travertine Kitchen</b><small>Concept</small></a></li><li><a href="#private"><b><i>09</i>Private Residence</b><small>Ontario, Canada</small></a></li><li><a href="#shop-drawings"><b><i>10</i>Shop Drawing Package</b><small>Ontario, Canada</small></a></li></ol>
 </section>
 
-<main id="stages"></main>
-
-
-<section class="featured">
-  <h3>Projects featured on this page</h3>
-  <ul>
-    <li><b>Elixir Artistic Perfumery</b><span>Retail · Saudi Arabia</span></li>
-    <li><b>Lakeside Residence</b><span>Residential · Ontario</span></li>
-    <li><b>White Orchid</b><span>Retail &amp; café · Sharjah</span></li>
-    <li><b>Flo Boutique</b><span>Retail · Sharjah</span></li>
-    <li><b>Efreez Salon</b><span>Beauty · Dubai</span></li>
-    <li><b>Efreez Salon</b><span>Beauty · Sharjah</span></li>
-    <li><b>The Travertine Kitchen</b><span>Residential · Concept</span></li>
-    <li><b>Private Residence</b><span>Residential · Ontario</span></li>
-  </ul>
-</section>
+<main id="chapters"></main>
 
 <section class="closing">
   <p data-reveal>Have a project ready for design?</p>
@@ -299,7 +361,8 @@
       <p style="font-size:13px; color:rgba(239,235,228,0.6); line-height:1.7; max-width:280px; margin-bottom:24px;">Interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.</p>
       <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Follow Us</div>
       <div class="footer-social">
-        <a href="https://www.instagram.com/mk_interior_desing_studio/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.63.07-4.85.07s-3.6-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.62-.07-4.81s.01-3.56.07-4.81c.15-3.23 1.67-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.73.07-2.27.1-3.34 1.19-3.44 3.44C3.77 8.74 3.76 9.1 3.76 12s.01 3.26.07 4.49c.1 2.25 1.16 3.34 3.44 3.44 1.23.06 1.59.07 4.73.07s3.5-.01 4.73-.07c2.27-.1 3.34-1.18 3.44-3.44.06-1.23.07-1.59.07-4.49s-.01-3.26-.07-4.49c-.1-2.25-1.17-3.34-3.44-3.44C15.5 4.01 15.14 4 12 4zm0 3.85a4.15 4.15 0 1 1 0 8.3 4.15 4.15 0 0 1 0-8.3zm0 1.8a2.35 2.35 0 1 0 0 4.7 2.35 2.35 0 0 0 0-4.7zm4.3-2.15a.97.97 0 1 1 0 1.94.97.97 0 0 1 0-1.94z"/></svg></a>
+        <a href="https://www.instagram.com/mk.interior.design.studio/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.63.07-4.85.07s-3.6-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.62-.07-4.81s.01-3.56.07-4.81c.15-3.23 1.67-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.73.07-2.27.1-3.34 1.19-3.44 3.44C3.77 8.74 3.76 9.1 3.76 12s.01 3.26.07 4.49c.1 2.25 1.16 3.34 3.44 3.44 1.23.06 1.59.07 4.73.07s3.5-.01 4.73-.07c2.27-.1 3.34-1.18 3.44-3.44.06-1.23.07-1.59.07-4.49s-.01-3.26-.07-4.49c-.1-2.25-1.17-3.34-3.44-3.44C15.5 4.01 15.14 4 12 4zm0 3.85a4.15 4.15 0 1 1 0 8.3 4.15 4.15 0 0 1 0-8.3zm0 1.8a2.35 2.35 0 1 0 0 4.7 2.35 2.35 0 0 0 0-4.7zm4.3-2.15a.97.97 0 1 1 0 1.94.97.97 0 0 1 0-1.94z"/></svg></a>
+        <a href="https://www.facebook.com/mk.interior.design.studio/reels/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
@@ -338,196 +401,836 @@
 <script>
 /* =====================================================================
    HOW TO UPDATE THIS PAGE
-   Each stage has: title, kicker, lead text, deliverables, tools, slides.
-   Each slide:
-     { img:"process/…jpg", p:"Project", t:"Caption" }            photo
-     { img:"…", sheet:1, p:"…", t:"…" }                             drawing (white, zoomable)
-     { vid:"process/…mp4", p:"…", t:"…" }                           video (plays muted, then moves on)
-     { pair:["design.jpg","built.jpg"], p:"…", t:"…" }               design vs. built
-     add tall:1 to a vertical photo/video so it sits on a soft blurred background.
-   Slides advance on their own; hovering a slideshow pauses it.
+   PROJECTS is the list of chapters, in the order they appear.
+   Each project: id, name, meta (type · location), sum (one paragraph),
+   slides: [{ st:"stage id", img/vid/pair, sheet:1 (drawing), tall:1 (vertical), t:"caption" }]
+   Stage ids: brief, layout, concept, materials, modeling, live, walkthrough,
+   renders, marketing, selections, drawings, site, handover.
    ===================================================================== */
-const EL="Elixir Artistic Perfumery · Saudi Arabia", LK="Lakeside Residence · Ontario", WO="White Orchid · Sharjah",
-      FL="Flo Boutique · Sharjah", ED="Efreez Salon · Dubai", ES="Efreez Salon · Sharjah", KT="The Travertine Kitchen · Concept",
-      PR="Private Residence · Ontario";
-const P="process/";
-const STAGES = [
- { id:"brief", title:"Brief & Site Review", kicker:"Before a single line is drawn",
-   lead:"We start with what is already there: the shell, the existing drawings, the landlord or builder requirements, the budget and the buyer. For mall tenants that means the design manual and submission checklist. For builders, the plans, the price point and the market.",
-   deliv:["Shell & site review","Landlord / builder requirements","Design brief & scope"], tools:["Site survey","AutoCAD"],
-   slides:[
-    { img:P+"elixir/brief-01.jpg", sheet:1, p:EL, t:"The empty SG13 unit at Othaim Circle, measured and drawn as the starting point for the boutique." },
-    { img:P+"white-orchid/site-02.jpg", p:WO, t:"Day one: the bare shell before fit-out. Every wall, column and service was surveyed before design began." },
-    { img:P+"white-orchid/layout-02.jpg", sheet:1, p:WO, t:"Existing layout survey, prepared as part of the authority submission package." },
-    { img:P+"lakeside/drawing-02.jpg", sheet:1, p:LK, t:"Demolition and proposed plans for a renovation: what comes out, what stays and what is new, colour-coded for the trades." },
-   ]},
- { id:"layout", title:"Space Planning & Layout", kicker:"Where the budget is saved",
-   lead:"Layouts are developed as options so circulation, furniture and storage can be compared side by side. Small changes happen here, quickly and cheaply, before anything is modelled, priced or built.",
-   deliv:["Zoning & furniture layouts","Layout options to compare","Partition & flooring plans"], tools:["AutoCAD","Revit"],
-   slides:[
-    { img:P+"elixir/layout-01.jpg", sheet:1, p:EL, t:"Zoning plan: storage, perfume sampling, lounge, branded displays and shopfront allocated across the floor plate." },
-    { img:P+"elixir/layout-02.jpg", sheet:1, p:EL, t:"Furniture layout with every display unit, sampling table and lounge piece placed and dimensioned." },
-    { img:P+"lakeside/drawing-03.jpg", sheet:1, p:LK, t:"Two flooring layouts presented side by side, so the client can compare and choose in one sitting." },
-    { img:P+"private-residence/layout-01.jpg", sheet:1, p:PR, t:"Master bedroom in two layout options, each with its furniture, clearances and cost." },
-    { img:P+"white-orchid/layout-01.jpg", p:WO, t:"Rendered plan of the flower shop and café, read the way a customer moves through it." },
-    { img:P+"elixir/layout-03.jpg", sheet:1, p:EL, t:"Partition layout: wall types and openings coordinated with the mall's demise line." },
-    { img:P+"lakeside/drawing-01.jpg", sheet:1, p:LK, t:"First and second floor plans with door, frame and finish schedules on the same sheet." },
-    { img:P+"white-orchid/layout-03.jpg", sheet:1, p:WO, t:"Proposed partition layout with wall build-ups and sample details for approval." },
-   ]},
- { id:"concept", title:"Concept & Mood", kicker:"Agree the feeling first",
-   lead:"The design direction is set before modelling: a colour story, references and styled options with real furniture. Once it is agreed, the 3D stage moves fast because nobody is guessing.",
-   deliv:["Colour story & mood","Styled design options","Furniture direction"], tools:["Photoshop","Corona"],
-   slides:[
-    { img:P+"travertine-kitchen/concept-01.jpg", tall:1, p:KT, t:"Natural, refined, balanced: the five-colour palette that sets the tone for the whole kitchen." },
-    { img:P+"private-residence/concept-01.jpg", sheet:1, p:PR, t:"Colour story: the same bedroom shown in a neutral base, then with a soft colour accent, so the client can feel the difference." },
-    { img:P+"private-residence/concept-02.jpg", sheet:1, p:PR, t:"Option 1, the Eva bed: the room styled around a low upholstered bed in a calm neutral scheme." },
-    { img:P+"private-residence/concept-03.jpg", sheet:1, p:PR, t:"Option 2, the Berlin bed: a channel-tufted alternative with warmer accents and art." },
-    { img:P+"efreez-dubai/materials-02.jpg", tall:1, p:ED, t:"Concept flatlay: plaster, brushed brass, walnut and bouclé tested together before the salon was modelled." },
-   ]},
- { id:"materials", title:"Materials & Finishes", kicker:"Real, buildable, approved",
-   lead:"Every finish is chosen for durability, cost and look, then checked against physical samples from the trades and suppliers who will install it. What is approved here is what gets built.",
-   deliv:["Material boards","Finish samples on site","Supplier options"], tools:["Samples","Supplier specs"],
-   slides:[
-    { img:P+"elixir/materials-01.jpg", sheet:1, p:EL, t:"The boutique palette: stone, plaster and metal finishes carried consistently from shopfront to back wall." },
-    { img:P+"efreez-dubai/materials-01.jpg", p:ED, t:"Material board with nine finishes, each named and coded for the contractor." },
-    { img:P+"travertine-kitchen/materials-01.jpg", tall:1, p:KT, t:"Travertine, honed: the island and counters, chosen for its warm, quiet texture." },
-    { img:P+"travertine-kitchen/materials-03.jpg", tall:1, p:KT, t:"Aged bronze, matte brushed: the statement hood, hand-finished to echo the stone." },
-    { img:P+"travertine-kitchen/materials-04.jpg", tall:1, p:KT, t:"White oak with a vertical grain for the cabinetry, running floor to ceiling." },
-    { vid:P+"flo/materials-01.mp4", tall:1, p:FL, t:"On site: the plaster finish checked against the approved sample before the walls were completed." },
-    { img:P+"travertine-kitchen/materials-06.jpg", tall:1, p:KT, t:"Bronze tap and carved stone sink: fixtures selected as part of the palette, not as an afterthought." },
-    { vid:P+"flo/materials-02.mp4", tall:1, p:FL, t:"A second plaster sample, compared in daylight with the joinery colour." },
-   ]},
- { id:"modeling", title:"3D Modeling", kicker:"One model, everything follows",
-   lead:"We build an accurate 3D model from the construction drawings. It becomes the base for every render, walkthrough and drawing, so a change is made once and carried everywhere.",
-   deliv:["Full 3D model","Clay & massing studies","Custom furniture modelling"], tools:["3ds Max","SketchUp","Revit"],
-   slides:[
-    { vid:P+"lakeside/modeling-04.mp4", p:LK, t:"Building the great room in 3ds Max: the curved sofa, coffee tables and rug modelled to real size." },
-    { vid:P+"travertine-kitchen/modeling-01.mp4", tall:1, p:KT, t:"Clay to final: the same camera before and after materials and light are applied." },
-    { img:P+"travertine-kitchen/modeling-02.jpg", tall:1, p:KT, t:"Same frame, two stages. Proportions are approved in clay before a single material is added." },
-    { vid:P+"lakeside/modeling-03.mp4", p:LK, t:"Refining the custom marble coffee tables: shape, thickness and base checked in the model." },
-    { img:P+"lakeside/model-01-great-room.jpg", p:LK, t:"The great room straight out of the model, before final lighting and post-production." },
-    { vid:P+"lakeside/modeling-05.mp4", tall:1, p:LK, t:"A clay walkthrough of the whole house to check scale and sightlines before rendering." },
-    { img:P+"lakeside/model-02-dining-kitchen.jpg", p:LK, t:"Dining and kitchen from the model: millwork, island and pendants locked in." },
-   ]},
- { id:"live", title:"Live Design Session", kicker:"Decide in one meeting, not ten emails",
-   lead:"We open your project in real time and change materials, colours, lighting and furniture with you on screen. Decisions that usually take weeks of revisions get made in one meeting, in person or online.",
-   deliv:["Real-time 3D session","Instant material & light changes","High-res stills on the spot"], tools:["Chaos Vantage","Online or in person"],
-   slides:[
-    { vid:P+"elixir/live-01.mp4", p:EL, t:"Elixir in real time: moving through the boutique and reviewing the display walls and lighting with the client." },
-    { vid:P+"efreez-dubai/live-01.mp4", p:ED, t:"The salon opened live: reception, styling stations and signage checked from any angle the client asked for." },
-    { vid:P+"lakeside/live-01.mp4", p:LK, t:"The great room rendered live, then exported as a high-resolution still during the session." },
-   ]},
- { id:"walkthrough", title:"Walkthrough Films", kicker:"Feel it before it is built",
-   lead:"Cinematic walkthroughs let buyers, investors and approval boards experience the space before construction. Delivered in 4K for sales centres and in vertical formats for social and presales.",
-   deliv:["Cinematic walkthrough","4K & vertical exports","Sales-centre ready"], tools:["Corona","V-Ray","Vantage"],
-   slides:[
-    { vid:P+"elixir/walkthrough-01.mp4", p:EL, t:"From the mall shopfront, past the signature wall and sampling table, to the display walls at the back." },
-    { vid:P+"lakeside/walkthrough-02.mp4", p:LK, t:"The full great room, dining and kitchen in one continuous film." },
-    { vid:P+"flo/walkthrough-01.mp4", tall:1, p:FL, t:"The design walkthrough of the boutique, produced before fit-out." },
-    { vid:P+"efreez-dubai/walkthrough-01.mp4", tall:1, p:ED, t:"Reception to styling stations, cut vertically for social media." },
-    { vid:P+"travertine-kitchen/walkthrough-01.mp4", tall:1, p:KT, t:"A slow cinematic pass across stone, bronze and oak." },
-   ]},
- { id:"renders", title:"Photorealistic Renderings", kicker:"Images that sell",
-   lead:"High-resolution stills for marketing, listings, sales centres and approvals, with detail shots that prove the quality of every material.",
-   deliv:["High-resolution stills","Day & dusk views","Material detail shots"], tools:["Corona","V-Ray","Photoshop"],
-   slides:[
-    { img:P+"elixir/renders-01.jpg", p:EL, t:"The signature wall and fragrance display, the first view a customer sees." },
-    { img:P+"lakeside/render-01-great-room.jpg", p:LK, t:"Double-height great room under a sculptural ribbon chandelier, framed by the lake view." },
-    { img:P+"white-orchid/renders-02.jpg", p:WO, t:"A sculpted stone counter around a living olive tree, the centrepiece of the shop." },
-    { img:P+"elixir/renders-02.jpg", p:EL, t:"The sampling table at the heart of the boutique, under a canopy of brass rods and greenery." },
-    { img:P+"efreez-sharjah/renders-01.jpg", p:ES, t:"The olive tree from above, with the pedicure lounge and nail bar arranged around it." },
-    { img:P+"flo/renders-01.jpg", p:FL, t:"An arched bronze storefront opening onto a warm plaster interior." },
-    { img:P+"lakeside/render-03-dining-kitchen.jpg", p:LK, t:"Dining for twelve in front of a bronze hood and book-matched stone." },
-    { img:P+"efreez-dubai/renders-01.jpg", p:ED, t:"Gallery-white reception with arched mirrors and brushed brass." },
-    { img:P+"elixir/renders-16.jpg", p:EL, t:"The shopfront as seen from the mall concourse." },
-    { img:P+"white-orchid/renders-05.jpg", p:WO, t:"Café seating in front of the sculpted pink niche wall." },
-    { img:P+"lakeside/render-04-chandelier.jpg", p:LK, t:"Detail: the hand-formed glass ribbons of the chandelier." },
-    { img:P+"travertine-kitchen/renders-02.jpg", tall:1, p:KT, t:"Detail: aged bronze hood, brushed by hand." },
-    { img:P+"efreez-sharjah/renders-02.jpg", p:ES, t:"Pedicure lounge in burgundy velvet and pale travertine." },
-    { img:P+"flo/renders-05.jpg", p:FL, t:"Detail: the backlit emblem set into textured plaster." },
-   ]},
- { id:"marketing", title:"Marketing Films & 3D Ads", kicker:"Presales, launches and social",
-   lead:"Short animated content for presales, launches and social media, cut from the same model so the campaign matches exactly what gets built.",
-   deliv:["Reels & short ads","Launch animations","Social post & story kits"], tools:["After Effects","Premiere","Photoshop"],
-   slides:[
-    { vid:P+"travertine-kitchen/marketing-01.mp4", tall:1, p:KT, t:"Reel: from the material board to the finished room in thirteen seconds." },
-    { vid:P+"white-orchid/marketing-01.mp4", tall:1, p:WO, t:"Vertical launch reel built from the renders." },
-    { vid:P+"lakeside/marketing-01.mp4", tall:1, p:LK, t:"Vertical reel built from the great room renders." },
-    { vid:P+"white-orchid/marketing-02.mp4", p:WO, t:"Animated render: light and movement added to a still for social." },
-    { vid:P+"travertine-kitchen/marketing-02.mp4", tall:1, p:KT, t:"Detail reel: stone, bronze and oak." },
-    { img:P+"travertine-kitchen/marketing-04.jpg", tall:1, p:KT, t:"Instagram post from the launch kit." },
-    { img:P+"travertine-kitchen/marketing-06.jpg", tall:1, p:KT, t:"Campaign aimed at builders: a show kitchen designed to sell the house." },
-    { vid:P+"lakeside/marketing-02.mp4", p:LK, t:"Short vertical clip of the dining and kitchen, framed for stories." },
-   ]},
- { id:"selections", title:"Selections, Schedules & Quantities", kicker:"Approved once, ordered right",
-   lead:"Every furniture piece, finish, fixture and accessory is listed with supplier, size, finish, quantity and cost, with options side by side. Quantities are taken off the drawings for pricing and procurement, so nothing is guessed on site.",
-   deliv:["Furniture & FF&E schedules","Décor schedules by area","Quantity takeoffs"], tools:["Excel","Supplier pricing"],
-   slides:[
-    { img:P+"private-residence/selections-01.jpg", sheet:1, p:PR, t:"Furniture schedule: fourteen items with finish, size, quantity and cost on one page." },
-    { img:P+"private-residence/selections-02.jpg", sheet:1, p:PR, t:"Specification sheet for each piece: configuration, fabric, dimensions, construction and lead time." },
-    { img:P+"private-residence/selections-04.jpg", sheet:1, p:PR, t:"Master bedroom: both layout options priced side by side, so the client chooses with the numbers in front of them." },
-    { img:P+"private-residence/selections-06.jpg", sheet:1, p:PR, t:"Décor favourites organised by area, from the entrance console to the bedroom." },
-    { img:P+"private-residence/selections-07.jpg", sheet:1, p:PR, t:"Summary and shopping list, with every change between revisions noted." },
-    { img:P+"lakeside/drawing-17.jpg", sheet:1, p:LK, t:"Countertops material takeoff: every slab piece drawn and measured for the stone fabricator." },
-    { img:P+"elixir/drawings-06.jpg", sheet:1, p:EL, t:"Lighting layout with lux calculations and a fixture schedule for pricing." },
-   ]},
- { id:"drawings", title:"Construction & Shop Drawings", kicker:"Drawings trades can build from",
-   lead:"Coordinated drawing sets your contractors can price and build from: plans, ceilings, lighting, power, elevations and fabrication details. Mall and authority submissions included. Click any sheet to read it at full size.",
-   deliv:["Construction drawing sets","Millwork & shop drawings","Mall & authority submissions"], tools:["AutoCAD","Revit"],
-   slides:[
-    { img:P+"elixir/drawings-01.jpg", sheet:1, p:EL, t:"A complete mall submission set, indexed sheet by sheet." },
-    { img:P+"lakeside/drawing-07.jpg", sheet:1, p:LK, t:"Kitchen and island package: elevations, plan, appliance and plumbing schedules on one sheet." },
-    { img:P+"elixir/drawings-07.jpg", sheet:1, p:EL, t:"Shopfront elevation and interface details with the mall's finishes." },
-    { img:P+"elixir/drawings-05.jpg", sheet:1, p:EL, t:"Reflected ceiling layout with the feature ceiling setting out." },
-    { img:P+"lakeside/drawing-05.jpg", sheet:1, p:LK, t:"Main area and staircase: elevations, plan and an isometric to explain the stair." },
-    { img:P+"elixir/drawings-09.jpg", sheet:1, p:EL, t:"Signature wall construction details, ready for the joinery shop." },
-    { img:P+"lakeside/drawing-12.jpg", sheet:1, p:LK, t:"Primary closet: every elevation and isometric dimensioned for the millworker." },
-    { img:P+"elixir/drawings-10.jpg", sheet:1, p:EL, t:"Reception counter details, from plan to section." },
-    { img:P+"white-orchid/drawings-03.jpg", sheet:1, p:WO, t:"Ceiling layout with cove lighting details and finish schedule." },
-    { img:P+"lakeside/drawing-13.jpg", sheet:1, p:LK, t:"Bathrooms: plans, elevations and isometrics for three rooms." },
-    { img:P+"elixir/drawings-15.jpg", sheet:1, p:EL, t:"Cabinet details: materials, fixings and edge profiles for fabrication." },
-    { img:P+"white-orchid/drawings-04.jpg", sheet:1, p:WO, t:"Section elevation A-A with joinery and lighting details." },
-   ]},
- { id:"site", title:"Site Coordination & Project Management", kicker:"On the project until it is right",
-   lead:"We stay involved through fit-out: site visits, coordinating trades, answering questions, approving samples, tracking progress and closing out deficiency lists. The same person who designed it checks that it is built that way.",
-   deliv:["Site visits & trade coordination","Progress tracking & reporting","Deficiency lists & close-out"], tools:["Owner's rep","Schedules","Site reports"],
-   slides:[
-    { img:P+"white-orchid/site-03.jpg", tall:1, p:WO, t:"Fit-out underway: arches formed and shelving framed in, checked against the drawings." },
-    { vid:P+"flo/site-09.mp4", tall:1, p:FL, t:"Coordinating trades on the scaffold: ceiling, lighting and joinery working in sequence." },
-    { img:P+"flo/site-02.jpg", tall:1, p:FL, t:"Joinery and emblem wall going in, with the site team on the counter." },
-    { vid:P+"white-orchid/site-08.mp4", tall:1, p:WO, t:"Lighting check on site: cove and shelf lighting tested before handover." },
-    { img:P+"white-orchid/site-05.jpg", tall:1, p:WO, t:"The sculpted niche wall, finished and inspected." },
-    { vid:P+"efreez-sharjah/site-06.mp4", tall:1, p:ES, t:"The olive tree being installed: the centrepiece positioned to the plan." },
-    { vid:P+"flo/site-01.mp4", tall:1, p:FL, t:"A full site walkthrough at the end of fit-out, recorded for the client." },
-    { vid:P+"efreez-sharjah/site-03.mp4", tall:1, p:ES, t:"Furniture delivered to site, ready to be placed to the layout." },
-    { vid:P+"white-orchid/site-09.mp4", tall:1, p:WO, t:"Walking the finished joinery on site." },
-   ]},
- { id:"handover", title:"Handover: Design to Reality", kicker:"The render becomes the space",
-   lead:"The finished result, built to the drawings. This is the point of everything above: what you approved on screen is what opens its doors.",
-   deliv:["Final inspection","Styling & opening","Record photos & film"], tools:["Close-out","Opening day"],
-   slides:[
-    { pair:[P+"white-orchid/renders-05.jpg",P+"white-orchid/site-14.jpg"], p:WO, t:"The sculpted niche wall: approved in 3D, built on site, now stocked and in use." },
-    { img:P+"white-orchid/site-11.jpg", p:WO, t:"White Orchid, finished and stocked." },
-    { pair:[P+"flo/renders-05.jpg",P+"flo/site-07.jpg"], p:FL, t:"The emblem wall in 3D, then built on site in textured plaster, just before the lighting and lettering went in." },
-    { vid:P+"efreez-sharjah/site-01.mp4", tall:1, p:ES, t:"The completed salon: the olive tree, lit and finished." },
-    { img:P+"white-orchid/site-01.jpg", p:WO, t:"Opening day on the terrace." },
-    { vid:P+"efreez-sharjah/site-02.mp4", tall:1, p:ES, t:"A walk through the finished salon on handover day." },
-    { img:P+"flo/site-06.jpg", tall:1, p:FL, t:"The bronze-framed storefront, installed." },
-    { img:P+"white-orchid/site-13.jpg", p:WO, t:"Open for business." },
-   ]},
+const STAGE_INFO = {"brief": {"title": "Brief & Site Review", "lead": "We start with what is already there: the shell, the existing drawings, the landlord or builder requirements, the budget and the buyer. For mall tenants that means the design manual and submission checklist. For builders, the plans, the price point and the market.", "deliv": ["Shell & site review", "Landlord / builder requirements", "Design brief & scope"], "tools": ["Site survey", "AutoCAD"]}, "layout": {"title": "Space Planning & Layout", "lead": "Layouts are developed as options so circulation, furniture and storage can be compared side by side. Small changes happen here, quickly and cheaply, before anything is modelled, priced or built.", "deliv": ["Zoning & furniture layouts", "Layout options to compare", "Partition & flooring plans"], "tools": ["AutoCAD", "Revit"]}, "concept": {"title": "Concept & Mood", "lead": "The design direction is set before modelling: a colour story, references and styled options with real furniture. Once it is agreed, the 3D stage moves fast because nobody is guessing.", "deliv": ["Colour story & mood", "Styled design options", "Furniture direction"], "tools": ["Photoshop", "Corona"]}, "materials": {"title": "Materials & Finishes", "lead": "Every finish is chosen for durability, cost and look, then checked against physical samples from the trades and suppliers who will install it. What is approved here is what gets built.", "deliv": ["Material boards", "Finish samples on site", "Supplier options"], "tools": ["Samples", "Supplier specs"]}, "modeling": {"title": "3D Modeling", "lead": "We build an accurate 3D model from the construction drawings. It becomes the base for every render, walkthrough and drawing, so a change is made once and carried everywhere.", "deliv": ["Full 3D model", "Clay & massing studies", "Custom furniture modelling"], "tools": ["3ds Max", "SketchUp", "Revit"]}, "live": {"title": "Live Design Session", "lead": "We open your project in real time and change materials, colours, lighting and furniture with you on screen. Decisions that usually take weeks of revisions get made in one meeting, in person or online.", "deliv": ["Real-time 3D session", "Instant material & light changes", "High-res stills on the spot"], "tools": ["Chaos Vantage", "Online or in person"]}, "walkthrough": {"title": "Walkthrough Films", "lead": "Cinematic walkthroughs let buyers, investors and approval boards experience the space before construction. Delivered in 4K for sales centres and in vertical formats for social and presales.", "deliv": ["Cinematic walkthrough", "4K & vertical exports", "Sales-centre ready"], "tools": ["Corona", "V-Ray", "Vantage"]}, "renders": {"title": "Photorealistic Renderings", "lead": "High-resolution stills for marketing, listings, sales centres and approvals, with detail shots that prove the quality of every material.", "deliv": ["High-resolution stills", "Day & dusk views", "Material detail shots"], "tools": ["Corona", "V-Ray", "Photoshop"]}, "marketing": {"title": "Marketing Films & 3D Ads", "lead": "Short animated content for presales, launches and social media, cut from the same model so the campaign matches exactly what gets built.", "deliv": ["Reels & short ads", "Launch animations", "Social post & story kits"], "tools": ["After Effects", "Premiere", "Photoshop"]}, "selections": {"title": "Selections, Schedules & Quantities", "lead": "Every furniture piece, finish, fixture and accessory is listed with supplier, size, finish, quantity and cost, with options side by side. Quantities are taken off the drawings for pricing and procurement, so nothing is guessed on site.", "deliv": ["Furniture & FF&E schedules", "Décor schedules by area", "Quantity takeoffs"], "tools": ["Excel", "Supplier pricing"]}, "drawings": {"title": "Construction & Shop Drawings", "lead": "Coordinated drawing sets your contractors can price and build from: plans, ceilings, lighting, power, elevations and fabrication details. Mall and authority submissions included. Click any sheet to read it at full size.", "deliv": ["Construction drawing sets", "Millwork & shop drawings", "Mall & authority submissions"], "tools": ["AutoCAD", "Revit"]}, "site": {"title": "Site Coordination & Project Management", "lead": "We stay involved through fit-out: site visits, coordinating trades, answering questions, approving samples, tracking progress and closing out deficiency lists. The same person who designed it checks that it is built that way.", "deliv": ["Site visits & trade coordination", "Progress tracking & reporting", "Deficiency lists & close-out"], "tools": ["Owner's rep", "Schedules", "Site reports"]}, "handover": {"title": "Handover: Design to Reality", "lead": "The finished result, built to the drawings. This is the point of everything above: what you approved on screen is what opens its doors.", "deliv": ["Final inspection", "Styling & opening", "Record photos & film"], "tools": ["Close-out", "Opening day"]}};
+const ORDER = ["brief", "layout", "concept", "materials", "modeling", "live", "walkthrough", "renders", "marketing", "selections", "drawings", "site", "handover"];
+const SHORT = {"brief": "Brief", "layout": "Layout", "concept": "Concept", "materials": "Materials", "modeling": "3D Model", "live": "Live Session", "walkthrough": "Walkthrough", "renders": "Renders", "marketing": "Marketing", "selections": "Selections", "drawings": "Drawings", "site": "Site & PM", "handover": "Handover"};
+const PROJECTS = [
+ {
+  "id": "elixir",
+  "name": "Elixir Artistic Perfumery",
+  "meta": "Retail boutique · Othaim Circle, Saudi Arabia",
+  "sum": "A perfume boutique taken from an empty mall unit to a complete tenant submission: zoning, finishes, a live design review, a walkthrough film, nineteen views and a full construction drawing set.",
+  "slides": [
+   {
+    "st": "brief",
+    "img": "process/elixir/brief-01.jpg",
+    "sheet": 1,
+    "t": "The starting point: the empty SG13 unit at Othaim Circle, measured and drawn with the mall's demise line."
+   },
+   {
+    "st": "layout",
+    "img": "process/elixir/layout-01.jpg",
+    "sheet": 1,
+    "t": "Zoning plan: storage, perfume sampling, lounge, branded displays and shopfront allocated across the floor plate."
+   },
+   {
+    "st": "layout",
+    "img": "process/elixir/layout-02.jpg",
+    "sheet": 1,
+    "t": "Furniture layout with every display unit, sampling table and lounge piece placed and dimensioned."
+   },
+   {
+    "st": "layout",
+    "img": "process/elixir/layout-03.jpg",
+    "sheet": 1,
+    "t": "Partition layout: wall types and openings coordinated with the mall's requirements."
+   },
+   {
+    "st": "materials",
+    "img": "process/elixir/materials-01.jpg",
+    "sheet": 1,
+    "t": "Material palette: stone, plaster, brass and timber finishes carried from shopfront to back wall."
+   },
+   {
+    "st": "live",
+    "vid": "process/elixir/live-01.mp4",
+    "t": "Live design review in real time: walking the boutique with the client and checking displays, lighting and finishes on screen."
+   },
+   {
+    "st": "walkthrough",
+    "vid": "process/elixir/walkthrough-01.mp4",
+    "t": "The walkthrough film: from the mall concourse, through the arched shopfront, to the signature wall and display niches."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-01.jpg",
+    "t": "The signature wall and fragrance display, the first view a customer sees."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-02.jpg",
+    "t": "Front view: the Elixir signature wall behind the round sampling table."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-03.jpg",
+    "t": "Branded fragrance walls in backlit niches around the central display."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-04.jpg",
+    "t": "Lounge seating for private consultations, framed by display shelving."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-05.jpg",
+    "t": "The whole boutique under its brass-rod and greenery canopy."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-06.jpg",
+    "t": "Arriving from the mall: the interior seen through the arched glass entrance."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-07.jpg",
+    "t": "The signature wall in context, with the canopy above the sampling table."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-08.jpg",
+    "t": "Looking up: the suspended greenery and the light ring."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-09.jpg",
+    "t": "Display niches lining both walls, leading the eye to the back of the store."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-10.jpg",
+    "t": "A lounge sofa beneath the signature wall."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-11.jpg",
+    "t": "Colourful branded displays in arched, backlit niches."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-12.jpg",
+    "t": "Lounge and display walls seen from the entrance."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-13.jpg",
+    "t": "The interior framed by the arched glass shopfront."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-15.jpg",
+    "t": "Detail: the fluted reception counter with the Elixir logo.",
+    "tall": 1
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-16.jpg",
+    "t": "The shopfront from the mall concourse."
+   },
+   {
+    "st": "renders",
+    "img": "process/elixir/renders-17.jpg",
+    "t": "The shopfront straight on: arched brass frame and signage."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-01.jpg",
+    "sheet": 1,
+    "t": "A complete mall submission set, indexed sheet by sheet."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-02.jpg",
+    "sheet": 1,
+    "t": "Furniture details layout: every unit numbered and referenced to its detail."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-03.jpg",
+    "sheet": 1,
+    "t": "Flooring layout with the inlaid pattern set out from the entrance."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-04.jpg",
+    "sheet": 1,
+    "t": "Power layout coordinated with the display walls and counters."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-05.jpg",
+    "sheet": 1,
+    "t": "Reflected ceiling layout with the feature ceiling setting out."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-06.jpg",
+    "sheet": 1,
+    "t": "Lighting layout with lux calculations and a fixture schedule."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-07.jpg",
+    "sheet": 1,
+    "t": "Shopfront elevation and interface details with the mall finishes."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-08.jpg",
+    "sheet": 1,
+    "t": "Sections through the display walls."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-09.jpg",
+    "sheet": 1,
+    "t": "Signature wall construction details, ready for the joinery shop."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-10.jpg",
+    "sheet": 1,
+    "t": "Reception counter details, from plan to section."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-11.jpg",
+    "sheet": 1,
+    "t": "Backlit shelving details."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-12.jpg",
+    "sheet": 1,
+    "t": "Display well details."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-13.jpg",
+    "sheet": 1,
+    "t": "Free-standing display unit details."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-14.jpg",
+    "sheet": 1,
+    "t": "Column cladding details."
+   },
+   {
+    "st": "drawings",
+    "img": "process/elixir/drawings-15.jpg",
+    "sheet": 1,
+    "t": "Cabinet details: materials, fixings and edge profiles for fabrication."
+   }
+  ]
+ },
+ {
+  "id": "flo",
+  "name": "Flo Boutique",
+  "meta": "Retail · Sharjah, UAE",
+  "sum": "A flower shop in a mall storefront: finishes approved on site, a design walkthrough and renders, then a full fit-out followed through to handover.",
+  "slides": [
+   {
+    "vid": "process/flo/materials-01.mp4",
+    "tall": 1,
+    "t": "On site: the plaster finish checked against the approved sample before the walls were completed.",
+    "st": "materials"
+   },
+   {
+    "vid": "process/flo/materials-02.mp4",
+    "tall": 1,
+    "t": "A second plaster sample, compared in daylight with the joinery colour.",
+    "st": "materials"
+   },
+   {
+    "vid": "process/flo/walkthrough-01.mp4",
+    "tall": 1,
+    "t": "The design walkthrough of the boutique, produced before fit-out.",
+    "st": "walkthrough"
+   },
+   {
+    "img": "process/flo/renders-01.jpg",
+    "t": "An arched bronze storefront opening onto a warm plaster interior.",
+    "st": "renders"
+   },
+   {
+    "img": "process/flo/renders-05.jpg",
+    "t": "Detail: the backlit emblem set into textured plaster.",
+    "st": "renders"
+   },
+   {
+    "vid": "process/flo/site-09.mp4",
+    "tall": 1,
+    "t": "Coordinating trades on the scaffold: ceiling, lighting and joinery working in sequence.",
+    "st": "site"
+   },
+   {
+    "img": "process/flo/site-02.jpg",
+    "tall": 1,
+    "t": "Joinery and emblem wall going in, with the site team on the counter.",
+    "st": "site"
+   },
+   {
+    "vid": "process/flo/site-01.mp4",
+    "tall": 1,
+    "t": "A full site walkthrough at the end of fit-out, recorded for the client.",
+    "st": "site"
+   },
+   {
+    "pair": [
+     "process/flo/renders-05.jpg",
+     "process/flo/site-07.jpg"
+    ],
+    "t": "The emblem wall in 3D, then built on site in textured plaster, just before the lighting and lettering went in.",
+    "st": "handover"
+   },
+   {
+    "img": "process/flo/site-06.jpg",
+    "tall": 1,
+    "t": "The bronze-framed storefront, installed.",
+    "st": "handover"
+   }
+  ]
+ },
+ {
+  "id": "efreez-dubai",
+  "name": "Efreez Salon",
+  "meta": "Beauty salon · Dubai, UAE",
+  "sum": "A gallery-white salon in plaster, brass and walnut: material palette, a live design review, a vertical walkthrough and a full set of renders.",
+  "slides": [
+   {
+    "img": "process/efreez-dubai/materials-02.jpg",
+    "tall": 1,
+    "t": "Concept flatlay: plaster, brushed brass, walnut and bouclé tested together before the salon was modelled.",
+    "st": "concept"
+   },
+   {
+    "img": "process/efreez-dubai/materials-01.jpg",
+    "t": "Material board with nine finishes, each named and coded for the contractor.",
+    "st": "materials"
+   },
+   {
+    "vid": "process/efreez-dubai/live-01.mp4",
+    "t": "The salon opened live: reception, styling stations and signage checked from any angle the client asked for.",
+    "st": "live"
+   },
+   {
+    "vid": "process/efreez-dubai/walkthrough-01.mp4",
+    "tall": 1,
+    "t": "Reception to styling stations, cut vertically for social media.",
+    "st": "walkthrough"
+   },
+   {
+    "img": "process/efreez-dubai/renders-01.jpg",
+    "t": "Gallery-white reception with arched mirrors and brushed brass.",
+    "st": "renders"
+   }
+  ]
+ },
+ {
+  "id": "efreez-sharjah",
+  "name": "Efreez Salon",
+  "meta": "Beauty salon · Sharjah, UAE",
+  "sum": "An arched salon planned around a living olive tree: designed in 3D, then built on site and handed over.",
+  "slides": [
+   {
+    "img": "process/efreez-sharjah/renders-01.jpg",
+    "t": "The olive tree from above, with the pedicure lounge and nail bar arranged around it.",
+    "st": "renders"
+   },
+   {
+    "img": "process/efreez-sharjah/renders-02.jpg",
+    "t": "Pedicure lounge in burgundy velvet and pale travertine.",
+    "st": "renders"
+   },
+   {
+    "vid": "process/efreez-sharjah/site-06.mp4",
+    "tall": 1,
+    "t": "The olive tree being installed: the centrepiece positioned to the plan.",
+    "st": "site"
+   },
+   {
+    "vid": "process/efreez-sharjah/site-03.mp4",
+    "tall": 1,
+    "t": "Furniture delivered to site, ready to be placed to the layout.",
+    "st": "site"
+   },
+   {
+    "vid": "process/efreez-sharjah/site-01.mp4",
+    "tall": 1,
+    "t": "The completed salon: the olive tree, lit and finished.",
+    "st": "handover"
+   },
+   {
+    "vid": "process/efreez-sharjah/site-02.mp4",
+    "tall": 1,
+    "t": "A walk through the finished salon on handover day.",
+    "st": "handover"
+   }
+  ]
+ },
+ {
+  "id": "lakehouse",
+  "name": "Lakehouse Retreat",
+  "meta": "Residential · Ontario, Canada",
+  "sum": "A lake house designed around the view: modelled in 3ds Max, rendered in real time, finished as photoreal stills and cut into a marketing film.",
+  "slides": [
+   {
+    "st": "modeling",
+    "vid": "process/lakehouse/model-01.mp4",
+    "t": "Building the living room in 3ds Max: the curved sofa, sculpted coffee tables and rug modelled to real size."
+   },
+   {
+    "st": "modeling",
+    "vid": "process/lakehouse/model-02.mp4",
+    "t": "Refining the custom stone coffee tables: shape, thickness and base checked in the model before rendering."
+   },
+   {
+    "st": "walkthrough",
+    "vid": "process/lakehouse/walkthrough-01.mp4",
+    "t": "The full walkthrough, rendered in real time: living room, green-veined marble kitchen, study and the view over the lake."
+   },
+   {
+    "st": "renders",
+    "img": "process/lakehouse/renders-01.jpg",
+    "t": "The living room seen from the terrace, with the lake and mountains reflected in the glass."
+   },
+   {
+    "st": "renders",
+    "img": "process/lakehouse/renders-02.jpg",
+    "t": "Detail: green-veined marble coffee table, sculpted vase and the curved bouclé sofa."
+   },
+   {
+    "st": "renders",
+    "img": "process/lakehouse/renders-03.jpg",
+    "t": "Detail: the marble island, brushed brass tap and walnut joinery framing the lake view."
+   },
+   {
+    "st": "marketing",
+    "vid": "process/lakehouse/film-01.mp4",
+    "tall": 1,
+    "t": "The marketing film: marble, brass and timber details, ending on the view at sunset."
+   }
+  ]
+ },
+ {
+  "id": "lakeside",
+  "name": "Lakeside Residence",
+  "meta": "Residential · Ontario, Canada",
+  "sum": "A double-height great room by the lake: a full 3D model, live rendering, cinematic walkthroughs, renders and social content.",
+  "slides": [
+   {
+    "img": "process/lakeside/model-01-great-room.jpg",
+    "t": "The great room straight out of the model, before final lighting and post-production.",
+    "st": "modeling"
+   },
+   {
+    "vid": "process/lakeside/modeling-05.mp4",
+    "tall": 1,
+    "t": "A clay walkthrough of the whole house to check scale and sightlines before rendering.",
+    "st": "modeling"
+   },
+   {
+    "img": "process/lakeside/model-02-dining-kitchen.jpg",
+    "t": "Dining and kitchen from the model: millwork, island and pendants locked in.",
+    "st": "modeling"
+   },
+   {
+    "vid": "process/lakeside/live-01.mp4",
+    "t": "The great room rendered live, then exported as a high-resolution still during the session.",
+    "st": "live"
+   },
+   {
+    "vid": "process/lakeside/walkthrough-02.mp4",
+    "t": "The full great room, dining and kitchen in one continuous film.",
+    "st": "walkthrough"
+   },
+   {
+    "img": "process/lakeside/render-01-great-room.jpg",
+    "t": "Double-height great room under a sculptural ribbon chandelier, framed by the lake view.",
+    "st": "renders"
+   },
+   {
+    "img": "process/lakeside/render-03-dining-kitchen.jpg",
+    "t": "Dining for twelve in front of a bronze hood and book-matched stone.",
+    "st": "renders"
+   },
+   {
+    "img": "process/lakeside/render-04-chandelier.jpg",
+    "t": "Detail: the hand-formed glass ribbons of the chandelier.",
+    "st": "renders"
+   },
+   {
+    "vid": "process/lakeside/marketing-01.mp4",
+    "tall": 1,
+    "t": "Vertical reel built from the great room renders.",
+    "st": "marketing"
+   },
+   {
+    "vid": "process/lakeside/marketing-02.mp4",
+    "t": "Short vertical clip of the dining and kitchen, framed for stories.",
+    "st": "marketing"
+   }
+  ]
+ },
+ {
+  "id": "white-orchid",
+  "name": "White Orchid",
+  "meta": "Flower shop & café · Sharjah, UAE",
+  "sum": "A flower shop and café taken from a bare shell to opening day: survey, layouts, renders, authority drawings, launch content and site coordination.",
+  "slides": [
+   {
+    "img": "process/white-orchid/site-02.jpg",
+    "t": "Day one: the bare shell before fit-out. Every wall, column and service was surveyed before design began.",
+    "st": "brief"
+   },
+   {
+    "img": "process/white-orchid/layout-02.jpg",
+    "sheet": 1,
+    "t": "Existing layout survey, prepared as part of the authority submission package.",
+    "st": "brief"
+   },
+   {
+    "img": "process/white-orchid/layout-01.jpg",
+    "t": "Rendered plan of the flower shop and café, read the way a customer moves through it.",
+    "st": "layout"
+   },
+   {
+    "img": "process/white-orchid/layout-03.jpg",
+    "sheet": 1,
+    "t": "Proposed partition layout with wall build-ups and sample details for approval.",
+    "st": "layout"
+   },
+   {
+    "img": "process/white-orchid/renders-02.jpg",
+    "t": "A sculpted stone counter around a living olive tree, the centrepiece of the shop.",
+    "st": "renders"
+   },
+   {
+    "img": "process/white-orchid/renders-05.jpg",
+    "t": "Café seating in front of the sculpted pink niche wall.",
+    "st": "renders"
+   },
+   {
+    "vid": "process/white-orchid/marketing-01.mp4",
+    "tall": 1,
+    "t": "Vertical launch reel built from the renders.",
+    "st": "marketing"
+   },
+   {
+    "vid": "process/white-orchid/marketing-02.mp4",
+    "t": "Animated render: light and movement added to a still for social.",
+    "st": "marketing"
+   },
+   {
+    "img": "process/white-orchid/drawings-03.jpg",
+    "sheet": 1,
+    "t": "Ceiling layout with cove lighting details and finish schedule.",
+    "st": "drawings"
+   },
+   {
+    "img": "process/white-orchid/drawings-04.jpg",
+    "sheet": 1,
+    "t": "Section elevation A-A with joinery and lighting details.",
+    "st": "drawings"
+   },
+   {
+    "img": "process/white-orchid/site-03.jpg",
+    "tall": 1,
+    "t": "Fit-out underway: arches formed and shelving framed in, checked against the drawings.",
+    "st": "site"
+   },
+   {
+    "vid": "process/white-orchid/site-08.mp4",
+    "tall": 1,
+    "t": "Lighting check on site: cove and shelf lighting tested before handover.",
+    "st": "site"
+   },
+   {
+    "img": "process/white-orchid/site-05.jpg",
+    "tall": 1,
+    "t": "The sculpted niche wall, finished and inspected.",
+    "st": "site"
+   },
+   {
+    "vid": "process/white-orchid/site-09.mp4",
+    "tall": 1,
+    "t": "Walking the finished joinery on site.",
+    "st": "site"
+   },
+   {
+    "pair": [
+     "process/white-orchid/renders-05.jpg",
+     "process/white-orchid/site-14.jpg"
+    ],
+    "t": "The sculpted niche wall: approved in 3D, built on site, now stocked and in use.",
+    "st": "handover"
+   },
+   {
+    "img": "process/white-orchid/site-11.jpg",
+    "t": "White Orchid, finished and stocked.",
+    "st": "handover"
+   },
+   {
+    "img": "process/white-orchid/site-01.jpg",
+    "t": "Opening day on the terrace.",
+    "st": "handover"
+   },
+   {
+    "img": "process/white-orchid/site-13.jpg",
+    "t": "Open for business.",
+    "st": "handover"
+   }
+  ]
+ },
+ {
+  "id": "kitchen",
+  "name": "The Travertine Kitchen",
+  "meta": "Residential · Concept",
+  "sum": "A show kitchen for builders: palette and materials, clay model to final render, a cinematic walkthrough and a full social campaign.",
+  "slides": [
+   {
+    "img": "process/travertine-kitchen/concept-01.jpg",
+    "tall": 1,
+    "t": "Natural, refined, balanced: the five-colour palette that sets the tone for the whole kitchen.",
+    "st": "concept"
+   },
+   {
+    "img": "process/travertine-kitchen/materials-01.jpg",
+    "tall": 1,
+    "t": "Travertine, honed: the island and counters, chosen for its warm, quiet texture.",
+    "st": "materials"
+   },
+   {
+    "img": "process/travertine-kitchen/materials-03.jpg",
+    "tall": 1,
+    "t": "Aged bronze, matte brushed: the statement hood, hand-finished to echo the stone.",
+    "st": "materials"
+   },
+   {
+    "img": "process/travertine-kitchen/materials-04.jpg",
+    "tall": 1,
+    "t": "White oak with a vertical grain for the cabinetry, running floor to ceiling.",
+    "st": "materials"
+   },
+   {
+    "img": "process/travertine-kitchen/materials-06.jpg",
+    "tall": 1,
+    "t": "Bronze tap and carved stone sink: fixtures selected as part of the palette, not as an afterthought.",
+    "st": "materials"
+   },
+   {
+    "vid": "process/travertine-kitchen/modeling-01.mp4",
+    "tall": 1,
+    "t": "Clay to final: the same camera before and after materials and light are applied.",
+    "st": "modeling"
+   },
+   {
+    "img": "process/travertine-kitchen/modeling-02.jpg",
+    "tall": 1,
+    "t": "Same frame, two stages. Proportions are approved in clay before a single material is added.",
+    "st": "modeling"
+   },
+   {
+    "vid": "process/travertine-kitchen/walkthrough-01.mp4",
+    "tall": 1,
+    "t": "A slow cinematic pass across stone, bronze and oak.",
+    "st": "walkthrough"
+   },
+   {
+    "img": "process/travertine-kitchen/renders-02.jpg",
+    "tall": 1,
+    "t": "Detail: aged bronze hood, brushed by hand.",
+    "st": "renders"
+   },
+   {
+    "vid": "process/travertine-kitchen/marketing-01.mp4",
+    "tall": 1,
+    "t": "Reel: from the material board to the finished room in thirteen seconds.",
+    "st": "marketing"
+   },
+   {
+    "vid": "process/travertine-kitchen/marketing-02.mp4",
+    "tall": 1,
+    "t": "Detail reel: stone, bronze and oak.",
+    "st": "marketing"
+   },
+   {
+    "img": "process/travertine-kitchen/marketing-04.jpg",
+    "tall": 1,
+    "t": "Instagram post from the launch kit.",
+    "st": "marketing"
+   },
+   {
+    "img": "process/travertine-kitchen/marketing-06.jpg",
+    "tall": 1,
+    "t": "Campaign aimed at builders: a show kitchen designed to sell the house.",
+    "st": "marketing"
+   }
+  ]
+ },
+ {
+  "id": "private",
+  "name": "Private Residence",
+  "meta": "Residential · Ontario, Canada",
+  "sum": "Furniture and décor for a family home: layout options, a colour story and fully priced selection schedules.",
+  "slides": [
+   {
+    "img": "process/private-residence/layout-01.jpg",
+    "sheet": 1,
+    "t": "Master bedroom in two layout options, each with its furniture, clearances and cost.",
+    "st": "layout"
+   },
+   {
+    "img": "process/private-residence/concept-01.jpg",
+    "sheet": 1,
+    "t": "Colour story: the same bedroom shown in a neutral base, then with a soft colour accent, so the client can feel the difference.",
+    "st": "concept"
+   },
+   {
+    "img": "process/private-residence/concept-02.jpg",
+    "sheet": 1,
+    "t": "Option 1, the Eva bed: the room styled around a low upholstered bed in a calm neutral scheme.",
+    "st": "concept"
+   },
+   {
+    "img": "process/private-residence/concept-03.jpg",
+    "sheet": 1,
+    "t": "Option 2, the Berlin bed: a channel-tufted alternative with warmer accents and art.",
+    "st": "concept"
+   },
+   {
+    "img": "process/private-residence/selections-01.jpg",
+    "sheet": 1,
+    "t": "Furniture schedule: fourteen items with finish, size, quantity and cost on one page.",
+    "st": "selections"
+   },
+   {
+    "img": "process/private-residence/selections-02.jpg",
+    "sheet": 1,
+    "t": "Specification sheet for each piece: configuration, fabric, dimensions, construction and lead time.",
+    "st": "selections"
+   },
+   {
+    "img": "process/private-residence/selections-04.jpg",
+    "sheet": 1,
+    "t": "Master bedroom: both layout options priced side by side, so the client chooses with the numbers in front of them.",
+    "st": "selections"
+   },
+   {
+    "img": "process/private-residence/selections-06.jpg",
+    "sheet": 1,
+    "t": "Décor favourites organised by area, from the entrance console to the bedroom.",
+    "st": "selections"
+   },
+   {
+    "img": "process/private-residence/selections-07.jpg",
+    "sheet": 1,
+    "t": "Summary and shopping list, with every change between revisions noted.",
+    "st": "selections"
+   }
+  ]
+ },
+ {
+  "id": "shop-drawings",
+  "name": "Shop Drawing Package",
+  "meta": "Residential renovation · Ontario, Canada",
+  "sum": "A complete interior drawing package for a two-storey home renovation, from demolition to millwork: every sheet ready for trades to price and build from. Tap any sheet to read it at full size.",
+  "slides": [
+   {
+    "st": "brief",
+    "img": "process/shop-drawings/drawing-02.jpg",
+    "sheet": 1,
+    "t": "Existing conditions: demolition and proposed plans, colour-coded so every trade knows what comes out and what stays."
+   },
+   {
+    "st": "layout",
+    "img": "process/shop-drawings/drawing-03.jpg",
+    "sheet": 1,
+    "t": "Flooring layout options presented side by side, so the client can choose in one sitting."
+   },
+   {
+    "st": "layout",
+    "img": "process/shop-drawings/drawing-01.jpg",
+    "sheet": 1,
+    "t": "First and second floor plans with door, frame and finish schedules on the same sheet."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-04.jpg",
+    "sheet": 1,
+    "t": "Lighting plans for both floors, with a fixture and switching legend."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-05.jpg",
+    "sheet": 1,
+    "t": "Main area and staircase: elevations, plan and an isometric to explain the stair."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-06.jpg",
+    "sheet": 1,
+    "t": "Family room: rendered view, media wall elevation, isometric and plan."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-07.jpg",
+    "sheet": 1,
+    "t": "Kitchen and island package: elevations, plan, appliance and plumbing schedules on one sheet."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-08.jpg",
+    "sheet": 1,
+    "t": "Pantry: elevations, plan and isometrics for the millworker."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-12.jpg",
+    "sheet": 1,
+    "t": "Primary closet: every elevation and isometric dimensioned for fabrication."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-13.jpg",
+    "sheet": 1,
+    "t": "Bathrooms: plans, elevations and isometrics for three rooms."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-15.jpg",
+    "sheet": 1,
+    "t": "Bedroom closets and bedroom plan."
+   },
+   {
+    "st": "drawings",
+    "img": "process/shop-drawings/drawing-16.jpg",
+    "sheet": 1,
+    "t": "Laundry room: elevations, isometrics and plan."
+   },
+   {
+    "st": "selections",
+    "img": "process/shop-drawings/drawing-17.jpg",
+    "sheet": 1,
+    "t": "Countertops material takeoff: every slab piece drawn and measured for the stone fabricator."
+   }
+  ]
+ }
 ];
 
-/* ---------------- page logic ---------------- */
-const pad = n => String(n).padStart(2,"0");
-const IMG_MS = 2800, SHEET_MS = 3800, PAIR_MS = 3800, VID_CAP = 9, FAST_RATE = 1.5;
+const pad=n=>String(n).padStart(2,"0");
+const IMG_MS=2800, SHEET_MS=3800, PAIR_MS=3800, VID_CAP=9, FAST_RATE=1.5;
 
-// nav
 const navToggle=document.getElementById("navToggle"), mobileMenu=document.getElementById("mobileMenu");
 navToggle.addEventListener("click",()=>{ navToggle.classList.toggle("open"); mobileMenu.classList.toggle("open"); });
 mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{ navToggle.classList.remove("open"); mobileMenu.classList.remove("open"); }));
-
-// stage index
-document.getElementById("indexList").innerHTML = STAGES.map((s,i)=>`<li><a href="#${s.id}"><span>${pad(i+1)}</span>${s.title}</a></li>`).join("");
 
 function slideHTML(s){
   if(s.pair) return `<div class="slide pair"><figure><img data-src="${s.pair[0]}" alt=""><figcaption>Design</figcaption></figure><figure><img data-src="${s.pair[1]}" alt=""><figcaption>Built</figcaption></figure></div>`;
@@ -535,78 +1238,84 @@ function slideHTML(s){
   if(s.sheet) return `<div class="slide sheet"><img data-src="${s.img}" alt=""></div>`;
   return `<div class="slide kb${s.tall?" tall":""}">${s.tall?`<img class="blur" data-src="${s.img}" alt="">`:""}<img class="main" data-src="${s.img}" alt=""></div>`;
 }
+function stagesOf(p){ const seen=[]; p.slides.forEach(s=>{ if(!seen.includes(s.st)) seen.push(s.st); }); return seen; }
 
-const stagesEl=document.getElementById("stages");
-stagesEl.innerHTML = STAGES.map((s,i)=>`
-  <section class="stage" id="${s.id}">
-    <div class="stage-copy" data-reveal>
-      <div class="stage-num">${pad(i+1)}</div>
-      <div class="stage-kicker">${s.kicker}</div>
-      <h2>${s.title}</h2>
-      <p class="lead">${s.lead}</p>
-      <ul class="deliv">${s.deliv.map(d=>`<li>${d}</li>`).join("")}</ul>
-      <div class="tools">${s.tools.map(t=>`<span>${t}</span>`).join("")}</div>
+document.getElementById("chapters").innerHTML = PROJECTS.map((p,i)=>`
+  <section class="chap" id="${p.id}">
+    <div class="chap-head" data-reveal>
+      <div><div class="chap-num">Project ${pad(i+1)} of ${pad(PROJECTS.length)}</div><h2>${p.name}</h2><div class="chap-meta">${p.meta}</div></div>
+      <p class="chap-sum">${p.sum}</p>
     </div>
-    <div class="show" data-i="${i}" data-reveal>
-      <div class="frame">
-        <div class="bars">${s.slides.map(()=>`<i><b></b></i>`).join("")}</div>
-        ${s.slides.map(slideHTML).join("")}
-        <span class="paused">Paused</span>
-        <button type="button" class="arr prev" aria-label="Previous">&#8249;</button><button type="button" class="arr next" aria-label="Next">&#8250;</button>
-        <div class="frame-ui"><button type="button" class="expand">View full screen</button></div>
+    <div class="chips">${stagesOf(p).map(st=>`<button type="button" data-st="${st}"><span>${pad(ORDER.indexOf(st)+1)}</span>${SHORT[st]}</button>`).join("")}</div>
+    <div class="chap-body">
+      <div class="show" data-i="${i}">
+        <div class="frame">
+          ${p.slides.map(slideHTML).join("")}
+          <span class="paused">Paused</span>
+          <button type="button" class="arr prev" aria-label="Previous">&#8249;</button><button type="button" class="arr next" aria-label="Next">&#8250;</button>
+          <div class="frame-ui"><button type="button" class="expand">View full screen</button></div>
+          <div class="prog"><b></b></div>
+        </div>
+        <div class="cap"><div class="cap-in"><div class="stg"></div><div class="txt"></div></div><div class="count"></div></div>
       </div>
-      <div class="cap"><div class="cap-in"><div class="proj"></div><div class="txt"></div></div><div class="count"></div></div>
+      <aside class="panel"><div class="pn"></div><h3></h3><p></p><ul></ul><div class="tools"></div></aside>
     </div>
   </section>`).join("");
 
-function load(el){ el.querySelectorAll("[data-src]").forEach(m=>{ m.src=m.dataset.src; m.removeAttribute("data-src"); }); }
+function load(el){ if(el) el.querySelectorAll("[data-src]").forEach(m=>{ m.src=m.dataset.src; m.removeAttribute("data-src"); }); }
 
-class Show{
-  constructor(root){
-    this.root=root; this.data=STAGES[+root.dataset.i].slides; this.slides=[...root.querySelectorAll(".slide")];
-    this.bars=[...root.querySelectorAll(".bars i")]; this.capIn=root.querySelector(".cap-in");
-    this.idx=-1; this.visible=false; this.hold=false; this.t0=0; this.elapsed=0; this.dur=IMG_MS; this.raf=null;
-    // hovering pauses the timer on pictures and drawings; videos keep playing
-    root.addEventListener("mouseenter",()=>{ if(matchMedia("(hover:hover)").matches){ this.elapsed+=performance.now()-this.t0; this.hold=true; root.classList.add("hold"); } });
-    root.addEventListener("mouseleave",()=>{ this.hold=false; this.t0=performance.now(); root.classList.remove("hold"); });
-    this.bars.forEach((b,k)=>b.addEventListener("click",e=>{ e.stopPropagation(); this.go(k); }));
-    root.querySelector(".arr.prev").addEventListener("click",e=>{ e.stopPropagation(); this.go(this.idx-1); });
-    root.querySelector(".arr.next").addEventListener("click",e=>{ e.stopPropagation(); this.go(this.idx+1); });
-    root.querySelector(".expand").addEventListener("click",e=>{ e.stopPropagation(); openLB(this.data[this.idx]); });
-    const frame=root.querySelector(".frame");
-    frame.addEventListener("click",e=>{ if(e.target.closest(".frame-ui,.bars,.arr")) return; if(this.data[this.idx] && this.data[this.idx].sheet) openLB(this.data[this.idx]); });
-    // swipe on phones
+class Chapter{
+  constructor(sec, i){
+    this.sec=sec; this.p=PROJECTS[i]; this.data=this.p.slides; this.root=sec.querySelector(".show");
+    this.slides=[...sec.querySelectorAll(".slide")]; this.capIn=sec.querySelector(".cap-in"); this.bar=sec.querySelector(".prog b");
+    this.chips=[...sec.querySelectorAll(".chips button")]; this.panel=sec.querySelector(".panel");
+    this.idx=-1; this.curStage=null; this.visible=false; this.hold=false; this.t0=0; this.elapsed=0; this.dur=IMG_MS; this.raf=null;
+    this.root.addEventListener("mouseenter",()=>{ if(matchMedia("(hover:hover)").matches){ this.elapsed+=performance.now()-this.t0; this.hold=true; this.root.classList.add("hold"); } });
+    this.root.addEventListener("mouseleave",()=>{ this.hold=false; this.t0=performance.now(); this.root.classList.remove("hold"); });
+    sec.querySelector(".arr.prev").addEventListener("click",e=>{ e.stopPropagation(); this.go(this.idx-1); });
+    sec.querySelector(".arr.next").addEventListener("click",e=>{ e.stopPropagation(); this.go(this.idx+1); });
+    sec.querySelector(".expand").addEventListener("click",e=>{ e.stopPropagation(); openLB(this.data[this.idx]); });
+    this.chips.forEach(c=>c.addEventListener("click",()=>this.go(this.data.findIndex(s=>s.st===c.dataset.st))));
+    const frame=sec.querySelector(".frame");
+    frame.addEventListener("click",e=>{ if(e.target.closest(".frame-ui,.arr")) return; if(this.data[this.idx].sheet) openLB(this.data[this.idx]); });
     let sx=null;
     frame.addEventListener("touchstart",e=>{ sx=e.touches[0].clientX; },{passive:true});
     frame.addEventListener("touchend",e=>{ if(sx===null) return; const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) this.go(this.idx+(dx<0?1:-1)); sx=null; },{passive:true});
-    this.go(0, true);
+    this.go(0,true);
   }
   vids(k){ return this.slides[k] ? [...this.slides[k].querySelectorAll("video")] : []; }
+  setStage(st, silent){
+    if(st===this.curStage) return; this.curStage=st;
+    this.chips.forEach(c=>c.classList.toggle("on",c.dataset.st===st));
+    const on=this.chips.find(c=>c.dataset.st===st); if(on && on.parentNode.scrollWidth>on.parentNode.clientWidth) on.parentNode.scrollTo({left:on.offsetLeft-40,behavior:"smooth"});
+    const I=STAGE_INFO[st], P=this.panel;
+    const fill=()=>{ P.querySelector(".pn").textContent=pad(ORDER.indexOf(st)+1); P.querySelector("h3").textContent=I.title; P.querySelector("p").textContent=I.lead;
+      P.querySelector("ul").innerHTML=I.deliv.map(d=>`<li>${d}</li>`).join(""); P.querySelector(".tools").innerHTML=I.tools.map(t=>`<span>${t}</span>`).join(""); P.classList.remove("swap"); };
+    if(silent) fill(); else { P.classList.add("swap"); setTimeout(fill,250); }
+  }
   go(k, silent){
     if(this.idx>=0){ this.slides[this.idx].classList.remove("on"); this.vids(this.idx).forEach(v=>{ v.pause(); v.onended=null; }); }
     this.idx=(k+this.data.length)%this.data.length;
-    const s=this.data[this.idx], el=this.slides[this.idx];
-    load(el); load(this.slides[(this.idx+1)%this.slides.length]); load(this.slides[(this.idx-1+this.slides.length)%this.slides.length]);
-    this.bars.forEach((b,j)=>{ b.classList.toggle("done", j<this.idx); b.firstChild.style.width = j<this.idx ? "100%" : "0"; });
+    const s=this.data[this.idx], el=this.slides[this.idx], n=this.slides.length;
+    load(el); load(this.slides[(this.idx+1)%n]); load(this.slides[(this.idx-1+n)%n]);
     this.dur = s.pair ? PAIR_MS : s.sheet ? SHEET_MS : IMG_MS;
-    el.style.setProperty("--dur", (this.dur/1000+0.6)+"s");
+    el.style.setProperty("--dur",(this.dur/1000+0.6)+"s");
     void el.offsetWidth; el.classList.add("on");
-    this.elapsed=0; this.t0=performance.now();
+    this.elapsed=0; this.t0=performance.now(); this.bar.style.width="0";
     if(s.vid){
-      const vs=this.vids(this.idx), main=vs[vs.length-1];
-      this.dur=VID_CAP*1000;
-      const setup=()=>{ const fast = main.duration > 20 ? FAST_RATE : 1; vs.forEach(v=>{ v.playbackRate=fast; v.defaultPlaybackRate=fast; }); };
+      const vs=this.vids(this.idx), main=vs[vs.length-1]; this.dur=VID_CAP*1000;
+      const setup=()=>{ const r=main.duration>20?FAST_RATE:1; vs.forEach(v=>{ v.playbackRate=r; v.defaultPlaybackRate=r; }); };
       vs.forEach(v=>{ try{ v.currentTime=0; }catch(e){} });
       if(main.readyState>=1) setup(); else main.addEventListener("loadedmetadata",setup,{once:true});
-      main.onended=()=>this.next();
+      main.onended=()=>this.go(this.idx+1);
       if(this.visible) vs.forEach(v=>v.play().catch(()=>{}));
     }
+    this.setStage(s.st, silent);
     this.capIn.classList.add("swap");
-    setTimeout(()=>{ this.capIn.querySelector(".proj").textContent=s.p||""; this.capIn.querySelector(".txt").textContent=s.t||""; this.capIn.classList.remove("swap"); }, silent?0:180);
-    this.root.querySelector(".count").textContent=`${pad(this.idx+1)} / ${pad(this.data.length)}`;
-    this.root.querySelector(".expand").textContent = s.vid ? "Watch with sound" : s.sheet ? "Read full size" : "View full screen";
+    setTimeout(()=>{ this.capIn.querySelector(".stg").textContent=`${pad(ORDER.indexOf(s.st)+1)} · ${STAGE_INFO[s.st].title}`; this.capIn.querySelector(".txt").textContent=s.t||""; this.capIn.classList.remove("swap"); }, silent?0:180);
+    this.sec.querySelector(".count").textContent=`${pad(this.idx+1)} / ${pad(this.data.length)}`;
+    this.sec.querySelector(".expand").textContent = s.vid ? "Watch with sound" : s.sheet ? "Read full size" : "View full screen";
   }
-  next(){ this.go(this.idx+1); }
   playCurrent(){ if(this.visible && this.data[this.idx].vid) this.vids(this.idx).forEach(v=>v.play().catch(()=>{})); }
   setVisible(v){
     if(v===this.visible) return; this.visible=v;
@@ -622,23 +1331,21 @@ class Show{
       else if(s.vid){
         const v=this.vids(this.idx).slice(-1)[0];
         if(v && v.paused && v.readyState>=2 && !v.ended) v.play().catch(()=>{});
-        const t = v ? v.currentTime*1000/(v.playbackRate||1) : 0;
-        const total = v && v.duration ? Math.min(v.duration*1000/(v.playbackRate||1), this.dur) : this.dur;
-        const p = t/total;
-        this.bars[this.idx].firstChild.style.width=Math.min(100,p*100)+"%";
-        if(p>=1 && !this.hold) this.next();
+        const t=v?v.currentTime*1000/(v.playbackRate||1):0, total=v&&v.duration?Math.min(v.duration*1000/(v.playbackRate||1),this.dur):this.dur, p=t/total;
+        this.bar.style.width=Math.min(100,p*100)+"%";
+        if(p>=1 && !this.hold) this.go(this.idx+1);
       } else if(!this.hold){
         const p=(this.elapsed+performance.now()-this.t0)/this.dur;
-        this.bars[this.idx].firstChild.style.width=Math.min(100,p*100)+"%";
-        if(p>=1) this.next();
+        this.bar.style.width=Math.min(100,p*100)+"%";
+        if(p>=1) this.go(this.idx+1);
       }
       this.raf=requestAnimationFrame(tick);
     };
     this.raf=requestAnimationFrame(tick);
   }
 }
-const shows=[...document.querySelectorAll(".show")].map(r=>new Show(r));
-const showIO=new IntersectionObserver(es=>es.forEach(e=>{ const s=shows[+e.target.dataset.i]; s.setVisible(e.intersectionRatio>=0.35); }),{threshold:[0,0.35,0.6]});
+const chapters=[...document.querySelectorAll(".chap")].map((s,i)=>new Chapter(s,i));
+const showIO=new IntersectionObserver(es=>es.forEach(e=>{ const c=chapters[+e.target.dataset.i]; c.setVisible(e.intersectionRatio>=0.35); }),{threshold:[0,0.35,0.6]});
 document.querySelectorAll(".show").forEach(r=>showIO.observe(r));
 
 // lightbox
@@ -646,39 +1353,36 @@ let lbOpen=false;
 const lb=document.getElementById("lb"), lbMedia=document.getElementById("lbMedia"), lbHint=document.getElementById("lbHint");
 function openLB(s){
   if(!s) return;
-  shows.forEach(x=>x.vids(x.idx).forEach(v=>v.pause()));
+  chapters.forEach(c=>c.vids(c.idx).forEach(v=>v.pause()));
   lbMedia.classList.remove("zoomed");
-  if(s.vid){ lbMedia.innerHTML=`<video src="${s.vid}" controls autoplay playsinline></video>`; lbHint.textContent=s.p||""; }
-  else if(s.pair){ lbMedia.innerHTML=`<img src="${s.pair[1]}" alt="">`; lbHint.textContent=(s.p||"")+" · Built"; }
-  else { lbMedia.innerHTML=`<img src="${s.img}" alt=""${s.sheet?' class="sheet"':''}>`; lbHint.textContent = s.sheet ? "Click the sheet to zoom" : (s.p||"");
+  if(s.vid){ lbMedia.innerHTML=`<video src="${s.vid}" controls autoplay playsinline></video>`; lbHint.textContent=""; }
+  else if(s.pair){ lbMedia.innerHTML=`<img src="${s.pair[1]}" alt="">`; lbHint.textContent="Built"; }
+  else { lbMedia.innerHTML=`<img src="${s.img}" alt=""${s.sheet?' class="sheet"':''}>`; lbHint.textContent = s.sheet ? "Click the sheet to zoom" : "";
     const im=lbMedia.querySelector("img.sheet"); if(im) im.addEventListener("click",e=>{ e.stopPropagation(); lbMedia.classList.toggle("zoomed"); }); }
   lb.classList.add("open"); lbOpen=true;
 }
-function closeLB(){ lb.classList.remove("open"); lbMedia.innerHTML=""; lbOpen=false; shows.forEach(x=>x.playCurrent()); }
+function closeLB(){ lb.classList.remove("open"); lbMedia.innerHTML=""; lbOpen=false; chapters.forEach(c=>c.playCurrent()); }
 document.getElementById("lbClose").addEventListener("click",closeLB);
 lb.addEventListener("click",e=>{ if(e.target===lb || e.target===lbMedia) closeLB(); });
 
-// keyboard stage jumps (for presenting)
-let cur=0;
-const stageIO=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) cur=STAGES.findIndex(s=>s.id===e.target.id); }),{rootMargin:"-45% 0px -50% 0px"});
-document.querySelectorAll(".stage").forEach(s=>stageIO.observe(s));
-const firstStage=document.querySelector(".stage");
+// keyboard for presenting: left/right = slide in the project on screen, up/down page = next project
+function current(){ let best=null, bd=1e9; chapters.forEach(c=>{ const r=c.root.getBoundingClientRect(); const d=Math.abs(r.top+r.height/2-innerHeight/2); if(d<bd){ bd=d; best=c; } }); return best; }
 document.addEventListener("keydown",e=>{
   if(lbOpen){ if(e.key==="Escape") closeLB(); return; }
-  const before = window.scrollY < firstStage.offsetTop-200;
-  if(e.key==="ArrowRight"||e.key==="PageDown"){ e.preventDefault(); const i=before?0:Math.min(STAGES.length-1,cur+1); document.getElementById(STAGES[i].id).scrollIntoView({behavior:"smooth"}); }
-  if(e.key==="ArrowLeft"||e.key==="PageUp"){ e.preventDefault(); const i=Math.max(0,cur-1); document.getElementById(STAGES[i].id).scrollIntoView({behavior:"smooth"}); }
+  const c=current();
+  if(e.key==="ArrowRight" && c){ e.preventDefault(); c.go(c.idx+1); }
+  if(e.key==="ArrowLeft" && c){ e.preventDefault(); c.go(c.idx-1); }
+  if(e.key==="PageDown"||e.key==="PageUp"){ e.preventDefault(); const i=chapters.indexOf(c)+(e.key==="PageDown"?1:-1); if(chapters[i]) chapters[i].sec.scrollIntoView({behavior:"smooth"}); }
 });
 
-// reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("in"); }),{threshold:.1});
 document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll("[data-reveal]:not(.in)").forEach(el=>el.classList.add("in")),2500);
-
 // hero: show which stage the film is on
 (function(){ const v=document.getElementById("heroVid"), ph=[...document.querySelectorAll("#heroPhases span")];
   const upd=()=>{ const t=v.currentTime; ph.forEach(p=>{ const a=+p.dataset.a, b=+p.dataset.b, on=t>=a&&t<b; p.classList.toggle("on",on); p.querySelector("i").style.setProperty("--p", (on?Math.min(100,(t-a)/(b-a)*100):(t>=b?100:0))+"%"); }); requestAnimationFrame(upd); };
   requestAnimationFrame(upd); })();
+
 </script>
 </body>
 </html>
