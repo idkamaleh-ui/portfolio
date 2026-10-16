@@ -366,7 +366,7 @@
   [data-reveal].in{ opacity:1; transform:translateY(0); }
 
   @media (max-width:1300px){
-    nav ul{ gap:24px; }
+    nav ul{ gap:22px; }
     nav{ padding:34px 40px; }
   }
   @media (max-width:900px){
@@ -462,6 +462,10 @@
     .consult-grid{ grid-template-columns:1fr; gap:48px; }
     .field-row{ grid-template-columns:1fr; }
   }
+
+  /* 9-item nav: switch to the menu button earlier */
+  @media (max-width:1520px){ nav ul{ gap:28px; } }
+  @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
 </style>
 </head>
 <body>
@@ -470,10 +474,12 @@
   <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
   <ul>
     <li><a href="index.html">Home</a></li>
+    <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html" class="active">Services</a></li>
     <li><a href="site.html">On Site</a></li>
+    <li><a href="workshop.html">Workshop</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="consultation.html">Start a Project</a></li>
   </ul>
@@ -484,10 +490,12 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
+  <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="workshop.html">Workshop</a>
   <a href="contact.html">Contact</a>
   <a href="consultation.html">Start a Project</a>
 </div>
@@ -531,6 +539,11 @@
       <span class="name">Shop Drawings &amp; Documentation</span>
       <span class="desc">Documentation for coordination, fabrication and pricing — including millwork detailing — prepared for contractors and trades.</span>
     </div>
+    <div class="service-row">
+      <span class="num">07</span>
+      <span class="name">Interior Fit-Out &amp; Construction</span>
+      <span class="desc">Fit-out and construction delivered on site: joinery, finishes, MEP coordination and project management, from site handover to final deficiencies and handover.</span>
+    </div>
   </div>
 </section>
 
@@ -568,6 +581,7 @@
     </div>
   </div>
   <a href="consultation.html" style="display:inline-block; margin-top:56px; padding:16px 40px; border:1px solid var(--gold); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ivory); transition:background .35s, color .35s;" onmouseover="this.style.background='var(--gold)'; this.style.color='var(--ink)';" onmouseout="this.style.background='transparent'; this.style.color='var(--ivory)';">Start a Project</a>
+  <a href="process.html" style="display:inline-block; margin-top:56px; margin-left:24px; padding:16px 0; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); border-bottom:1px solid var(--gold);">See the Full Process →</a>
 </section>
 
 <footer class="site-footer">
@@ -584,10 +598,12 @@
       <h4>Company</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="workshop.html">Workshop</a></li>
       </ul>
     </div>
     <div class="footer-col">

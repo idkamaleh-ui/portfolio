@@ -366,7 +366,7 @@
   [data-reveal].in{ opacity:1; transform:translateY(0); }
 
   @media (max-width:1300px){
-    nav ul{ gap:24px; }
+    nav ul{ gap:22px; }
     nav{ padding:34px 40px; }
   }
   @media (max-width:900px){
@@ -440,6 +440,10 @@
     .consult-grid{ grid-template-columns:1fr; gap:48px; }
     .field-row{ grid-template-columns:1fr; }
   }
+
+  /* 9-item nav: switch to the menu button earlier */
+  @media (max-width:1520px){ nav ul{ gap:28px; } }
+  @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
 </style>
 </head>
 <body>
@@ -448,10 +452,12 @@
   <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
   <ul>
     <li><a href="index.html">Home</a></li>
+    <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="site.html" class="active">On Site</a></li>
+    <li><a href="workshop.html">Workshop</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="consultation.html">Start a Project</a></li>
   </ul>
@@ -462,10 +468,12 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
+  <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="workshop.html">Workshop</a>
   <a href="contact.html">Contact</a>
   <a href="consultation.html">Start a Project</a>
 </div>
@@ -505,10 +513,12 @@
       <h4>Company</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="workshop.html">Workshop</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -572,6 +582,13 @@
   // add items to the `media` array as photos/videos come in for that
   // project, and it will appear in the grid automatically.
   const projects = [
+    { title:"Private Villa, Marina", cat:"residential", loc:"Marina, Abu Dhabi, UAE", year:"",
+      media:[
+        { type:"video", src:"marina-villa-1.mp4", tag:"Fit-Out Walkthrough" },
+        { type:"video", src:"marina-villa-2.mp4", tag:"Fit-Out Walkthrough" },
+        { type:"video", src:"marina-villa-3.mp4", tag:"Kitchen Detail" },
+      ],
+      desc:"A private luxury villa on Abu Dhabi's Marina, delivered for a distinguished private client. The interior fit-out and construction were carried out on site, from structural works and MEP coordination through bespoke joinery, travertine and marble stone cladding, timber wall panelling, custom wardrobes and high-end kitchen fittings, managing every trade to the exacting standard a residence of this calibre demands. The villa sits on the waterfront with its own private jetty." },
     { title:"AJ House", cat:"residential", loc:"Location TBD", year:"2026",
       media:[
         { type:"video", src:"aj-house-walkthrough.mp4", tag:"On-Site Walkthrough" },
@@ -616,6 +633,16 @@
       media:[
         { type:"video", src:"wo-fs-walkthrough.mp4", tag:"On-Site Walkthrough" },
       ], desc:"The White Orchid fit-out at final stage — terracotta plasterwork, an arched doorway and display shelving nearing completion." },
+    { title:"Tamra Cafe", cat:"commercial", loc:"Sharjah, UAE", year:"2013",
+      media:[
+        { type:"image", src:"tamra-cafe-01.jpg", tag:"Completed Space" },
+        { type:"image", src:"tamra-cafe-02.jpg", tag:"Fit-Out Progress" },
+        { type:"image", src:"tamra-cafe-03.jpg", tag:"Completed Space" },
+        { type:"image", src:"tamra-cafe-04.jpg", tag:"Lighting Detail" },
+        { type:"image", src:"tamra-cafe-05.jpg", tag:"Lighting Detail" },
+        { type:"image", src:"tamra-cafe-06.jpg", tag:"The Team On Site" },
+      ],
+      desc:"An early fit-out: an industrial-style cafe in Sharjah. Deep blue walls, a hand-finished whitewashed brick feature wall, black steel framing with overhead mesh and timber crate shelving, Edison filament pendants and spun-aluminium dome lights set a warm, casual mood, completed with glass-topped steel tables and rush-seat chairs. Completed in 2013." },
   ];
 
   const grid = document.getElementById('projectGrid');

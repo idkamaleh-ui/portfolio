@@ -410,7 +410,7 @@
   [data-reveal].in{ opacity:1; transform:translateY(0); }
 
   @media (max-width:1300px){
-    nav ul{ gap:24px; }
+    nav ul{ gap:22px; }
     nav{ padding:34px 40px; }
   }
   @media (max-width:900px){
@@ -437,6 +437,10 @@
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; animation:none !important; }
   }
+
+  /* 9-item nav: switch to the menu button earlier */
+  @media (max-width:1520px){ nav ul{ gap:28px; } }
+  @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
 </style>
 </head>
 <body>
@@ -445,10 +449,12 @@
   <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
   <ul>
     <li><a href="index.html">Home</a></li>
+    <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html" class="active">Portfolio</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="site.html">On Site</a></li>
+    <li><a href="workshop.html">Workshop</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="consultation.html">Start a Project</a></li>
   </ul>
@@ -459,10 +465,12 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
+  <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="workshop.html">Workshop</a>
   <a href="contact.html">Contact</a>
   <a href="consultation.html">Start a Project</a>
 </div>
@@ -505,10 +513,12 @@
       <h4>Company</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="workshop.html">Workshop</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -672,6 +682,94 @@
         { type:"video", src:"wo-video-1.mp4", tag:"Site Video" },
       ],
       desc:"Full design and fit-out project management for a flower boutique and café in Sharjah. A blush-pink micro-cement shell, fluted travertine millwork and a sculpted stone counter set against arched glazing and brass detailing — carried from concept render through on-site fit-out to the finished, opened space." },
+    { title:"Thai Gate Restaurant", cat:"hospitality", loc:"Khor Fakkan, Sharjah, UAE", year:"2022",
+      role:"Concept design, 3D visualization, interior fit-out and construction",
+      media:[
+        { type:"image", src:"thai-gate-restaurant-01.jpg", tag:"Completed Space" },
+        { type:"video", src:"thaigate-walkthrough.mp4", tag:"Walkthrough" },
+        { type:"image", src:"thai-gate-restaurant-02.jpg", tag:"Design Render" },
+        { type:"image", src:"thai-gate-restaurant-03.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-04.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-05.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-06.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-07.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-08.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-09.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-10.jpg", tag:"Completed Space" },
+        { type:"image", src:"thai-gate-restaurant-11.jpg", tag:"Construction Progress" },
+        { type:"image", src:"thai-gate-restaurant-12.jpg", tag:"Construction Progress" },
+      ],
+      desc:"A Thai restaurant on the Khor Fakkan waterfront in Sharjah. The concept draws on Thailand's island culture through a bold, colourful palette: sweeping bamboo arches, hand-painted Thai parasols, woven rattan pendants, tropical planting and a street-art mural, bringing the energy of Thai street food and coastal dining into a relaxed waterfront setting. Completed in 2022." },
+    { title:"Things Cafe", cat:"hospitality", loc:"Abu Dhabi, UAE", year:"2021",
+      role:"Concept design, 3D visualization, interior fit-out and construction",
+      media:[
+        { type:"image", src:"things-cafe-01.jpg", tag:"Design Render" },
+        { type:"video", src:"things-walkthrough.mp4", tag:"Walkthrough" },
+        { type:"image", src:"things-cafe-02.jpg", tag:"Design Render" },
+        { type:"image", src:"things-cafe-03.jpg", tag:"Design Render" },
+        { type:"image", src:"things-cafe-04.jpg", tag:"Design Render" },
+        { type:"image", src:"things-cafe-05.jpg", tag:"Design Render" },
+        { type:"image", src:"things-cafe-06.jpg", tag:"Construction Progress" },
+        { type:"image", src:"things-cafe-07.jpg", tag:"Construction Progress" },
+      ],
+      desc:"An industrial-style speciality coffee shop and concept store in Abu Dhabi. The design celebrates raw materials and honest construction: textured concrete walls, a stacked-block coffee bar, black steel track lighting and mesh screens, softened by live-edge timber tables, leather-trimmed chairs and a sculptural neon light over the bar. Completed in 2021." },
+    { title:"Halah Chocolate Cafe", cat:"hospitality", loc:"Sharjah, UAE", year:"2022",
+      role:"Concept design, 3D visualization, interior fit-out and construction",
+      media:[
+        { type:"image", src:"halah-chocolate-cafe-01.jpg", tag:"Completed Space" },
+        { type:"video", src:"halah-walkthrough.mp4", tag:"Walkthrough" },
+        { type:"image", src:"halah-chocolate-cafe-02.jpg", tag:"Completed Space" },
+        { type:"image", src:"halah-chocolate-cafe-03.jpg", tag:"Completed Space" },
+        { type:"image", src:"halah-chocolate-cafe-04.jpg", tag:"Fit-Out Progress" },
+        { type:"image", src:"halah-chocolate-cafe-05.jpg", tag:"Construction Progress" },
+      ],
+      desc:"A chocolate cafe in Sharjah designed as a playful, pastel dessert parlour. Backlit mint fluted wall panels framed in blush pink, gold-rimmed mirrors and amber glass pendants set the tone, with grey channel-tufted banquettes, blush velvet chairs, marble tables on fluted bases and a golden waffle-pattern feature wall. Completed in 2022." },
+    { title:"La Douce Beauty Center", cat:"commercial", loc:"Abu Dhabi, UAE", year:"2021",
+      role:"Concept design, 3D visualization, interior fit-out and construction",
+      media:[
+        { type:"image", src:"la-douce-beauty-center-01.jpg", tag:"Design Render" },
+        { type:"video", src:"ladouce-walkthrough.mp4", tag:"Walkthrough" },
+        { type:"image", src:"la-douce-beauty-center-02.jpg", tag:"Design Render" },
+        { type:"image", src:"la-douce-beauty-center-03.jpg", tag:"Design Render" },
+        { type:"image", src:"la-douce-beauty-center-04.jpg", tag:"Design Render" },
+        { type:"image", src:"la-douce-beauty-center-05.jpg", tag:"Design Render" },
+        { type:"image", src:"la-douce-beauty-center-06.jpg", tag:"Construction Progress" },
+        { type:"image", src:"la-douce-beauty-center-07.jpg", tag:"Construction Progress" },
+        { type:"image", src:"la-douce-beauty-center-08.jpg", tag:"Construction Progress" },
+        { type:"image", src:"la-douce-beauty-center-09.jpg", tag:"Construction Progress" },
+      ],
+      desc:"A light, airy beauty center in Abu Dhabi with sweeping floor-to-ceiling views. Soft blush fluted counters, a timber-slatted column wrapped around raw concrete, cloud-like mesh pendants and hanging rattan chairs create a calm lounge and coffee bar at the entrance, leading to styling stations with gold-framed arched mirrors, a private make-up suite and marble-clad washrooms. Completed in 2021." },
+    { title:"Elixir Artistic Perfumery", cat:"commercial", loc:"Khobar, Saudi Arabia", year:"",
+      role:"Retail interior design, shop drawings, 3D visualization",
+      media:[
+        { type:"image", src:"elixir-artistic-perfumery-01.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-02.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-03.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-04.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-05.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-06.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-07.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-08.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-09.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-10.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-11.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-12.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-13.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-14.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-15.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-16.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-17.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-18.jpg", tag:"Design Render" },
+      ],
+      desc:"A perfumery boutique in an arched, champagne-brass frontage. A sculpted copper-toned feature wall, a hanging planted ring and vertical brass rods rise above a central display table, with backlit fragrance shelving, low lounge seating and a curved reception counter." },
+    { title:"Pulmicort Exhibition Stand", cat:"commercial", loc:"Dubai, UAE", year:"",
+      role:"Stand design, fabrication and on-site installation",
+      media:[
+        { type:"image", src:"pulmicort-exhibition-stand-01.jpg", tag:"Completed Stand" },
+        { type:"image", src:"pulmicort-exhibition-stand-02.jpg", tag:"Completed Stand" },
+        { type:"image", src:"pulmicort-exhibition-stand-03.jpg", tag:"Installation" },
+      ],
+      desc:"A branded exhibition stand for Pulmicort Respules at a pharmaceutical exhibition in Dubai. The design is built around the brand's green and white identity: a backlit hexagonal logo sign above a green feature panel, illuminated product light boxes on either side, a compact seating nook and a bold coral kiosk housing an interactive product screen, fabricated and installed on site for a strong presence on the exhibition floor." },
     { title:"Efreez Beauty Salon — Sharjah", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
       media:[
         { type:"image", src:"efreez-cover.jpg", tag:"Design Render — Reception" },
@@ -868,7 +966,7 @@
         <div class="card-overlay">
           <span class="tag">${p.cat}</span>
           <h3>${p.title}</h3>
-          <p>${p.loc.includes('TBD') ? 'Concept' : p.loc} — ${p.year}</p>
+          <p>${p.loc.includes('TBD') ? 'Concept' : p.loc}${p.year ? ' — ' + p.year : ''}</p>
         </div>`;
       if(previewVideo){
         const vid = card.querySelector('video');
@@ -925,7 +1023,7 @@
 
   function openModal(p){
     currentProject = p;
-    document.getElementById('modalMeta').textContent = `${p.loc.includes('TBD') ? 'Concept' : p.loc} · ${p.year} · ${p.cat.toUpperCase()}`;
+    document.getElementById('modalMeta').textContent = `${p.loc.includes('TBD') ? 'Concept' : p.loc}${p.year ? ' · ' + p.year : ''} · ${p.cat.toUpperCase()}`;
     document.getElementById('modalTitle').textContent = p.title;
     document.getElementById('modalDesc').textContent = p.desc;
     const roleEl = document.getElementById('modalRole');

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How MK Interior Design Studio works, from site review and layout to 3D, live design sessions, walkthroughs, drawings and site coordination. Thirteen stages, one studio, shown through real projects.">
+<title>Work Process — MK Interior Design Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#EFEBE4; --ink:#15161B; --gold:#A6875A; --taupe:#9C917C;
+    --line-dark:rgba(239,235,228,0.16); --bg:#000;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--ivory); font-family:'Jost',sans-serif; font-weight:300; overflow-x:hidden; }
+  ::selection{ background:var(--gold); color:var(--ivory); }
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; }
+  .serif{ font-family:'Cormorant Garamond',serif; }
+
+  /* NAV (shared) */
+  nav{ position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:34px 60px; mix-blend-mode:difference; color:#efebe4; }
+  nav .logo{ font-family:'Cormorant Garamond',serif; font-size:20px; letter-spacing:0.06em; font-weight:500; white-space:nowrap; flex-shrink:0; display:flex; align-items:center; gap:10px; }
+  nav .logo img{ height:28px; width:auto; display:block; }
+  nav ul{ display:flex; gap:44px; list-style:none; }
+  nav ul li a{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:400; position:relative; padding-bottom:6px; }
+  nav ul li a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:currentColor; transition:width .4s ease; }
+  nav ul li a:hover::after{ width:100%; }
+  nav ul li a.active{ color:var(--gold); }
+  nav ul li a.active::after{ width:100%; background:var(--gold); }
+  .nav-toggle{ display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:101; padding:6px; }
+  .nav-toggle span{ width:24px; height:1px; background:currentColor; transition:transform .3s ease, opacity .3s ease; }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+  .mobile-menu{ position:fixed; inset:0; z-index:99; background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; opacity:0; pointer-events:none; transition:opacity .35s ease; }
+  .mobile-menu.open{ opacity:1; pointer-events:all; }
+  .mobile-menu a{ font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--ivory); font-style:italic; font-weight:400; }
+
+  /* HERO */
+  .hero{ position:relative; min-height:100vh; display:flex; align-items:flex-end; overflow:hidden; }
+  .hero video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.55) saturate(.95); }
+  .hero::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.92) 100%); }
+  .hero-inner{ position:relative; z-index:2; width:100%; padding:0 60px 72px; }
+  .eyebrow{ font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:18px; }
+  .hero h1{ font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic; font-size:clamp(40px,6vw,92px); line-height:1.04; max-width:1000px; }
+  .hero-sub{ margin-top:24px; max-width:620px; font-size:16px; line-height:1.85; color:rgba(239,235,228,.85); }
+  .hero-stats{ display:flex; gap:56px; flex-wrap:wrap; margin-top:44px; padding-top:28px; border-top:1px solid var(--line-dark); }
+  .hero-stats .num{ font-family:'Cormorant Garamond',serif; font-size:42px; color:var(--gold); line-height:1; }
+  .hero-stats .lbl{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); margin-top:8px; }
+  .scroll-cue{ position:absolute; right:60px; bottom:72px; z-index:2; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:rgba(239,235,228,.7); display:flex; align-items:center; gap:12px; }
+  .scroll-cue::after{ content:''; width:1px; height:44px; background:linear-gradient(var(--gold), transparent); animation:cue 2s ease-in-out infinite; }
+  @keyframes cue{ 0%,100%{ transform:scaleY(.4); transform-origin:top; } 50%{ transform:scaleY(1); transform-origin:top; } }
+
+  /* STAGE INDEX */
+  .index{ padding:72px 60px; border-bottom:1px solid var(--line-dark); }
+  .index p{ max-width:760px; font-family:'Cormorant Garamond',serif; font-size:clamp(22px,2.4vw,30px); line-height:1.5; margin-bottom:40px; }
+  .index p em{ color:var(--gold); }
+  .index ol{ list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:0; border-top:1px solid var(--line-dark); }
+  .index li{ display:flex; }
+  .index li a{ flex:1; display:flex; gap:14px; align-items:baseline; padding:16px 4px; border-bottom:1px solid var(--line-dark); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:rgba(239,235,228,.75); transition:color .3s, padding-left .3s; }
+  .index li a span{ font-family:'Cormorant Garamond',serif; font-size:17px; letter-spacing:0; color:var(--gold); }
+  .index li a:hover{ color:var(--ivory); padding-left:10px; }
+
+  /* STAGE */
+  .stage{ display:grid; grid-template-columns:minmax(280px,.34fr) 1fr; gap:64px; padding:110px 60px; border-bottom:1px solid var(--line-dark); scroll-margin-top:10px; }
+  .stage-copy{ position:sticky; top:120px; align-self:start; }
+  .stage-num{ font-family:'Cormorant Garamond',serif; font-size:72px; line-height:1; color:var(--gold); font-weight:300; }
+  .stage-kicker{ font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--taupe); margin-top:14px; }
+  .stage-copy h2{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(32px,3.2vw,46px); line-height:1.1; margin:12px 0 20px; }
+  .stage-copy .lead{ font-size:15.5px; line-height:1.85; color:rgba(239,235,228,.8); max-width:440px; }
+  .deliv{ list-style:none; margin-top:26px; padding-top:20px; border-top:1px solid var(--line-dark); display:flex; flex-direction:column; gap:10px; max-width:440px; }
+  .deliv li{ font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--taupe); display:flex; gap:12px; }
+  .deliv li::before{ content:''; width:14px; height:1px; background:var(--gold); margin-top:7px; flex-shrink:0; }
+  .tools{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+  .tools span{ font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; padding:6px 11px; border:1px solid rgba(166,135,90,.45); color:var(--gold); }
+
+  /* SLIDESHOW */
+  .show{ position:relative; }
+  .frame{ position:relative; aspect-ratio:16/9; background:#0a0a0c; overflow:hidden; }
+  .slide{ position:absolute; inset:0; opacity:0; transition:opacity 1s ease; }
+  .slide.on{ opacity:1; z-index:1; }
+  .slide img, .slide video{ width:100%; height:100%; display:block; }
+  .slide img{ object-fit:cover; }
+  .slide.kb.on img{ animation:kb var(--dur,6s) linear forwards; }
+  @keyframes kb{ from{ transform:scale(1); } to{ transform:scale(1.07); } }
+  .slide video{ object-fit:contain; background:#0a0a0c; }
+  .slide .blur{ position:absolute; inset:-30px; width:calc(100% + 60px); height:calc(100% + 60px); object-fit:cover; filter:blur(28px) brightness(.45); }
+  .slide.tall img.main, .slide.tall video.main{ position:relative; object-fit:contain; }
+  .slide.sheet{ background:#fff; }
+  .slide.sheet img{ object-fit:contain; background:#fff; }
+  .slide.pair{ display:grid; grid-template-columns:1fr 1fr; gap:3px; background:#0a0a0c; }
+  .slide.pair figure{ position:relative; overflow:hidden; }
+  .slide.pair img{ object-fit:cover; }
+  .slide.pair figcaption{ position:absolute; left:14px; top:28px; font-size:10px; letter-spacing:.18em; text-transform:uppercase; padding:6px 12px; background:rgba(0,0,0,.6); color:var(--ivory); }
+  .slide.pair figure:last-child figcaption{ background:var(--gold); color:var(--ink); }
+  .bars{ position:absolute; left:14px; right:14px; top:12px; z-index:5; display:flex; gap:4px; }
+  .bars i{ flex:1; height:2px; background:rgba(255,255,255,.28); overflow:hidden; cursor:pointer; position:relative; }
+  .bars i::before{ content:''; position:absolute; inset:-8px 0; }
+  .bars i b{ display:block; height:100%; width:0; background:var(--ivory); }
+  .bars i.done b{ width:100%; }
+  .frame-ui{ position:absolute; right:14px; bottom:14px; z-index:5; display:flex; gap:8px; }
+  .frame-ui button{ font-family:'Jost',sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; padding:9px 14px; background:rgba(0,0,0,.6); color:var(--ivory); border:1px solid rgba(255,255,255,.18); cursor:pointer; backdrop-filter:blur(6px); transition:border-color .3s, color .3s; }
+  .frame-ui button:hover{ border-color:var(--gold); color:var(--gold); }
+  .paused{ position:absolute; left:14px; bottom:14px; z-index:5; font-size:10px; letter-spacing:.18em; text-transform:uppercase; padding:7px 12px; background:rgba(0,0,0,.6); opacity:0; transition:opacity .3s; }
+  .show.hold .paused{ opacity:1; }
+  .cap{ display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start; margin-top:20px; min-height:76px; }
+  .cap .proj{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  .cap .txt{ font-family:'Cormorant Garamond',serif; font-size:clamp(19px,1.7vw,24px); line-height:1.4; color:var(--ivory); max-width:760px; }
+  .cap .count{ font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--taupe); white-space:nowrap; padding-top:18px; }
+  .cap-in{ transition:opacity .25s ease, transform .25s ease; }
+  .cap-in.swap{ opacity:0; transform:translateY(6px); }
+
+  /* RAIL */
+
+  /* FEATURED + CLOSING */
+  .featured{ padding:90px 60px; border-bottom:1px solid var(--line-dark); }
+  .featured h3{ font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--taupe); margin-bottom:28px; font-weight:400; }
+  .featured ul{ list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); border-top:1px solid var(--line-dark); }
+  .featured li{ padding:18px 4px; border-bottom:1px solid var(--line-dark); display:flex; justify-content:space-between; gap:16px; }
+  .featured li b{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:21px; }
+  .featured li span{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--taupe); align-self:center; text-align:right; }
+  .closing{ text-align:center; padding:140px 60px; }
+  .closing p{ font-family:'Cormorant Garamond',serif; font-size:clamp(30px,3.8vw,50px); font-style:italic; font-weight:300; margin-bottom:14px; }
+  .closing small{ display:block; font-size:15px; color:rgba(239,235,228,.7); margin-bottom:36px; }
+  .btn{ display:inline-block; padding:16px 40px; border:1px solid var(--gold); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ivory); transition:background .35s, color .35s; }
+  .btn:hover{ background:var(--gold); color:var(--ink); }
+  .btn.ghost{ border-color:transparent; color:var(--gold); }
+
+  /* FOOTER (shared) */
+  .site-footer{ display:block; padding:80px 60px 32px; border-top:1px solid var(--line-dark); background:var(--bg); }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:60px; padding-bottom:56px; }
+  .footer-brand .brand{ display:flex; align-items:center; gap:10px; font-family:'Cormorant Garamond',serif; font-size:17px; color:var(--ivory); margin-bottom:22px; }
+  .footer-brand .brand img{ height:26px; width:auto; }
+  .footer-social{ display:flex; gap:14px; }
+  .footer-social a{ width:36px; height:36px; border:1px solid var(--line-dark); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--taupe); transition:border-color .3s, color .3s; }
+  .footer-social a:hover{ border-color:var(--gold); color:var(--gold); }
+  .footer-social svg{ width:15px; height:15px; fill:currentColor; }
+  .footer-col h4{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; font-weight:400; }
+  .footer-col ul{ list-style:none; display:flex; flex-direction:column; gap:12px; }
+  .footer-col a{ font-size:13px; color:rgba(239,235,228,.7); transition:color .25s; }
+  .footer-col a:hover{ color:var(--ivory); }
+  .footer-bottom{ padding-top:24px; border-top:1px solid var(--line-dark); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:11px; color:rgba(239,235,228,.45); letter-spacing:.06em; }
+
+  /* LIGHTBOX */
+  .lb{ position:fixed; inset:0; z-index:300; background:rgba(8,8,10,.97); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s; }
+  .lb.open{ opacity:1; pointer-events:all; }
+  .lb-media{ width:100%; height:100vh; display:flex; align-items:center; justify-content:center; padding:56px 24px 24px; }
+  .lb-media img, .lb-media video{ max-width:100%; max-height:100%; object-fit:contain; display:block; }
+  .lb-media img.sheet{ background:#fff; cursor:zoom-in; }
+  .lb-media.zoomed{ overflow:auto; display:block; }
+  .lb-media.zoomed img.sheet{ max-width:none; max-height:none; cursor:zoom-out; }
+  .lb-close{ position:absolute; top:14px; right:20px; z-index:3; font-size:12px; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; padding:10px; }
+  .lb-close:hover{ color:var(--gold); }
+  .lb-hint{ position:absolute; top:24px; left:24px; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe); }
+
+  [data-reveal]{ opacity:0; transform:translateY(24px); transition:opacity .9s ease, transform .9s ease; }
+  [data-reveal].in{ opacity:1; transform:none; }
+
+  
+  @media (max-width:1300px){ nav ul{ gap:22px; } nav{ padding:34px 40px; } }
+  @media (max-width:1520px){ nav ul{ gap:28px; } }
+  @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
+  @media (max-width:1100px){
+    .stage{ grid-template-columns:1fr; gap:34px; padding:90px 40px; }
+    .stage-copy{ position:static; display:grid; grid-template-columns:1fr 1fr; column-gap:48px; }
+    .stage-copy .stage-num, .stage-copy .stage-kicker, .stage-copy h2{ grid-column:1 / -1; }
+    .stage-copy .lead{ grid-column:1; max-width:none; }
+    .stage-copy .deliv{ grid-column:2; grid-row:4 / span 2; margin-top:0; border-top:none; padding-top:4px; }
+    .stage-copy .tools{ grid-column:1; }
+    .hero-inner{ padding:0 40px 64px; } .index, .featured{ padding:64px 40px; }
+  }
+  @media (max-width:900px){
+    nav{ padding:22px 24px; }
+    .hero-inner{ padding:0 24px 56px; }
+    .scroll-cue{ display:none; }
+    .hero-stats{ gap:32px; }
+    .index, .featured{ padding:56px 24px; }
+    .stage{ grid-template-columns:1fr; gap:30px; padding:72px 24px; }
+    .stage-copy{ position:static; display:block; }
+    .stage-copy .deliv{ margin-top:26px; border-top:1px solid var(--line-dark); padding-top:20px; }
+    .stage-num{ font-size:52px; }
+    .frame{ aspect-ratio:4/3; }
+    .cap{ grid-template-columns:1fr; gap:6px; }
+    .cap .count{ padding-top:0; font-size:15px; }
+    .frame-ui button{ padding:8px 10px; font-size:9.5px; }
+    .closing{ padding:100px 24px; }
+    .site-footer{ padding:56px 24px 24px; }
+    .footer-grid{ grid-template-columns:1fr 1fr; gap:40px 24px; }
+    .footer-brand{ grid-column:1 / -1; }
+  }
+  @media (max-width:560px){ .footer-grid{ grid-template-columns:1fr; } .slide.pair{ grid-template-columns:1fr; grid-template-rows:1fr 1fr; } }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } html{ scroll-behavior:auto; } }
+
+  .arr{ position:absolute; top:50%; transform:translateY(-50%); z-index:6; width:52px; height:52px; border-radius:50%; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.55); color:var(--ivory); font-size:30px; line-height:1; cursor:pointer; opacity:0; transition:opacity .25s, border-color .25s, color .25s; display:flex; align-items:center; justify-content:center; padding-bottom:4px; backdrop-filter:blur(6px); }
+  .arr.prev{ left:16px; } .arr.next{ right:16px; }
+  .frame:hover .arr{ opacity:1; }
+  .arr:hover{ border-color:var(--gold); color:var(--gold); }
+  @media (hover:none){ .arr{ opacity:.9; } .paused{ display:none; } }
+  @media (hover:none) and (max-width:600px){ .arr{ width:42px; height:42px; font-size:24px; } }
+  .frame{ touch-action:pan-y; -webkit-user-select:none; user-select:none; }
+  .slide{ transition:opacity .6s ease !important; }
+
+  .phases{ position:absolute; top:120px; right:60px; z-index:3; display:flex; flex-direction:column; gap:14px; }
+  .phases span{ position:relative; display:flex; align-items:baseline; gap:12px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:rgba(239,235,228,.45); padding-bottom:8px; min-width:210px; transition:color .4s; }
+  .phases b{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:18px; letter-spacing:0; color:inherit; }
+  .phases i{ position:absolute; left:0; bottom:0; height:1px; width:100%; background:rgba(239,235,228,.18); }
+  .phases i::after{ content:''; position:absolute; left:0; top:0; height:100%; width:var(--p,0%); background:var(--gold); }
+  .phases span.on{ color:var(--ivory); }
+  .phases span.on b{ color:var(--gold); }
+  @media (max-width:900px){ .phases{ top:auto; bottom:auto; position:relative; right:auto; flex-direction:row; flex-wrap:wrap; gap:10px 18px; padding:0 24px; margin-top:-24px; display:none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="process.html" class="active">Process</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="site.html">On Site</a></li>
+    <li><a href="workshop.html">Workshop</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="consultation.html">Start a Project</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="process.html">Process</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="site.html">On Site</a>
+  <a href="workshop.html">Workshop</a>
+  <a href="contact.html">Contact</a>
+  <a href="consultation.html">Start a Project</a>
+</div>
+
+<header class="hero">
+  <video id="heroVid" src="process/hero-process.mp4" muted autoplay loop playsinline preload="auto"></video>
+  <div class="hero-inner">
+    <span class="eyebrow">Work Process</span>
+    <h1>From an empty shell to a finished, built space.</h1>
+    <p class="hero-sub">Thirteen stages, one studio. This page walks through exactly how we work, using real projects in Canada, the UAE and Saudi Arabia: layouts, 3D models, live design sessions, walkthrough films, construction drawings and site coordination.</p>
+    <div class="hero-stats">
+      <div><div class="num">13</div><div class="lbl">Stages, A to Z</div></div>
+      <div><div class="num">10+</div><div class="lbl">Years of practice</div></div>
+      <div><div class="num">100+</div><div class="lbl">Projects delivered</div></div>
+      <div><div class="num">1</div><div class="lbl">Point of contact</div></div>
+    </div>
+  </div>
+  <div class="phases" id="heroPhases">
+    <span data-a="0" data-b="9.7"><b>01</b>3D model<i></i></span>
+    <span data-a="9.7" data-b="22.3"><b>02</b>Real-time render<i></i></span>
+    <span data-a="22.3" data-b="29.7"><b>03</b>Marketing film<i></i></span>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</header>
+
+<section class="index">
+  <p>Bring us in for one stage, or for the whole journey. <em>Every slideshow below is real work</em>, and every caption explains what you are looking at.</p>
+  <ol id="indexList"></ol>
+</section>
+
+<main id="stages"></main>
+
+
+<section class="featured">
+  <h3>Projects featured on this page</h3>
+  <ul>
+    <li><b>Elixir Artistic Perfumery</b><span>Retail · Saudi Arabia</span></li>
+    <li><b>Lakeside Residence</b><span>Residential · Ontario</span></li>
+    <li><b>White Orchid</b><span>Retail &amp; café · Sharjah</span></li>
+    <li><b>Flo Boutique</b><span>Retail · Sharjah</span></li>
+    <li><b>Efreez Salon</b><span>Beauty · Dubai</span></li>
+    <li><b>Efreez Salon</b><span>Beauty · Sharjah</span></li>
+    <li><b>The Travertine Kitchen</b><span>Residential · Concept</span></li>
+    <li><b>Private Residence</b><span>Residential · Ontario</span></li>
+  </ul>
+</section>
+
+<section class="closing">
+  <p data-reveal>Have a project ready for design?</p>
+  <small data-reveal>Send the drawings. We'll tell you which stages you need and how fast we can deliver them.</small>
+  <div data-reveal><a class="btn" href="consultation.html">Start a Project →</a> <a class="btn ghost" href="portfolio.html">View Portfolio</a></div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
+      <p style="font-size:13px; color:rgba(239,235,228,0.6); line-height:1.7; max-width:280px; margin-bottom:24px;">Interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.</p>
+      <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Follow Us</div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/mk_interior_desing_studio/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.63.07-4.85.07s-3.6-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.62-.07-4.81s.01-3.56.07-4.81c.15-3.23 1.67-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.73.07-2.27.1-3.34 1.19-3.44 3.44C3.77 8.74 3.76 9.1 3.76 12s.01 3.26.07 4.49c.1 2.25 1.16 3.34 3.44 3.44 1.23.06 1.59.07 4.73.07s3.5-.01 4.73-.07c2.27-.1 3.34-1.18 3.44-3.44.06-1.23.07-1.59.07-4.49s-.01-3.26-.07-4.49c-.1-2.25-1.17-3.34-3.44-3.44C15.5 4.01 15.14 4 12 4zm0 3.85a4.15 4.15 0 1 1 0 8.3 4.15 4.15 0 0 1 0-8.3zm0 1.8a2.35 2.35 0 1 0 0 4.7 2.35 2.35 0 0 0 0-4.7zm4.3-2.15a.97.97 0 1 1 0 1.94.97.97 0 0 1 0-1.94z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="site.html">On Site</a></li>
+        <li><a href="workshop.html">Workshop</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="consultation.html">Start a Project</a></li>
+        <li><a href="mailto:info@mkinteriordesignstudio.com">info@mkinteriordesignstudio.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MK Interior Design Studio. All rights reserved.</span>
+    <span>Canada · US · UAE</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb">
+  <span class="lb-hint" id="lbHint"></span>
+  <span class="lb-close" id="lbClose">Close ✕</span>
+  <div class="lb-media" id="lbMedia"></div>
+</div>
+
+<script>
+/* =====================================================================
+   HOW TO UPDATE THIS PAGE
+   Each stage has: title, kicker, lead text, deliverables, tools, slides.
+   Each slide:
+     { img:"process/…jpg", p:"Project", t:"Caption" }            photo
+     { img:"…", sheet:1, p:"…", t:"…" }                             drawing (white, zoomable)
+     { vid:"process/…mp4", p:"…", t:"…" }                           video (plays muted, then moves on)
+     { pair:["design.jpg","built.jpg"], p:"…", t:"…" }               design vs. built
+     add tall:1 to a vertical photo/video so it sits on a soft blurred background.
+   Slides advance on their own; hovering a slideshow pauses it.
+   ===================================================================== */
+const EL="Elixir Artistic Perfumery · Saudi Arabia", LK="Lakeside Residence · Ontario", WO="White Orchid · Sharjah",
+      FL="Flo Boutique · Sharjah", ED="Efreez Salon · Dubai", ES="Efreez Salon · Sharjah", KT="The Travertine Kitchen · Concept",
+      PR="Private Residence · Ontario";
+const P="process/";
+const STAGES = [
+ { id:"brief", title:"Brief & Site Review", kicker:"Before a single line is drawn",
+   lead:"We start with what is already there: the shell, the existing drawings, the landlord or builder requirements, the budget and the buyer. For mall tenants that means the design manual and submission checklist. For builders, the plans, the price point and the market.",
+   deliv:["Shell & site review","Landlord / builder requirements","Design brief & scope"], tools:["Site survey","AutoCAD"],
+   slides:[
+    { img:P+"elixir/brief-01.jpg", sheet:1, p:EL, t:"The empty SG13 unit at Othaim Circle, measured and drawn as the starting point for the boutique." },
+    { img:P+"white-orchid/site-02.jpg", p:WO, t:"Day one: the bare shell before fit-out. Every wall, column and service was surveyed before design began." },
+    { img:P+"white-orchid/layout-02.jpg", sheet:1, p:WO, t:"Existing layout survey, prepared as part of the authority submission package." },
+    { img:P+"lakeside/drawing-02.jpg", sheet:1, p:LK, t:"Demolition and proposed plans for a renovation: what comes out, what stays and what is new, colour-coded for the trades." },
+   ]},
+ { id:"layout", title:"Space Planning & Layout", kicker:"Where the budget is saved",
+   lead:"Layouts are developed as options so circulation, furniture and storage can be compared side by side. Small changes happen here, quickly and cheaply, before anything is modelled, priced or built.",
+   deliv:["Zoning & furniture layouts","Layout options to compare","Partition & flooring plans"], tools:["AutoCAD","Revit"],
+   slides:[
+    { img:P+"elixir/layout-01.jpg", sheet:1, p:EL, t:"Zoning plan: storage, perfume sampling, lounge, branded displays and shopfront allocated across the floor plate." },
+    { img:P+"elixir/layout-02.jpg", sheet:1, p:EL, t:"Furniture layout with every display unit, sampling table and lounge piece placed and dimensioned." },
+    { img:P+"lakeside/drawing-03.jpg", sheet:1, p:LK, t:"Two flooring layouts presented side by side, so the client can compare and choose in one sitting." },
+    { img:P+"private-residence/layout-01.jpg", sheet:1, p:PR, t:"Master bedroom in two layout options, each with its furniture, clearances and cost." },
+    { img:P+"white-orchid/layout-01.jpg", p:WO, t:"Rendered plan of the flower shop and café, read the way a customer moves through it." },
+    { img:P+"elixir/layout-03.jpg", sheet:1, p:EL, t:"Partition layout: wall types and openings coordinated with the mall's demise line." },
+    { img:P+"lakeside/drawing-01.jpg", sheet:1, p:LK, t:"First and second floor plans with door, frame and finish schedules on the same sheet." },
+    { img:P+"white-orchid/layout-03.jpg", sheet:1, p:WO, t:"Proposed partition layout with wall build-ups and sample details for approval." },
+   ]},
+ { id:"concept", title:"Concept & Mood", kicker:"Agree the feeling first",
+   lead:"The design direction is set before modelling: a colour story, references and styled options with real furniture. Once it is agreed, the 3D stage moves fast because nobody is guessing.",
+   deliv:["Colour story & mood","Styled design options","Furniture direction"], tools:["Photoshop","Corona"],
+   slides:[
+    { img:P+"travertine-kitchen/concept-01.jpg", tall:1, p:KT, t:"Natural, refined, balanced: the five-colour palette that sets the tone for the whole kitchen." },
+    { img:P+"private-residence/concept-01.jpg", sheet:1, p:PR, t:"Colour story: the same bedroom shown in a neutral base, then with a soft colour accent, so the client can feel the difference." },
+    { img:P+"private-residence/concept-02.jpg", sheet:1, p:PR, t:"Option 1, the Eva bed: the room styled around a low upholstered bed in a calm neutral scheme." },
+    { img:P+"private-residence/concept-03.jpg", sheet:1, p:PR, t:"Option 2, the Berlin bed: a channel-tufted alternative with warmer accents and art." },
+    { img:P+"efreez-dubai/materials-02.jpg", tall:1, p:ED, t:"Concept flatlay: plaster, brushed brass, walnut and bouclé tested together before the salon was modelled." },
+   ]},
+ { id:"materials", title:"Materials & Finishes", kicker:"Real, buildable, approved",
+   lead:"Every finish is chosen for durability, cost and look, then checked against physical samples from the trades and suppliers who will install it. What is approved here is what gets built.",
+   deliv:["Material boards","Finish samples on site","Supplier options"], tools:["Samples","Supplier specs"],
+   slides:[
+    { img:P+"elixir/materials-01.jpg", sheet:1, p:EL, t:"The boutique palette: stone, plaster and metal finishes carried consistently from shopfront to back wall." },
+    { img:P+"efreez-dubai/materials-01.jpg", p:ED, t:"Material board with nine finishes, each named and coded for the contractor." },
+    { img:P+"travertine-kitchen/materials-01.jpg", tall:1, p:KT, t:"Travertine, honed: the island and counters, chosen for its warm, quiet texture." },
+    { img:P+"travertine-kitchen/materials-03.jpg", tall:1, p:KT, t:"Aged bronze, matte brushed: the statement hood, hand-finished to echo the stone." },
+    { img:P+"travertine-kitchen/materials-04.jpg", tall:1, p:KT, t:"White oak with a vertical grain for the cabinetry, running floor to ceiling." },
+    { vid:P+"flo/materials-01.mp4", tall:1, p:FL, t:"On site: the plaster finish checked against the approved sample before the walls were completed." },
+    { img:P+"travertine-kitchen/materials-06.jpg", tall:1, p:KT, t:"Bronze tap and carved stone sink: fixtures selected as part of the palette, not as an afterthought." },
+    { vid:P+"flo/materials-02.mp4", tall:1, p:FL, t:"A second plaster sample, compared in daylight with the joinery colour." },
+   ]},
+ { id:"modeling", title:"3D Modeling", kicker:"One model, everything follows",
+   lead:"We build an accurate 3D model from the construction drawings. It becomes the base for every render, walkthrough and drawing, so a change is made once and carried everywhere.",
+   deliv:["Full 3D model","Clay & massing studies","Custom furniture modelling"], tools:["3ds Max","SketchUp","Revit"],
+   slides:[
+    { vid:P+"lakeside/modeling-04.mp4", p:LK, t:"Building the great room in 3ds Max: the curved sofa, coffee tables and rug modelled to real size." },
+    { vid:P+"travertine-kitchen/modeling-01.mp4", tall:1, p:KT, t:"Clay to final: the same camera before and after materials and light are applied." },
+    { img:P+"travertine-kitchen/modeling-02.jpg", tall:1, p:KT, t:"Same frame, two stages. Proportions are approved in clay before a single material is added." },
+    { vid:P+"lakeside/modeling-03.mp4", p:LK, t:"Refining the custom marble coffee tables: shape, thickness and base checked in the model." },
+    { img:P+"lakeside/model-01-great-room.jpg", p:LK, t:"The great room straight out of the model, before final lighting and post-production." },
+    { vid:P+"lakeside/modeling-05.mp4", tall:1, p:LK, t:"A clay walkthrough of the whole house to check scale and sightlines before rendering." },
+    { img:P+"lakeside/model-02-dining-kitchen.jpg", p:LK, t:"Dining and kitchen from the model: millwork, island and pendants locked in." },
+   ]},
+ { id:"live", title:"Live Design Session", kicker:"Decide in one meeting, not ten emails",
+   lead:"We open your project in real time and change materials, colours, lighting and furniture with you on screen. Decisions that usually take weeks of revisions get made in one meeting, in person or online.",
+   deliv:["Real-time 3D session","Instant material & light changes","High-res stills on the spot"], tools:["Chaos Vantage","Online or in person"],
+   slides:[
+    { vid:P+"elixir/live-01.mp4", p:EL, t:"Elixir in real time: moving through the boutique and reviewing the display walls and lighting with the client." },
+    { vid:P+"efreez-dubai/live-01.mp4", p:ED, t:"The salon opened live: reception, styling stations and signage checked from any angle the client asked for." },
+    { vid:P+"lakeside/live-01.mp4", p:LK, t:"The great room rendered live, then exported as a high-resolution still during the session." },
+   ]},
+ { id:"walkthrough", title:"Walkthrough Films", kicker:"Feel it before it is built",
+   lead:"Cinematic walkthroughs let buyers, investors and approval boards experience the space before construction. Delivered in 4K for sales centres and in vertical formats for social and presales.",
+   deliv:["Cinematic walkthrough","4K & vertical exports","Sales-centre ready"], tools:["Corona","V-Ray","Vantage"],
+   slides:[
+    { vid:P+"elixir/walkthrough-01.mp4", p:EL, t:"From the mall shopfront, past the signature wall and sampling table, to the display walls at the back." },
+    { vid:P+"lakeside/walkthrough-02.mp4", p:LK, t:"The full great room, dining and kitchen in one continuous film." },
+    { vid:P+"flo/walkthrough-01.mp4", tall:1, p:FL, t:"The design walkthrough of the boutique, produced before fit-out." },
+    { vid:P+"efreez-dubai/walkthrough-01.mp4", tall:1, p:ED, t:"Reception to styling stations, cut vertically for social media." },
+    { vid:P+"travertine-kitchen/walkthrough-01.mp4", tall:1, p:KT, t:"A slow cinematic pass across stone, bronze and oak." },
+   ]},
+ { id:"renders", title:"Photorealistic Renderings", kicker:"Images that sell",
+   lead:"High-resolution stills for marketing, listings, sales centres and approvals, with detail shots that prove the quality of every material.",
+   deliv:["High-resolution stills","Day & dusk views","Material detail shots"], tools:["Corona","V-Ray","Photoshop"],
+   slides:[
+    { img:P+"elixir/renders-01.jpg", p:EL, t:"The signature wall and fragrance display, the first view a customer sees." },
+    { img:P+"lakeside/render-01-great-room.jpg", p:LK, t:"Double-height great room under a sculptural ribbon chandelier, framed by the lake view." },
+    { img:P+"white-orchid/renders-02.jpg", p:WO, t:"A sculpted stone counter around a living olive tree, the centrepiece of the shop." },
+    { img:P+"elixir/renders-02.jpg", p:EL, t:"The sampling table at the heart of the boutique, under a canopy of brass rods and greenery." },
+    { img:P+"efreez-sharjah/renders-01.jpg", p:ES, t:"The olive tree from above, with the pedicure lounge and nail bar arranged around it." },
+    { img:P+"flo/renders-01.jpg", p:FL, t:"An arched bronze storefront opening onto a warm plaster interior." },
+    { img:P+"lakeside/render-03-dining-kitchen.jpg", p:LK, t:"Dining for twelve in front of a bronze hood and book-matched stone." },
+    { img:P+"efreez-dubai/renders-01.jpg", p:ED, t:"Gallery-white reception with arched mirrors and brushed brass." },
+    { img:P+"elixir/renders-16.jpg", p:EL, t:"The shopfront as seen from the mall concourse." },
+    { img:P+"white-orchid/renders-05.jpg", p:WO, t:"Café seating in front of the sculpted pink niche wall." },
+    { img:P+"lakeside/render-04-chandelier.jpg", p:LK, t:"Detail: the hand-formed glass ribbons of the chandelier." },
+    { img:P+"travertine-kitchen/renders-02.jpg", tall:1, p:KT, t:"Detail: aged bronze hood, brushed by hand." },
+    { img:P+"efreez-sharjah/renders-02.jpg", p:ES, t:"Pedicure lounge in burgundy velvet and pale travertine." },
+    { img:P+"flo/renders-05.jpg", p:FL, t:"Detail: the backlit emblem set into textured plaster." },
+   ]},
+ { id:"marketing", title:"Marketing Films & 3D Ads", kicker:"Presales, launches and social",
+   lead:"Short animated content for presales, launches and social media, cut from the same model so the campaign matches exactly what gets built.",
+   deliv:["Reels & short ads","Launch animations","Social post & story kits"], tools:["After Effects","Premiere","Photoshop"],
+   slides:[
+    { vid:P+"travertine-kitchen/marketing-01.mp4", tall:1, p:KT, t:"Reel: from the material board to the finished room in thirteen seconds." },
+    { vid:P+"white-orchid/marketing-01.mp4", tall:1, p:WO, t:"Vertical launch reel built from the renders." },
+    { vid:P+"lakeside/marketing-01.mp4", tall:1, p:LK, t:"Vertical reel built from the great room renders." },
+    { vid:P+"white-orchid/marketing-02.mp4", p:WO, t:"Animated render: light and movement added to a still for social." },
+    { vid:P+"travertine-kitchen/marketing-02.mp4", tall:1, p:KT, t:"Detail reel: stone, bronze and oak." },
+    { img:P+"travertine-kitchen/marketing-04.jpg", tall:1, p:KT, t:"Instagram post from the launch kit." },
+    { img:P+"travertine-kitchen/marketing-06.jpg", tall:1, p:KT, t:"Campaign aimed at builders: a show kitchen designed to sell the house." },
+    { vid:P+"lakeside/marketing-02.mp4", p:LK, t:"Short vertical clip of the dining and kitchen, framed for stories." },
+   ]},
+ { id:"selections", title:"Selections, Schedules & Quantities", kicker:"Approved once, ordered right",
+   lead:"Every furniture piece, finish, fixture and accessory is listed with supplier, size, finish, quantity and cost, with options side by side. Quantities are taken off the drawings for pricing and procurement, so nothing is guessed on site.",
+   deliv:["Furniture & FF&E schedules","Décor schedules by area","Quantity takeoffs"], tools:["Excel","Supplier pricing"],
+   slides:[
+    { img:P+"private-residence/selections-01.jpg", sheet:1, p:PR, t:"Furniture schedule: fourteen items with finish, size, quantity and cost on one page." },
+    { img:P+"private-residence/selections-02.jpg", sheet:1, p:PR, t:"Specification sheet for each piece: configuration, fabric, dimensions, construction and lead time." },
+    { img:P+"private-residence/selections-04.jpg", sheet:1, p:PR, t:"Master bedroom: both layout options priced side by side, so the client chooses with the numbers in front of them." },
+    { img:P+"private-residence/selections-06.jpg", sheet:1, p:PR, t:"Décor favourites organised by area, from the entrance console to the bedroom." },
+    { img:P+"private-residence/selections-07.jpg", sheet:1, p:PR, t:"Summary and shopping list, with every change between revisions noted." },
+    { img:P+"lakeside/drawing-17.jpg", sheet:1, p:LK, t:"Countertops material takeoff: every slab piece drawn and measured for the stone fabricator." },
+    { img:P+"elixir/drawings-06.jpg", sheet:1, p:EL, t:"Lighting layout with lux calculations and a fixture schedule for pricing." },
+   ]},
+ { id:"drawings", title:"Construction & Shop Drawings", kicker:"Drawings trades can build from",
+   lead:"Coordinated drawing sets your contractors can price and build from: plans, ceilings, lighting, power, elevations and fabrication details. Mall and authority submissions included. Click any sheet to read it at full size.",
+   deliv:["Construction drawing sets","Millwork & shop drawings","Mall & authority submissions"], tools:["AutoCAD","Revit"],
+   slides:[
+    { img:P+"elixir/drawings-01.jpg", sheet:1, p:EL, t:"A complete mall submission set, indexed sheet by sheet." },
+    { img:P+"lakeside/drawing-07.jpg", sheet:1, p:LK, t:"Kitchen and island package: elevations, plan, appliance and plumbing schedules on one sheet." },
+    { img:P+"elixir/drawings-07.jpg", sheet:1, p:EL, t:"Shopfront elevation and interface details with the mall's finishes." },
+    { img:P+"elixir/drawings-05.jpg", sheet:1, p:EL, t:"Reflected ceiling layout with the feature ceiling setting out." },
+    { img:P+"lakeside/drawing-05.jpg", sheet:1, p:LK, t:"Main area and staircase: elevations, plan and an isometric to explain the stair." },
+    { img:P+"elixir/drawings-09.jpg", sheet:1, p:EL, t:"Signature wall construction details, ready for the joinery shop." },
+    { img:P+"lakeside/drawing-12.jpg", sheet:1, p:LK, t:"Primary closet: every elevation and isometric dimensioned for the millworker." },
+    { img:P+"elixir/drawings-10.jpg", sheet:1, p:EL, t:"Reception counter details, from plan to section." },
+    { img:P+"white-orchid/drawings-03.jpg", sheet:1, p:WO, t:"Ceiling layout with cove lighting details and finish schedule." },
+    { img:P+"lakeside/drawing-13.jpg", sheet:1, p:LK, t:"Bathrooms: plans, elevations and isometrics for three rooms." },
+    { img:P+"elixir/drawings-15.jpg", sheet:1, p:EL, t:"Cabinet details: materials, fixings and edge profiles for fabrication." },
+    { img:P+"white-orchid/drawings-04.jpg", sheet:1, p:WO, t:"Section elevation A-A with joinery and lighting details." },
+   ]},
+ { id:"site", title:"Site Coordination & Project Management", kicker:"On the project until it is right",
+   lead:"We stay involved through fit-out: site visits, coordinating trades, answering questions, approving samples, tracking progress and closing out deficiency lists. The same person who designed it checks that it is built that way.",
+   deliv:["Site visits & trade coordination","Progress tracking & reporting","Deficiency lists & close-out"], tools:["Owner's rep","Schedules","Site reports"],
+   slides:[
+    { img:P+"white-orchid/site-03.jpg", tall:1, p:WO, t:"Fit-out underway: arches formed and shelving framed in, checked against the drawings." },
+    { vid:P+"flo/site-09.mp4", tall:1, p:FL, t:"Coordinating trades on the scaffold: ceiling, lighting and joinery working in sequence." },
+    { img:P+"flo/site-02.jpg", tall:1, p:FL, t:"Joinery and emblem wall going in, with the site team on the counter." },
+    { vid:P+"white-orchid/site-08.mp4", tall:1, p:WO, t:"Lighting check on site: cove and shelf lighting tested before handover." },
+    { img:P+"white-orchid/site-05.jpg", tall:1, p:WO, t:"The sculpted niche wall, finished and inspected." },
+    { vid:P+"efreez-sharjah/site-06.mp4", tall:1, p:ES, t:"The olive tree being installed: the centrepiece positioned to the plan." },
+    { vid:P+"flo/site-01.mp4", tall:1, p:FL, t:"A full site walkthrough at the end of fit-out, recorded for the client." },
+    { vid:P+"efreez-sharjah/site-03.mp4", tall:1, p:ES, t:"Furniture delivered to site, ready to be placed to the layout." },
+    { vid:P+"white-orchid/site-09.mp4", tall:1, p:WO, t:"Walking the finished joinery on site." },
+   ]},
+ { id:"handover", title:"Handover: Design to Reality", kicker:"The render becomes the space",
+   lead:"The finished result, built to the drawings. This is the point of everything above: what you approved on screen is what opens its doors.",
+   deliv:["Final inspection","Styling & opening","Record photos & film"], tools:["Close-out","Opening day"],
+   slides:[
+    { pair:[P+"white-orchid/renders-05.jpg",P+"white-orchid/site-14.jpg"], p:WO, t:"The sculpted niche wall: approved in 3D, built on site, now stocked and in use." },
+    { img:P+"white-orchid/site-11.jpg", p:WO, t:"White Orchid, finished and stocked." },
+    { pair:[P+"flo/renders-05.jpg",P+"flo/site-07.jpg"], p:FL, t:"The emblem wall in 3D, then built on site in textured plaster, just before the lighting and lettering went in." },
+    { vid:P+"efreez-sharjah/site-01.mp4", tall:1, p:ES, t:"The completed salon: the olive tree, lit and finished." },
+    { img:P+"white-orchid/site-01.jpg", p:WO, t:"Opening day on the terrace." },
+    { vid:P+"efreez-sharjah/site-02.mp4", tall:1, p:ES, t:"A walk through the finished salon on handover day." },
+    { img:P+"flo/site-06.jpg", tall:1, p:FL, t:"The bronze-framed storefront, installed." },
+    { img:P+"white-orchid/site-13.jpg", p:WO, t:"Open for business." },
+   ]},
+];
+
+/* ---------------- page logic ---------------- */
+const pad = n => String(n).padStart(2,"0");
+const IMG_MS = 2800, SHEET_MS = 3800, PAIR_MS = 3800, VID_CAP = 9, FAST_RATE = 1.5;
+
+// nav
+const navToggle=document.getElementById("navToggle"), mobileMenu=document.getElementById("mobileMenu");
+navToggle.addEventListener("click",()=>{ navToggle.classList.toggle("open"); mobileMenu.classList.toggle("open"); });
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{ navToggle.classList.remove("open"); mobileMenu.classList.remove("open"); }));
+
+// stage index
+document.getElementById("indexList").innerHTML = STAGES.map((s,i)=>`<li><a href="#${s.id}"><span>${pad(i+1)}</span>${s.title}</a></li>`).join("");
+
+function slideHTML(s){
+  if(s.pair) return `<div class="slide pair"><figure><img data-src="${s.pair[0]}" alt=""><figcaption>Design</figcaption></figure><figure><img data-src="${s.pair[1]}" alt=""><figcaption>Built</figcaption></figure></div>`;
+  if(s.vid) return `<div class="slide${s.tall?" tall":""}">${s.tall?`<video class="blur" muted playsinline preload="none" data-src="${s.vid}"></video>`:""}<video class="main" muted playsinline preload="none" data-src="${s.vid}"></video></div>`;
+  if(s.sheet) return `<div class="slide sheet"><img data-src="${s.img}" alt=""></div>`;
+  return `<div class="slide kb${s.tall?" tall":""}">${s.tall?`<img class="blur" data-src="${s.img}" alt="">`:""}<img class="main" data-src="${s.img}" alt=""></div>`;
+}
+
+const stagesEl=document.getElementById("stages");
+stagesEl.innerHTML = STAGES.map((s,i)=>`
+  <section class="stage" id="${s.id}">
+    <div class="stage-copy" data-reveal>
+      <div class="stage-num">${pad(i+1)}</div>
+      <div class="stage-kicker">${s.kicker}</div>
+      <h2>${s.title}</h2>
+      <p class="lead">${s.lead}</p>
+      <ul class="deliv">${s.deliv.map(d=>`<li>${d}</li>`).join("")}</ul>
+      <div class="tools">${s.tools.map(t=>`<span>${t}</span>`).join("")}</div>
+    </div>
+    <div class="show" data-i="${i}" data-reveal>
+      <div class="frame">
+        <div class="bars">${s.slides.map(()=>`<i><b></b></i>`).join("")}</div>
+        ${s.slides.map(slideHTML).join("")}
+        <span class="paused">Paused</span>
+        <button type="button" class="arr prev" aria-label="Previous">&#8249;</button><button type="button" class="arr next" aria-label="Next">&#8250;</button>
+        <div class="frame-ui"><button type="button" class="expand">View full screen</button></div>
+      </div>
+      <div class="cap"><div class="cap-in"><div class="proj"></div><div class="txt"></div></div><div class="count"></div></div>
+    </div>
+  </section>`).join("");
+
+function load(el){ el.querySelectorAll("[data-src]").forEach(m=>{ m.src=m.dataset.src; m.removeAttribute("data-src"); }); }
+
+class Show{
+  constructor(root){
+    this.root=root; this.data=STAGES[+root.dataset.i].slides; this.slides=[...root.querySelectorAll(".slide")];
+    this.bars=[...root.querySelectorAll(".bars i")]; this.capIn=root.querySelector(".cap-in");
+    this.idx=-1; this.visible=false; this.hold=false; this.t0=0; this.elapsed=0; this.dur=IMG_MS; this.raf=null;
+    // hovering pauses the timer on pictures and drawings; videos keep playing
+    root.addEventListener("mouseenter",()=>{ if(matchMedia("(hover:hover)").matches){ this.elapsed+=performance.now()-this.t0; this.hold=true; root.classList.add("hold"); } });
+    root.addEventListener("mouseleave",()=>{ this.hold=false; this.t0=performance.now(); root.classList.remove("hold"); });
+    this.bars.forEach((b,k)=>b.addEventListener("click",e=>{ e.stopPropagation(); this.go(k); }));
+    root.querySelector(".arr.prev").addEventListener("click",e=>{ e.stopPropagation(); this.go(this.idx-1); });
+    root.querySelector(".arr.next").addEventListener("click",e=>{ e.stopPropagation(); this.go(this.idx+1); });
+    root.querySelector(".expand").addEventListener("click",e=>{ e.stopPropagation(); openLB(this.data[this.idx]); });
+    const frame=root.querySelector(".frame");
+    frame.addEventListener("click",e=>{ if(e.target.closest(".frame-ui,.bars,.arr")) return; if(this.data[this.idx] && this.data[this.idx].sheet) openLB(this.data[this.idx]); });
+    // swipe on phones
+    let sx=null;
+    frame.addEventListener("touchstart",e=>{ sx=e.touches[0].clientX; },{passive:true});
+    frame.addEventListener("touchend",e=>{ if(sx===null) return; const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) this.go(this.idx+(dx<0?1:-1)); sx=null; },{passive:true});
+    this.go(0, true);
+  }
+  vids(k){ return this.slides[k] ? [...this.slides[k].querySelectorAll("video")] : []; }
+  go(k, silent){
+    if(this.idx>=0){ this.slides[this.idx].classList.remove("on"); this.vids(this.idx).forEach(v=>{ v.pause(); v.onended=null; }); }
+    this.idx=(k+this.data.length)%this.data.length;
+    const s=this.data[this.idx], el=this.slides[this.idx];
+    load(el); load(this.slides[(this.idx+1)%this.slides.length]); load(this.slides[(this.idx-1+this.slides.length)%this.slides.length]);
+    this.bars.forEach((b,j)=>{ b.classList.toggle("done", j<this.idx); b.firstChild.style.width = j<this.idx ? "100%" : "0"; });
+    this.dur = s.pair ? PAIR_MS : s.sheet ? SHEET_MS : IMG_MS;
+    el.style.setProperty("--dur", (this.dur/1000+0.6)+"s");
+    void el.offsetWidth; el.classList.add("on");
+    this.elapsed=0; this.t0=performance.now();
+    if(s.vid){
+      const vs=this.vids(this.idx), main=vs[vs.length-1];
+      this.dur=VID_CAP*1000;
+      const setup=()=>{ const fast = main.duration > 20 ? FAST_RATE : 1; vs.forEach(v=>{ v.playbackRate=fast; v.defaultPlaybackRate=fast; }); };
+      vs.forEach(v=>{ try{ v.currentTime=0; }catch(e){} });
+      if(main.readyState>=1) setup(); else main.addEventListener("loadedmetadata",setup,{once:true});
+      main.onended=()=>this.next();
+      if(this.visible) vs.forEach(v=>v.play().catch(()=>{}));
+    }
+    this.capIn.classList.add("swap");
+    setTimeout(()=>{ this.capIn.querySelector(".proj").textContent=s.p||""; this.capIn.querySelector(".txt").textContent=s.t||""; this.capIn.classList.remove("swap"); }, silent?0:180);
+    this.root.querySelector(".count").textContent=`${pad(this.idx+1)} / ${pad(this.data.length)}`;
+    this.root.querySelector(".expand").textContent = s.vid ? "Watch with sound" : s.sheet ? "Read full size" : "View full screen";
+  }
+  next(){ this.go(this.idx+1); }
+  playCurrent(){ if(this.visible && this.data[this.idx].vid) this.vids(this.idx).forEach(v=>v.play().catch(()=>{})); }
+  setVisible(v){
+    if(v===this.visible) return; this.visible=v;
+    if(v){ this.t0=performance.now(); this.playCurrent(); this.loop(); }
+    else { this.vids(this.idx).forEach(x=>x.pause()); this.elapsed+=performance.now()-this.t0; cancelAnimationFrame(this.raf); }
+  }
+  loop(){
+    cancelAnimationFrame(this.raf);
+    const tick=()=>{
+      if(!this.visible) return;
+      const s=this.data[this.idx];
+      if(lbOpen){ this.t0=performance.now(); }
+      else if(s.vid){
+        const v=this.vids(this.idx).slice(-1)[0];
+        if(v && v.paused && v.readyState>=2 && !v.ended) v.play().catch(()=>{});
+        const t = v ? v.currentTime*1000/(v.playbackRate||1) : 0;
+        const total = v && v.duration ? Math.min(v.duration*1000/(v.playbackRate||1), this.dur) : this.dur;
+        const p = t/total;
+        this.bars[this.idx].firstChild.style.width=Math.min(100,p*100)+"%";
+        if(p>=1 && !this.hold) this.next();
+      } else if(!this.hold){
+        const p=(this.elapsed+performance.now()-this.t0)/this.dur;
+        this.bars[this.idx].firstChild.style.width=Math.min(100,p*100)+"%";
+        if(p>=1) this.next();
+      }
+      this.raf=requestAnimationFrame(tick);
+    };
+    this.raf=requestAnimationFrame(tick);
+  }
+}
+const shows=[...document.querySelectorAll(".show")].map(r=>new Show(r));
+const showIO=new IntersectionObserver(es=>es.forEach(e=>{ const s=shows[+e.target.dataset.i]; s.setVisible(e.intersectionRatio>=0.35); }),{threshold:[0,0.35,0.6]});
+document.querySelectorAll(".show").forEach(r=>showIO.observe(r));
+
+// lightbox
+let lbOpen=false;
+const lb=document.getElementById("lb"), lbMedia=document.getElementById("lbMedia"), lbHint=document.getElementById("lbHint");
+function openLB(s){
+  if(!s) return;
+  shows.forEach(x=>x.vids(x.idx).forEach(v=>v.pause()));
+  lbMedia.classList.remove("zoomed");
+  if(s.vid){ lbMedia.innerHTML=`<video src="${s.vid}" controls autoplay playsinline></video>`; lbHint.textContent=s.p||""; }
+  else if(s.pair){ lbMedia.innerHTML=`<img src="${s.pair[1]}" alt="">`; lbHint.textContent=(s.p||"")+" · Built"; }
+  else { lbMedia.innerHTML=`<img src="${s.img}" alt=""${s.sheet?' class="sheet"':''}>`; lbHint.textContent = s.sheet ? "Click the sheet to zoom" : (s.p||"");
+    const im=lbMedia.querySelector("img.sheet"); if(im) im.addEventListener("click",e=>{ e.stopPropagation(); lbMedia.classList.toggle("zoomed"); }); }
+  lb.classList.add("open"); lbOpen=true;
+}
+function closeLB(){ lb.classList.remove("open"); lbMedia.innerHTML=""; lbOpen=false; shows.forEach(x=>x.playCurrent()); }
+document.getElementById("lbClose").addEventListener("click",closeLB);
+lb.addEventListener("click",e=>{ if(e.target===lb || e.target===lbMedia) closeLB(); });
+
+// keyboard stage jumps (for presenting)
+let cur=0;
+const stageIO=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) cur=STAGES.findIndex(s=>s.id===e.target.id); }),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll(".stage").forEach(s=>stageIO.observe(s));
+const firstStage=document.querySelector(".stage");
+document.addEventListener("keydown",e=>{
+  if(lbOpen){ if(e.key==="Escape") closeLB(); return; }
+  const before = window.scrollY < firstStage.offsetTop-200;
+  if(e.key==="ArrowRight"||e.key==="PageDown"){ e.preventDefault(); const i=before?0:Math.min(STAGES.length-1,cur+1); document.getElementById(STAGES[i].id).scrollIntoView({behavior:"smooth"}); }
+  if(e.key==="ArrowLeft"||e.key==="PageUp"){ e.preventDefault(); const i=Math.max(0,cur-1); document.getElementById(STAGES[i].id).scrollIntoView({behavior:"smooth"}); }
+});
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("in"); }),{threshold:.1});
+document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
+setTimeout(()=>document.querySelectorAll("[data-reveal]:not(.in)").forEach(el=>el.classList.add("in")),2500);
+
+// hero: show which stage the film is on
+(function(){ const v=document.getElementById("heroVid"), ph=[...document.querySelectorAll("#heroPhases span")];
+  const upd=()=>{ const t=v.currentTime; ph.forEach(p=>{ const a=+p.dataset.a, b=+p.dataset.b, on=t>=a&&t<b; p.classList.toggle("on",on); p.querySelector("i").style.setProperty("--p", (on?Math.min(100,(t-a)/(b-a)*100):(t>=b?100:0))+"%"); }); requestAnimationFrame(upd); };
+  requestAnimationFrame(upd); })();
+</script>
+</body>
+</html>

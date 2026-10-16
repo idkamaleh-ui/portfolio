@@ -366,7 +366,7 @@
   [data-reveal].in{ opacity:1; transform:translateY(0); }
 
   @media (max-width:1300px){
-    nav ul{ gap:24px; }
+    nav ul{ gap:22px; }
     nav{ padding:34px 40px; }
   }
   @media (max-width:900px){
@@ -462,6 +462,10 @@
     .consult-grid{ grid-template-columns:1fr; gap:48px; }
     .field-row{ grid-template-columns:1fr; }
   }
+
+  /* 9-item nav: switch to the menu button earlier */
+  @media (max-width:1520px){ nav ul{ gap:28px; } }
+  @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
 </style>
 </head>
 <body>
@@ -470,10 +474,12 @@
   <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
   <ul>
     <li><a href="index.html">Home</a></li>
+    <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="about.html" class="active">About</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="site.html">On Site</a></li>
+    <li><a href="workshop.html">Workshop</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="consultation.html">Start a Project</a></li>
   </ul>
@@ -484,10 +490,12 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
+  <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="workshop.html">Workshop</a>
   <a href="contact.html">Contact</a>
   <a href="consultation.html">Start a Project</a>
 </div>
@@ -538,10 +546,12 @@
       <h4>Company</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="workshop.html">Workshop</a></li>
       </ul>
     </div>
     <div class="footer-col">
