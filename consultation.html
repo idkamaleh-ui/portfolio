@@ -8,6 +8,14 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://mkinteriordesignstudio.com/consultation.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MK Interior Design Studio">
+<meta property="og:title" content="Start a Project — MK Interior Design Studio">
+<meta property="og:description" content="Start a project with MK Interior Design Studio — begin with a complimentary introductory consultation.">
+<meta property="og:url" content="https://mkinteriordesignstudio.com/consultation.html">
+<meta property="og:image" content="https://mkinteriordesignstudio.com/portfolio/crystal-rain-bath/crystal-rain-bath-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -50,9 +58,11 @@
     white-space:nowrap; flex-shrink:0;
     display:flex; align-items:center; gap:10px;
   }
-  nav .logo img{ height:28px; width:auto; display:block; }
+  nav .logo img{ height:48px; width:auto; display:block; }
+  .logo-sub{ font-family:'Jost', sans-serif; font-size:9.5px; letter-spacing:0.3em; text-transform:uppercase; font-weight:400; }
+  @media (max-width:900px){ nav .logo img{ height:38px; } nav .logo .logo-sub{ font-size:8.5px; letter-spacing:0.24em; } }
   footer .brand{ display:flex; align-items:center; gap:8px; }
-  footer .brand img{ height:18px; width:auto; display:block; }
+  footer .brand img{ height:34px; width:auto; display:block; }
   nav ul{ display:flex; gap:44px; list-style:none; }
   nav ul li a{
     font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:400;
@@ -231,7 +241,7 @@
     display:flex; align-items:center; gap:10px; font-family:'Cormorant Garamond', serif;
     font-size:17px; color:var(--ivory); margin-bottom:22px;
   }
-  .footer-brand .brand img{ height:26px; width:auto; }
+  .footer-brand .brand img{ height:38px; width:auto; }
   .footer-social{ display:flex; gap:14px; }
   .footer-social a{
     width:36px; height:36px; border:1px solid var(--line-dark); border-radius:50%;
@@ -469,44 +479,78 @@
   /* 9-item nav: switch to the menu button earlier */
   @media (max-width:1520px){ nav ul{ gap:28px; } }
   @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
+
+  .checks{ display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; margin-top:6px; }
+  .checks label{ display:flex; gap:10px; align-items:center; font-size:13.5px; letter-spacing:0; text-transform:none; color:rgba(239,235,228,0.85); margin:0; cursor:pointer; }
+  .checks input{ width:16px; height:16px; accent-color:var(--gold); }
+  @media (max-width:560px){ .checks{ grid-template-columns:1fr; } }
+
+  /* ===== NAV v2: main links + More dropdown + Start a Project button ===== */
+  nav ul.main-nav{ display:flex; align-items:center; gap:38px; list-style:none; }
+  nav ul.main-nav li a, nav ul.main-nav .more-btn{ font-size:14px; letter-spacing:0.16em; text-transform:uppercase; font-weight:400; }
+  nav ul.main-nav .more-btn{ background:none; border:0; color:inherit; font-family:inherit; cursor:pointer; padding:0 0 6px; display:flex; align-items:center; gap:8px; position:relative; }
+  nav ul.main-nav .more-btn::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:currentColor; transition:width .4s ease; }
+  nav ul.main-nav .more-btn:hover::after, nav ul.main-nav .more-btn.active::after{ width:100%; }
+  nav ul.main-nav .more-btn svg{ width:10px; height:10px; transition:transform .3s ease; }
+  nav ul.main-nav .more-btn[aria-expanded="true"] svg{ transform:rotate(180deg); }
+  nav ul.main-nav li a.nav-cta{ border:1px solid var(--gold); padding:12px 22px; margin-left:6px; }
+  nav ul.main-nav li a.nav-cta::after{ display:none; }
+  nav ul.main-nav li a.nav-cta:hover{ background:var(--gold); color:#15161B; }
+  .more-menu{ position:fixed; z-index:120; min-width:220px; background:rgba(16,17,21,0.97); border:1px solid rgba(166,135,90,0.35);
+    padding:10px 0; opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+    box-shadow:0 18px 40px rgba(0,0,0,0.45); }
+  .more-menu.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .more-menu a{ display:block; padding:12px 24px; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:#efebe4; transition:color .2s, background .2s; }
+  .more-menu a:hover, .more-menu a.active{ color:var(--gold); background:rgba(166,135,90,0.08); }
+  .mobile-menu{ gap:22px; overflow-y:auto; padding:90px 0 40px; justify-content:safe center; }
+  .mobile-menu .mm-label{ font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-top:10px; }
+  .mobile-menu a.mm-small{ font-size:23px; opacity:0.85; }
+  nav ul.main-nav li a{ display:inline-block; padding-bottom:6px; }
+  @media (min-width:1101px){ nav ul.main-nav{ display:flex; } nav .nav-toggle{ display:none; } }
+  @media (max-width:1100px){ nav ul.main-nav{ display:none; } nav .nav-toggle{ display:flex; } .more-menu{ display:none; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
-  <ul>
+  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
+  <ul class="main-nav">
     <li><a href="index.html">Home</a></li>
     <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
     <li><a href="site.html">On Site</a></li>
-    <li><a href="workshop.html">Workshop</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="consultation.html" class="active">Start a Project</a></li>
+    <li><button type="button" class="more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false" aria-controls="moreMenu">More <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></li>
+    <li><a href="consultation.html" class="nav-cta active">Start a Project</a></li>
   </ul>
   <div class="nav-toggle" id="navToggle">
     <span></span><span></span><span></span>
   </div>
 </nav>
+<div class="more-menu" id="moreMenu" role="menu">
+  <a href="about.html" role="menuitem">About</a>
+  <a href="workshop.html" role="menuitem">Workshop</a>
+  <a href="services.html" role="menuitem">Services</a>
+  <a href="contact.html" role="menuitem">Contact</a>
+  <a href="terms.html" role="menuitem">Terms</a>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="about.html">About</a>
   <a href="workshop.html">Workshop</a>
+  <a href="services.html">Services</a>
   <a href="contact.html">Contact</a>
+  <a href="terms.html">Terms</a>
   <a href="consultation.html">Start a Project</a>
 </div>
 
 <div class="page-hero">
   <span class="hero-eyebrow">Start a Project</span>
   <h1>Let's talk about your space.</h1>
-  <p>Begin with a complimentary introductory conversation about the project, the timeline and the budget. Fill in a few details below and the studio will follow up to arrange a time.</p>
+  <p>For builders, developers and brands. Tell us about the project and the stages you need, and the studio will follow up within 1–2 business days to arrange a call.</p>
 </div>
 
 <section class="contact" style="padding-top:100px;">
@@ -557,57 +601,80 @@
         <label>Email</label>
         <input type="email" name="email" placeholder="you@email.com" required>
       </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Company</label>
+          <input type="text" name="company" placeholder="Builder / developer name">
+        </div>
+        <div class="field">
+          <label>Your Role</label>
+          <select name="role">
+            <option value="" disabled selected>Select one</option>
+            <option value="Builder">Builder</option>
+            <option value="Developer">Developer</option>
+            <option value="Architect / Designer">Architect / Designer</option>
+            <option value="Contractor">Contractor</option>
+            <option value="Brand / Retail Owner">Brand / Retail Owner</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
       <div class="field">
         <label>Project Location</label>
-        <input type="text" name="project_location" placeholder="City, country">
+        <input type="text" name="project_location" placeholder="City, province / state">
       </div>
       <div class="field-row">
         <div class="field">
           <label>Project Type</label>
           <select name="project_type" required>
             <option value="" disabled selected>Select one</option>
-            <option value="Residential">Residential</option>
-            <option value="Commercial">Commercial</option>
+            <option value="Show Home / Model Home">Show home / model home</option>
+            <option value="Model Suite">Model suite</option>
+            <option value="Multi-Unit Residential">Multi-unit residential</option>
+            <option value="Custom Home">Custom home</option>
+            <option value="Sales Centre">Sales centre</option>
+            <option value="Retail / Commercial">Retail / commercial</option>
             <option value="Hospitality">Hospitality</option>
-            <option value="Visualization Only">Visualization Only</option>
-            <option value="Not sure yet">Not sure yet</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div class="field">
-          <label>Approximate Scope</label>
-          <select name="scope">
+          <label>Number of Units / Homes</label>
+          <select name="units">
             <option value="" disabled selected>Select one</option>
-            <option value="Single Room">Single Room</option>
-            <option value="Full Home">Full Home</option>
-            <option value="Full Commercial Space">Full Commercial Space</option>
-            <option value="Consultation Only">Consultation Only</option>
-            <option value="Not sure yet">Not sure yet</option>
+            <option value="1">1</option>
+            <option value="2-10">2–10</option>
+            <option value="11-50">11–50</option>
+            <option value="50+">50+</option>
+            <option value="Not applicable">Not applicable</option>
           </select>
         </div>
       </div>
-      <div class="field-row">
-        <div class="field">
-          <label>Timeline</label>
-          <select name="timeline">
-            <option value="" disabled selected>Select one</option>
-            <option value="Immediate">Ready to start now</option>
-            <option value="1-3 Months">1–3 months</option>
-            <option value="3-6 Months">3–6 months</option>
-            <option value="6+ Months">6+ months</option>
-            <option value="Just exploring">Just exploring</option>
-          </select>
+      <div class="field">
+        <label>Which stages do you need?</label>
+        <div class="checks">
+          <label><input type="checkbox" name="stages" value="Layout & space planning"> Layout &amp; space planning</label>
+          <label><input type="checkbox" name="stages" value="Concept & materials"> Concept &amp; materials</label>
+          <label><input type="checkbox" name="stages" value="3D model & renders"> 3D model &amp; renders</label>
+          <label><input type="checkbox" name="stages" value="Walkthrough film"> Walkthrough film</label>
+          <label><input type="checkbox" name="stages" value="Live design session"> Live design session</label>
+          <label><input type="checkbox" name="stages" value="Marketing content"> Marketing content</label>
+          <label><input type="checkbox" name="stages" value="Selections & BOQ"> Selections &amp; BOQ</label>
+          <label><input type="checkbox" name="stages" value="Construction & shop drawings"> Construction &amp; shop drawings</label>
+          <label><input type="checkbox" name="stages" value="Site coordination"> Site coordination</label>
+          <label><input type="checkbox" name="stages" value="Full A to Z"> The full A to Z</label>
         </div>
-        <div class="field">
-          <label>Budget Range</label>
-          <select name="budget_range">
-            <option value="" disabled selected>Select one</option>
-            <option value="Under $25k">Under $25,000</option>
-            <option value="$25k-$75k">$25,000 – $75,000</option>
-            <option value="$75k-$150k">$75,000 – $150,000</option>
-            <option value="$150k+">$150,000+</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
-        </div>
+      </div>
+      <div class="field">
+        <label>Timeline</label>
+        <select name="timeline">
+          <option value="" disabled selected>Select one</option>
+          <option value="Immediate">Ready to start now</option>
+          <option value="1-3 Months">1–3 months</option>
+          <option value="3-6 Months">3–6 months</option>
+          <option value="6+ Months">6+ months</option>
+          <option value="Just exploring">Just exploring</option>
+        </select>
       </div>
       <div class="field">
         <label>Preferred Contact Method</label>
@@ -621,11 +688,11 @@
       </div>
       <div class="field">
         <label>Tell us about your project</label>
-        <textarea name="message" placeholder="Space, goals, anything useful to know before the first conversation." required></textarea>
+        <textarea name="message" placeholder="Drawings available, number of rooms or units, deadlines, anything useful before the first call." required></textarea>
       </div>
       <button class="submit" type="submit">Request a Consultation</button>
       <p id="formStatus" style="display:none; margin-top:16px; font-size:13px; color:var(--gold); letter-spacing:0.02em;"></p>
-      <p style="font-size:11px; color:var(--taupe); line-height:1.6; margin-top:4px;">Your details are used only to respond to this enquiry and are never shared with third parties.</p>
+      <p style="font-size:11px; color:var(--taupe); line-height:1.6; margin-top:4px;">Your details are used only to respond to this enquiry and are never sold. See our <a href="privacy.html" style="color:var(--gold);">Privacy Policy</a>.</p>
     </form>
   </div>
 </section>
@@ -633,7 +700,7 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
+      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
       <p style="font-size:13px; color:rgba(239,235,228,0.6); line-height:1.7; max-width:280px; margin-bottom:24px;">Interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.</p>
       <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Follow Us</div>
       <div class="footer-social">
@@ -647,10 +714,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="workshop.html">Workshop</a></li>
+        <li><a href="services.html">Services</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -663,7 +730,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 MK Interior Design Studio. All rights reserved.</span>
+    <span>© 2026 MK Interior Design Studio. All rights reserved. · <a href="terms.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Terms of Use</a> · <a href="privacy.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Privacy Policy</a></span>
     <span>Canada · US · UAE</span>
   </div>
 </footer>
@@ -689,6 +756,7 @@
     form.addEventListener('submit', function(e){
       e.preventDefault();
       const data = new FormData(form);
+      const st = data.getAll('stages'); data.delete('stages'); data.append('stages', st.join(', '));
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -714,5 +782,47 @@
   }, 2500);
 </script>
 
+<script>
+(function(){
+  var btn=document.getElementById('moreBtn'), menu=document.getElementById('moreMenu'); if(!btn||!menu) return;
+  var t=null;
+  function place(){ var r=btn.getBoundingClientRect(); menu.style.top=(r.bottom+14)+'px'; menu.style.left=Math.min(r.left-24, window.innerWidth-menu.offsetWidth-16)+'px'; }
+  function open(){ clearTimeout(t); place(); menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  function close(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function later(){ clearTimeout(t); t=setTimeout(close,220); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); menu.classList.contains('open')?close():open(); });
+  if(matchMedia('(hover:hover)').matches){
+    [btn,menu].forEach(function(el){ el.addEventListener('mouseenter',open); el.addEventListener('mouseleave',later); });
+  }
+  document.addEventListener('click',function(e){ if(!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  window.addEventListener('resize',function(){ if(menu.classList.contains('open')) place(); });
+  window.addEventListener('scroll',function(){ if(menu.classList.contains('open')) place(); },{passive:true});
+})();
+</script>
+<!-- media protection: blocks right-click / drag / long-press saving of images and videos -->
+<style>
+  img, video, picture, canvas{ -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+</style>
+<script>
+(function(){
+  var MEDIA = 'img, video, picture, canvas, .card, .grid-cell, .lightbox-backdrop, #lbMedia, .hero, .ba, .slide, .show';
+  function isMedia(t){ return t && t.closest && (t.closest('img, video, picture, canvas') || (t.closest(MEDIA) && !t.closest('a[href], button, input, textarea, select'))); }
+  document.addEventListener('contextmenu', function(e){ if(isMedia(e.target)) e.preventDefault(); }, true);
+  document.addEventListener('dragstart', function(e){ if(e.target && e.target.closest && e.target.closest('img, video, picture, canvas')) e.preventDefault(); }, true);
+  function lock(v){
+    if(v.__mkLocked) return; v.__mkLocked = true;
+    var list = (v.getAttribute('controlsList') || '').split(/\s+/).filter(Boolean);
+    ['nodownload','noplaybackrate','noremoteplayback'].forEach(function(x){ if(list.indexOf(x) < 0) list.push(x); });
+    v.setAttribute('controlsList', list.join(' '));
+    v.setAttribute('disablePictureInPicture', ''); v.disablePictureInPicture = true;
+    v.setAttribute('disableRemotePlayback', '');
+  }
+  function scan(root){ (root.querySelectorAll ? root.querySelectorAll('video') : []).forEach(lock); if(root.tagName === 'VIDEO') lock(root); }
+  scan(document);
+  new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType === 1) scan(n); }); }); })
+    .observe(document.documentElement, { childList:true, subtree:true });
+})();
+</script>
 </body>
 </html>

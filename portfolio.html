@@ -4,10 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="MK Interior Design Studio — interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.">
-<title>MK Interior Design Studio — Interior Design, London Ontario</title>
+<title>Portfolio — MK Interior Design Studio</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://mkinteriordesignstudio.com/portfolio.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MK Interior Design Studio">
+<meta property="og:title" content="Portfolio — MK Interior Design Studio">
+<meta property="og:description" content="MK Interior Design Studio — interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.">
+<meta property="og:url" content="https://mkinteriordesignstudio.com/portfolio.html">
+<meta property="og:image" content="https://mkinteriordesignstudio.com/lakeside-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -50,9 +58,11 @@
     white-space:nowrap; flex-shrink:0;
     display:flex; align-items:center; gap:10px;
   }
-  nav .logo img{ height:28px; width:auto; display:block; }
+  nav .logo img{ height:48px; width:auto; display:block; }
+  .logo-sub{ font-family:'Jost', sans-serif; font-size:9.5px; letter-spacing:0.3em; text-transform:uppercase; font-weight:400; }
+  @media (max-width:900px){ nav .logo img{ height:38px; } nav .logo .logo-sub{ font-size:8.5px; letter-spacing:0.24em; } }
   footer .brand{ display:flex; align-items:center; gap:8px; }
-  footer .brand img{ height:18px; width:auto; display:block; }
+  footer .brand img{ height:34px; width:auto; display:block; }
   nav ul{ display:flex; gap:44px; list-style:none; }
   nav ul li a{
     font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:400;
@@ -275,7 +285,7 @@
     display:flex; align-items:center; gap:10px; font-family:'Cormorant Garamond', serif;
     font-size:17px; color:var(--ivory); margin-bottom:22px;
   }
-  .footer-brand .brand img{ height:26px; width:auto; }
+  .footer-brand .brand img{ height:38px; width:auto; }
   .footer-social{ display:flex; gap:14px; }
   .footer-social a{
     width:36px; height:36px; border:1px solid var(--line-dark); border-radius:50%;
@@ -370,6 +380,20 @@
     .modal-grid{ grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); }
   }
 
+  /* project nav + share (suggestion) */
+  .modal-actions{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; padding-top:6px; }
+  .mact{ font-size:11px; color:var(--ivory); cursor:pointer; letter-spacing:0.12em; text-transform:uppercase;
+    white-space:nowrap; background:none; border:0; font-family:inherit; padding:0; }
+  .mact:hover{ color:var(--gold); }
+  .mact.share{ border:1px solid var(--gold); padding:8px 14px; }
+  .mact.share:hover{ background:var(--gold); color:var(--ink, #15161B); }
+  .modal-pos{ font-size:11px; letter-spacing:0.12em; color:rgba(239,235,228,0.5); }
+  .mk-toast{ position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(20px); z-index:400;
+    background:var(--gold); color:#15161B; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+    padding:12px 22px; opacity:0; pointer-events:none; transition:opacity .3s, transform .3s; }
+  .mk-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  @media (max-width:900px){ .modal-actions{ gap:14px; } }
+
   /* LIGHTBOX */
   .lightbox-backdrop{
     position:fixed; inset:0; background:rgba(10,10,12,0.97); z-index:300;
@@ -444,45 +468,82 @@
   /* 9-item nav: switch to the menu button earlier */
   @media (max-width:1520px){ nav ul{ gap:28px; } }
   @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
+
+  /* ===== NAV v2: main links + More dropdown + Start a Project button ===== */
+  nav ul.main-nav{ display:flex; align-items:center; gap:38px; list-style:none; }
+  nav ul.main-nav li a, nav ul.main-nav .more-btn{ font-size:14px; letter-spacing:0.16em; text-transform:uppercase; font-weight:400; }
+  nav ul.main-nav .more-btn{ background:none; border:0; color:inherit; font-family:inherit; cursor:pointer; padding:0 0 6px; display:flex; align-items:center; gap:8px; position:relative; }
+  nav ul.main-nav .more-btn::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:currentColor; transition:width .4s ease; }
+  nav ul.main-nav .more-btn:hover::after, nav ul.main-nav .more-btn.active::after{ width:100%; }
+  nav ul.main-nav .more-btn svg{ width:10px; height:10px; transition:transform .3s ease; }
+  nav ul.main-nav .more-btn[aria-expanded="true"] svg{ transform:rotate(180deg); }
+  nav ul.main-nav li a.nav-cta{ border:1px solid var(--gold); padding:12px 22px; margin-left:6px; }
+  nav ul.main-nav li a.nav-cta::after{ display:none; }
+  nav ul.main-nav li a.nav-cta:hover{ background:var(--gold); color:#15161B; }
+  .more-menu{ position:fixed; z-index:120; min-width:220px; background:rgba(16,17,21,0.97); border:1px solid rgba(166,135,90,0.35);
+    padding:10px 0; opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+    box-shadow:0 18px 40px rgba(0,0,0,0.45); }
+  .more-menu.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .more-menu a{ display:block; padding:12px 24px; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:#efebe4; transition:color .2s, background .2s; }
+  .more-menu a:hover, .more-menu a.active{ color:var(--gold); background:rgba(166,135,90,0.08); }
+  .mobile-menu{ gap:22px; overflow-y:auto; padding:90px 0 40px; justify-content:safe center; }
+  .mobile-menu .mm-label{ font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-top:10px; }
+  .mobile-menu a.mm-small{ font-size:23px; opacity:0.85; }
+  nav ul.main-nav li a{ display:inline-block; padding-bottom:6px; }
+  @media (min-width:1101px){ nav ul.main-nav{ display:flex; } nav .nav-toggle{ display:none; } }
+  @media (max-width:1100px){ nav ul.main-nav{ display:none; } nav .nav-toggle{ display:flex; } .more-menu{ display:none; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
-  <ul>
+  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
+  <ul class="main-nav">
     <li><a href="index.html">Home</a></li>
     <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html" class="active">Portfolio</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
     <li><a href="site.html">On Site</a></li>
-    <li><a href="workshop.html">Workshop</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="consultation.html">Start a Project</a></li>
+    <li><button type="button" class="more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false" aria-controls="moreMenu">More <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></li>
+    <li><a href="consultation.html" class="nav-cta">Start a Project</a></li>
   </ul>
   <div class="nav-toggle" id="navToggle">
     <span></span><span></span><span></span>
   </div>
 </nav>
+<div class="more-menu" id="moreMenu" role="menu">
+  <a href="about.html" role="menuitem">About</a>
+  <a href="workshop.html" role="menuitem">Workshop</a>
+  <a href="services.html" role="menuitem">Services</a>
+  <a href="contact.html" role="menuitem">Contact</a>
+  <a href="terms.html" role="menuitem">Terms</a>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="about.html">About</a>
   <a href="workshop.html">Workshop</a>
+  <a href="services.html">Services</a>
   <a href="contact.html">Contact</a>
+  <a href="terms.html">Terms</a>
   <a href="consultation.html">Start a Project</a>
 </div>
 
-<div class="page-hero">
-  <span class="hero-eyebrow">Portfolio</span>
-  <h1>Selected work, in full.</h1>
-  <p>Every project shown here, from first concept render through to the finished, built space.</p>
-</div>
+<section class="hero" style="padding:0;">
+  <video class="active" src="hero-1.mp4" muted playsinline autoplay preload="auto"></video>
+  <video data-src="hero-2.mp4" muted playsinline preload="none"></video>
+  <video data-src="hero-3.mp4" muted playsinline preload="none"></video>
+  <video data-src="hero-5.mp4" muted playsinline preload="none"></video>
+  <div class="hero-content">
+    <div>
+      <span class="hero-eyebrow">Portfolio</span>
+      <h1>Selected work,<br>in full.</h1>
+    </div>
+    <p class="hero-sub">Every project shown here, from first concept render through to the finished, built space.</p>
+  </div>
+</section>
 
 <!-- WORK -->
 <section id="work" class="dark">
@@ -505,7 +566,7 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
+      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
       <p style="font-size:13px; color:rgba(239,235,228,0.6); line-height:1.7; max-width:280px; margin-bottom:24px;">Interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.</p>
       <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Follow Us</div>
       <div class="footer-social">
@@ -519,10 +580,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="workshop.html">Workshop</a></li>
+        <li><a href="services.html">Services</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -535,7 +596,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 MK Interior Design Studio. All rights reserved.</span>
+    <span>© 2026 MK Interior Design Studio. All rights reserved. · <a href="terms.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Terms of Use</a> · <a href="privacy.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Privacy Policy</a></span>
     <span>Canada · US · UAE</span>
   </div>
 </footer>
@@ -547,7 +608,13 @@
         <div class="meta" id="modalMeta"></div>
         <h3 id="modalTitle"></h3>
       </div>
-      <span class="modal-close" id="modalClose">Close ✕</span>
+      <div class="modal-actions">
+        <button class="mact" id="projPrev" aria-label="Previous project">‹ Prev</button>
+        <span class="modal-pos" id="projPos"></span>
+        <button class="mact" id="projNext" aria-label="Next project">Next ›</button>
+        <button class="mact share" id="projShare">Copy link</button>
+        <span class="modal-close" id="modalClose">Close ✕</span>
+      </div>
     </div>
     <div class="modal-scroll">
       <p class="modal-desc" id="modalDesc"></p>
@@ -583,40 +650,49 @@
     });
   });
 
+  // hero video crossfade cycle — videos 2-4 are not fetched until just before
+  // they're needed, so the page only pays for hero-1's weight on first load
+  const heroVideos = document.querySelectorAll('.hero video');
+  let heroIndex = 0;
+  function ensureLoaded(v){
+    if(v.dataset.src){
+      v.src = v.dataset.src;
+      v.removeAttribute('data-src');
+      v.load();
+    }
+  }
+  function playHero(i){
+    heroVideos.forEach((v, idx) => {
+      if(idx === i){
+        ensureLoaded(v);
+        v.classList.add('active');
+        // Safe to reset time only once metadata is actually loaded — on a
+        // slow connection, setting currentTime too early can silently stall
+        // playback until the next user interaction on some mobile browsers.
+        if(v.readyState >= 1) v.currentTime = 0;
+        const tryPlay = () => v.play().catch(()=>{});
+        tryPlay();
+        // Retry the moment the browser reports it actually has enough
+        // buffered data to play smoothly — this is what makes the video
+        // take over from the poster image as soon as it's ready, instead
+        // of waiting for the next `ended` event or a manual refresh.
+        v.addEventListener('canplay', tryPlay, { once:true });
+      } else {
+        v.classList.remove('active');
+      }
+    });
+    // start fetching the next clip in the background while this one plays
+    ensureLoaded(heroVideos[(i + 1) % heroVideos.length]);
+  }
+  heroVideos.forEach((v, idx) => {
+    v.addEventListener('ended', () => {
+      heroIndex = (idx + 1) % heroVideos.length;
+      playHero(heroIndex);
+    });
+  });
+  playHero(0);
+
   const projects = [
-    { title:"Flo Boutique", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
-      media:[
-        { type:"image", src:"flo-cover.jpg", tag:"Completed — Storefront" },
-        { type:"image", src:"flo-interior-1.jpg", tag:"Completed — Reception" },
-        { type:"image", src:"flo-overhead.jpg", tag:"Completed — Overhead" },
-        { type:"image", src:"flo-sign.jpg", tag:"Completed — Signage Detail" },
-        { type:"image", src:"flo-bouquet.jpg", tag:"Completed — Detail" },
-        { type:"image", src:"flo-shelving-1.jpg", tag:"Completed — Display Shelving" },
-        { type:"image", src:"flo-shelving-2.jpg", tag:"Completed — Display Shelving" },
-        { type:"image", src:"flo-shelving-3.jpg", tag:"Completed — Display Shelving" },
-        { type:"image", src:"flo-window-detail.jpg", tag:"Completed — Facade Detail" },
-        { type:"image", src:"flo-column-detail.jpg", tag:"Completed — Interior Detail" },
-        { type:"image", src:"flo-corridor.jpg", tag:"Completed — Corridor" },
-        { type:"video", src:"flo-walkthrough.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"A boutique flower shop set within a mall storefront — an arched bronze-framed glass front opens onto a warm, plaster-lined interior anchored by a book-matched stone reception counter and a backlit circular 'flo' emblem. Curved display shelving in soft cream plaster, brass trim and layered ambient lighting carry the material story from the entrance through to a private corridor lined with dried and fresh floral arrangements." },
-    { title:"Efreez Beauty Salon — Dubai", cat:"commercial", loc:"Dubai, UAE", year:"2026",
-      media:[
-        { type:"image", src:"efreez-16.jpg", tag:"Design Render — Reception" },
-        { type:"image", src:"efreez-17.jpg", tag:"Design Render — Salon Floor" },
-        { type:"image", src:"efreez-18.jpg", tag:"Design Render — Styling Stations" },
-        { type:"image", src:"efreez-19.jpg", tag:"Design Render — Signage Detail" },
-        { type:"image", src:"efreez-14.jpg", tag:"Design Render — Styling Chair Detail" },
-        { type:"image", src:"efreez-15.jpg", tag:"Design Render — Amenity Shelving" },
-        { type:"image", src:"efreez-20.jpg", tag:"Design Render — Amenity Detail" },
-        { type:"image", src:"efreez-21.jpg", tag:"Design Render — Reception Detail" },
-        { type:"image", src:"efreez-22.jpg", tag:"Design Render — Product Display" },
-        { type:"image", src:"efreez-23.jpg", tag:"Design Render — Vanity Mirror" },
-        { type:"image", src:"efreez-24.jpg", tag:"Design Render — Arch Detail" },
-        { type:"image", src:"efreez-materials-flatlay.jpg", tag:"Material Palette" },
-        { type:"video", src:"efreez-walkthrough-2.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"Efreez Beauty Salon's second location, in Dubai — a lighter, gallery-white scheme with fluted brass-and-timber columns, arched backlit mirrors and a run of styling stations, alongside the project's material palette of warm-grey plaster, brushed brass, walnut veneer and boucle upholstery." },
     { title:"Lakeside Residence — Great Room", cat:"residential", loc:"Ontario, Canada", year:"2026",
       media:[
         { type:"image", src:"lakeside-cover.jpg", tag:"Design Render — Living Room Overview" },
@@ -637,27 +713,43 @@
         { type:"video", src:"lakeside-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
       desc:"A double-height great room for a lakeside residence set against a mountain backdrop — a sculptural woven-glass ribbon chandelier drifts above a circular arrangement of boucle sofas and a pair of calacatta viola marble coffee tables on hammered-bronze bases. Warm walnut millwork, brushed brass detailing and a book-matched marble dining table carry the material story through to an open kitchen with a sculpted brass hood, all framed by floor-to-ceiling glazing onto the water." },
-    { title:"Lakehouse Retreat", cat:"residential", loc:"Ontario, Canada", year:"2026",
+    { title:"The Travertine Kitchen", cat:"residential", loc:"Concept", year:"2026",
+      role:"Kitchen design, material palette, clay-to-final 3D visualization",
       media:[
-        { type:"image", src:"lake-cover.jpg", tag:"Design Render — Living Room" },
-        { type:"video", src:"lake-hover-preview.mp4", tag:"Design Walkthrough" },
-        { type:"image", src:"lake-1.jpg", tag:"Design Render — Living Room" },
-        { type:"image", src:"lake-3.jpg", tag:"Design Render — Kitchen" },
-        { type:"image", src:"lake-4.jpg", tag:"Design Render — Detail" },
-        { type:"image", src:"lake-3dsmax.jpg", tag:"3D Modeling Process" },
-        { type:"video", src:"lake-full-walkthrough.mp4", tag:"Full Walkthrough" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-01.jpg", tag:"Design Render — Frame 01, The Island" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-02.jpg", tag:"Design Render — Frame 02, The Hood" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-03.jpg", tag:"Design Render — Frame 03, The Corner" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-04.jpg", tag:"Design Render — Frame 04, The Glow" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-05.jpg", tag:"Design Render — Frame 05, The Symmetry" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-06.jpg", tag:"Design Render — Detail, Monolithic Travertine" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-07.jpg", tag:"Design Render — Detail, Aged Bronze Hood" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-08.jpg", tag:"Design Render — Detail, Linear Pendants" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-09.jpg", tag:"Design Render — Detail, Floating Shelves" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-10.jpg", tag:"Design Render — Detail, Bronze Tap & Carved Sink" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-11.jpg", tag:"Design Render — Materials Applied" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-12.jpg", tag:"Design Render — Warm LED Lighting" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-13.jpg", tag:"Design Render — Final Frame" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-14.jpg", tag:"Design Render — Clay Model" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-15.jpg", tag:"Design Render — Frame 06, The Clay" },
+        { type:"video", src:"portfolio/travertine-kitchen/travertine-kitchen-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
-      desc:"A lakeside retreat on the shores of Ontario, designed around uninterrupted water views — green-veined marble, dark walnut millwork and sculptural brass fixtures throughout. Full process shown here from 3D model through lighting studies to a complete rendered walkthrough." },
-    { title:"Al Quti Group Corridor", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
+      desc:"A calm show kitchen in honed travertine, aged bronze and white oak: a monolithic rounded island, a hand-brushed bronze hood, floating shelves lit from below and linear pendants. Developed from a clay model to the final render." },
+    { title:"Flo Boutique", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
       media:[
-        { type:"image", src:"corridor-cover.jpg", tag:"Design Render" },
-        { type:"image", src:"corridor-1.jpg", tag:"Design Render" },
-        { type:"image", src:"corridor-2.jpg", tag:"Design Render" },
-        { type:"image", src:"corridor-4.jpg", tag:"Design Render" },
-        { type:"image", src:"corridor-3.jpg", tag:"Design Render — Detail" },
-        { type:"video", src:"corridor-video-1.mp4", tag:"Site Video" },
+        { type:"image", src:"flo-cover.jpg", tag:"Completed — Storefront" },
+        { type:"image", src:"flo-interior-1.jpg", tag:"Completed — Reception" },
+        { type:"image", src:"flo-overhead.jpg", tag:"Completed — Overhead" },
+        { type:"image", src:"flo-sign.jpg", tag:"Completed — Signage Detail" },
+        { type:"image", src:"flo-bouquet.jpg", tag:"Completed — Detail" },
+        { type:"image", src:"flo-shelving-1.jpg", tag:"Completed — Display Shelving" },
+        { type:"image", src:"flo-shelving-2.jpg", tag:"Completed — Display Shelving" },
+        { type:"image", src:"flo-shelving-3.jpg", tag:"Completed — Display Shelving" },
+        { type:"image", src:"flo-window-detail.jpg", tag:"Completed — Facade Detail" },
+        { type:"image", src:"flo-column-detail.jpg", tag:"Completed — Interior Detail" },
+        { type:"image", src:"flo-corridor.jpg", tag:"Completed — Corridor" },
+        { type:"video", src:"flo-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
-      desc:"Corridor and unit-entry design for Al Quti Group in Sharjah — walnut-panelled doorways, brass trim and warm sconce lighting set against a textured wool carpet, designed to feel closer to a boutique hotel than a typical residential hallway." },
+      desc:"A boutique flower shop set within a mall storefront — an arched bronze-framed glass front opens onto a warm, plaster-lined interior anchored by a book-matched stone reception counter and a backlit circular 'flo' emblem. Curved display shelving in soft cream plaster, brass trim and layered ambient lighting carry the material story from the entrance through to a private corridor lined with dried and fresh floral arrangements." },
     { title:"White Orchid", cat:"commercial", loc:"Sharjah, UAE", year:"2025",
       media:[
         { type:"image", src:"white-orchid-cover.jpg", tag:"Completed — Storefront" },
@@ -686,6 +778,49 @@
         { type:"video", src:"wo-video-1.mp4", tag:"Site Video" },
       ],
       desc:"Full design and fit-out project management for a flower boutique and café in Sharjah. A blush-pink micro-cement shell, fluted travertine millwork and a sculpted stone counter set against arched glazing and brass detailing — carried from concept render through on-site fit-out to the finished, opened space." },
+    { title:"Efreez Beauty Salon — Sharjah", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
+      media:[
+        { type:"image", src:"efreez-cover.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"efreez-7.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"efreez-9.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"efreez-3.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-4.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-6.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-13.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-5.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"efreez-8.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"efreez-10.jpg", tag:"Design Render — Pedicure Lounge" },
+        { type:"image", src:"efreez-12.jpg", tag:"Design Render — Overview" },
+        { type:"image", src:"efreez-2.jpg", tag:"Design Render — Moroccan Bath" },
+        { type:"image", src:"efreez-1.jpg", tag:"Design Render — Treatment Room" },
+        { type:"image", src:"efreez-11.jpg", tag:"Design Render — Treatment Room" },
+        { type:"video", src:"efreez-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"The first Efreez Beauty Salon location, in Sharjah — a soft, arched, gallery-like plan in plaster, travertine and perforated cane screens, with a dedicated Moroccan bath, nail bar, pedicure lounge and private treatment rooms, tied together by a single sculptural olive tree at its centre." },
+    { title:"Elixir Artistic Perfumery", cat:"commercial", loc:"Khobar, Saudi Arabia", year:"",
+      role:"Retail interior design, shop drawings, 3D visualization",
+      media:[
+        { type:"image", src:"elixir-artistic-perfumery-01.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-02.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-03.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-04.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-05.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-06.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-07.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-08.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-09.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-10.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-11.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-12.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-13.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-14.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-15.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-16.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-17.jpg", tag:"Design Render" },
+        { type:"image", src:"elixir-artistic-perfumery-18.jpg", tag:"Design Render" },
+        { type:"video", src:"process/elixir/walkthrough-01.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A perfumery boutique in an arched, champagne-brass frontage. A sculpted copper-toned feature wall, a hanging planted ring and vertical brass rods rise above a central display table, with backlit fragrance shelving, low lounge seating and a curved reception counter." },
     { title:"Thai Gate Restaurant", cat:"hospitality", loc:"Khor Fakkan, Sharjah, UAE", year:"2022",
       role:"Concept design, 3D visualization, interior fit-out and construction",
       media:[
@@ -717,17 +852,130 @@
         { type:"image", src:"things-cafe-07.jpg", tag:"Construction Progress" },
       ],
       desc:"An industrial-style speciality coffee shop and concept store in Abu Dhabi. The design celebrates raw materials and honest construction: textured concrete walls, a stacked-block coffee bar, black steel track lighting and mesh screens, softened by live-edge timber tables, leather-trimmed chairs and a sculptural neon light over the bar. Completed in 2021." },
-    { title:"Halah Chocolate Cafe", cat:"hospitality", loc:"Sharjah, UAE", year:"2022",
-      role:"Concept design, 3D visualization, interior fit-out and construction",
+    { title:"The Gable House", cat:"residential", loc:"Ontario, Canada", year:"2026",
+      role:"Exterior and interior concept, 3D visualization, lighting studies",
       media:[
-        { type:"image", src:"halah-chocolate-cafe-01.jpg", tag:"Completed Space" },
-        { type:"video", src:"halah-walkthrough.mp4", tag:"Walkthrough" },
-        { type:"image", src:"halah-chocolate-cafe-02.jpg", tag:"Completed Space" },
-        { type:"image", src:"halah-chocolate-cafe-03.jpg", tag:"Completed Space" },
-        { type:"image", src:"halah-chocolate-cafe-04.jpg", tag:"Fit-Out Progress" },
-        { type:"image", src:"halah-chocolate-cafe-05.jpg", tag:"Construction Progress" },
+        { type:"image", src:"portfolio/gable-house/gable-house-01.jpg", tag:"Design Render — Exterior, Full Sun" },
+        { type:"image", src:"portfolio/gable-house/gable-house-02.jpg", tag:"Design Render — Double-Height Entry" },
+        { type:"image", src:"portfolio/gable-house/gable-house-03.jpg", tag:"Design Render — Office in the Gable" },
+        { type:"image", src:"portfolio/gable-house/gable-house-04.jpg", tag:"Design Render — Bedroom under Oak" },
+        { type:"image", src:"portfolio/gable-house/gable-house-05.jpg", tag:"Design Render — Terrace above the Garage" },
+        { type:"image", src:"portfolio/gable-house/gable-house-06.jpg", tag:"Design Render — Living Room under the Glass Gable" },
+        { type:"image", src:"portfolio/gable-house/gable-house-07.jpg", tag:"Design Render — Stone Chimney & Fireplace" },
+        { type:"image", src:"portfolio/gable-house/gable-house-08.jpg", tag:"Design Render — Limestone Waterfall Island" },
+        { type:"image", src:"portfolio/gable-house/gable-house-09.jpg", tag:"Design Render — Dining by Full-Height Glass" },
+        { type:"image", src:"portfolio/gable-house/gable-house-10.jpg", tag:"Design Render — Exterior, First Lights" },
+        { type:"image", src:"portfolio/gable-house/gable-house-11.jpg", tag:"Design Render — Exterior, Blue Hour" },
+        { type:"image", src:"portfolio/gable-house/gable-house-12.jpg", tag:"Design Render — Exterior, Night" },
+        { type:"image", src:"portfolio/gable-house/gable-house-13.jpg", tag:"Design Render — Exterior, After the Rain" },
+        { type:"image", src:"portfolio/gable-house/gable-house-14.jpg", tag:"Design Render — Exterior from Above" },
+        { type:"image", src:"portfolio/gable-house/gable-house-15.jpg", tag:"Design Render — Exterior among the Neighbours" },
+        { type:"image", src:"portfolio/gable-house/gable-house-16.jpg", tag:"Design Render — Night Detail, Entrance Light" },
+        { type:"image", src:"portfolio/gable-house/gable-house-17.jpg", tag:"Design Render — Night Detail, Wall Washers on Stone" },
+        { type:"image", src:"portfolio/gable-house/gable-house-18.jpg", tag:"Design Render — Night Detail, Soffit Downlights" },
+        { type:"image", src:"portfolio/gable-house/gable-house-19.jpg", tag:"Design Render — Night Detail, Lit Steps" },
+        { type:"image", src:"portfolio/gable-house/gable-house-20.jpg", tag:"Design Render — Clay Massing Model" },
+        { type:"video", src:"portfolio/gable-house/gable-house-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
-      desc:"A chocolate cafe in Sharjah designed as a playful, pastel dessert parlour. Backlit mint fluted wall panels framed in blush pink, gold-rimmed mirrors and amber glass pendants set the tone, with grey channel-tufted banquettes, blush velvet chairs, marble tables on fluted bases and a golden waffle-pattern feature wall. Completed in 2022." },
+      desc:"A modern farmhouse built from two steep black gables, charcoal standing-seam metal, rough stone and walls of glass. Inside, a double-height living room sits under the glass gable with a stone chimney, a limestone waterfall island and honey oak throughout, shown from full sun to night." },
+    { title:"The London Cottage — Exterior", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
+      media:[
+        { type:"image", src:"cottage-ext-1.jpg", tag:"Design Render — Exterior, Dusk" },
+        { type:"image", src:"cottage-ext-2.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"cottage-ext-3.jpg", tag:"Design Render — Front Elevation" },
+        { type:"image", src:"cottage-ext-4.jpg", tag:"Design Render — Entrance Detail" },
+        { type:"image", src:"cottage-ext-5.jpg", tag:"Design Render — Garage & Side Elevation" },
+        { type:"image", src:"cottage-ext-6.jpg", tag:"Design Render — Rear Elevation" },
+        { type:"video", src:"cottage-ext-walkthrough.mp4", tag:"Exterior Walkthrough" },
+      ],
+      desc:"The exterior concept for a modern cottage-style residence in London, Ontario — a low-slung dark-clad form with cedar-lined soffits, ribbon lighting and a spiral stair to a rooftop terrace, sitting within a lush, palm-edged garden." },
+    { title:"The Cedar House", cat:"residential", loc:"Ontario, Canada", year:"2026",
+      role:"Exterior and interior concept, facade detailing, 3D visualization",
+      media:[
+        { type:"image", src:"portfolio/cedar-house/cedar-house-01.jpg", tag:"Design Render — Exterior, Bright Morning" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-02.jpg", tag:"Design Render — Exterior in Daylight" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-03.jpg", tag:"Design Render — Exterior, Golden Hour" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-04.jpg", tag:"Design Render — Cedar Slats Detail" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-05.jpg", tag:"Design Render — Exterior, Golden Hour" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-06.jpg", tag:"Design Render — Exterior, Soft Overcast" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-07.jpg", tag:"Design Render — Double-Height Entry" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-08.jpg", tag:"Design Render — Living Room, Glass on Two Sides" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-09.jpg", tag:"Design Render — Kitchen, Stone Island under Walnut" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-10.jpg", tag:"Design Render — Dining in the Trees" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-11.jpg", tag:"Design Render — Study with a View" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-12.jpg", tag:"Design Render — Master Bedroom, Cedar Slats" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-13.jpg", tag:"Design Render — Terrace, Golden Hour Upstairs" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-14.jpg", tag:"Design Render — Section View, Entry" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-15.jpg", tag:"Design Render — Section View, Living Room" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-16.jpg", tag:"Design Render — Section View, Master Bedroom" },
+        { type:"image", src:"portfolio/cedar-house/cedar-house-17.jpg", tag:"Design Render — Section View, Terrace" },
+        { type:"video", src:"portfolio/cedar-house/cedar-house-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A contemporary home under one sloping roof: a limestone base, a vertical cedar volume and charcoal steel framing, opening to the garden through full-height glass. The interiors carry the same cedar, stone and oak through the entry, living room, kitchen, study, master bedroom and terrace." },
+    { title:"Desert Modern Residence", cat:"residential", loc:"Palm Springs, California, USA", year:"2026",
+      media:[
+        { type:"image", src:"desert-cover.jpg", tag:"Design Render — Aerial, Pool & Pavilion" },
+        { type:"image", src:"desert-poolside.jpg", tag:"Design Render — Poolside" },
+        { type:"image", src:"desert-living-room.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"desert-dusk.jpg", tag:"Design Render — Exterior, Dusk" },
+        { type:"video", src:"desert-walkthrough-1.mp4", tag:"Design Walkthrough" },
+        { type:"video", src:"desert-walkthrough-2.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A low-slung desert-modern residence set among olive trees and rugged mountains — a hand-troweled plaster shell opens fully behind a deep timber pergola, dissolving the line between an indoor lounge and dining pavilion and a stone-decked pool terrace. Warm travertine paving, oversized terracotta urns and a sculptural fireplace carry the material story from golden-hour daylight through to a glowing, lantern-lit dusk." },
+    { title:"Classic to Smart Bedroom", cat:"residential", loc:"Private Residence", year:"2024",
+      media:[
+        { type:"image", src:"bedroom-cover.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-before-1.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-before-2.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-before-3.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-before-4.jpg", tag:"Before — Classic Design" },
+        { type:"image", src:"bed-render-1.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-render-2.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-render-3.jpg", tag:"Design Render — Modern Concept" },
+        { type:"image", src:"bed-fitout-1.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-2.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-3.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-4.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-5.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-6.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-fitout-7.jpg", tag:"Fit-Out in Progress" },
+        { type:"image", src:"bed-completed-1.jpg", tag:"Completed" },
+        { type:"image", src:"bed-completed-2.jpg", tag:"Completed" },
+        { type:"video", src:"bed-walkthrough-1.mp4", tag:"Completed Walkthrough" },
+        { type:"video", src:"bed-walkthrough-2.mp4", tag:"Completed Walkthrough" },
+      ],
+      desc:"A full bedroom transformation from an ornate, classical scheme — gilded cornicing, carved wood furniture, crystal chandeliers — into a smart, contemporary suite with fluted timber panelling, hidden lighting and integrated smart-home features. Shown here from the original space through concept renders, on-site fit-out, to the finished room." },
+    { title:"Pulmicort Exhibition Stand", cat:"commercial", loc:"Dubai, UAE", year:"",
+      role:"Stand design, fabrication and on-site installation",
+      media:[
+        { type:"image", src:"pulmicort-exhibition-stand-01.jpg", tag:"Completed Stand" },
+        { type:"image", src:"pulmicort-exhibition-stand-02.jpg", tag:"Completed Stand" },
+        { type:"image", src:"pulmicort-exhibition-stand-03.jpg", tag:"Installation" },
+      ],
+      desc:"A branded exhibition stand for Pulmicort Respules at a pharmaceutical exhibition in Dubai. The design is built around the brand's green and white identity: a backlit hexagonal logo sign above a green feature panel, illuminated product light boxes on either side, a compact seating nook and a bold coral kiosk housing an interactive product screen, fabricated and installed on site for a strong presence on the exhibition floor." },
+    { title:"Orla Salon", cat:"commercial", loc:"Al Mizhar, Dubai, UAE", year:"2026",
+      media:[
+        { type:"image", src:"orla-real-2.jpg", tag:"Completed — Pedicure Lounge" },
+        { type:"image", src:"orla-render-9.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"orla-render-1.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"orla-pano-5.jpg", tag:"Design Render — Reception, 360°" },
+        { type:"image", src:"orla-pano-1.jpg", tag:"Design Render — Treatment Room, 360°" },
+        { type:"image", src:"orla-render-5.jpg", tag:"Design Render — Treatment Room" },
+        { type:"image", src:"orla-render-6.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"orla-render-10.jpg", tag:"Design Render — Nail Bar" },
+        { type:"image", src:"orla-render-3.jpg", tag:"Design Render — Wash & Styling" },
+        { type:"image", src:"orla-render-11.jpg", tag:"Design Render — Styling Chairs" },
+        { type:"image", src:"orla-pano-3.jpg", tag:"Design Render — Salon Floor, 360°" },
+        { type:"image", src:"orla-render-2.jpg", tag:"Design Render — Boutique & Dressing" },
+        { type:"image", src:"orla-render-7.jpg", tag:"Design Render — Boutique & Dressing" },
+        { type:"image", src:"orla-render-4.jpg", tag:"Design Render — Pedicure Lounge" },
+        { type:"image", src:"orla-render-8.jpg", tag:"Design Render — Pedicure Lounge" },
+        { type:"image", src:"orla-pano-2.jpg", tag:"Design Render — Lounge, 360°" },
+        { type:"image", src:"orla-pano-4.jpg", tag:"Design Render — Lounge, 360°" },
+        { type:"image", src:"orla-real-1.jpg", tag:"Completed — Styling Chair" },
+        { type:"video", src:"orla-bc-walkthrough.mp4", tag:"On-Site Walkthrough" },
+      ],
+      desc:"Full design and fit-out for Orla, a beauty salon in the Al Mizhar (Merdif) area of Dubai — a soft, arched concrete-and-travertine shell built around a sculptural stone reception desk, with dedicated nail bar, styling and wash stations, private treatment rooms, a boutique dressing area and a pouf-lined pedicure lounge framed by a rattan-and-greenery screen. Shown here from full 360° design renders through to the finished, opened salon." },
     { title:"La Douce Beauty Center", cat:"commercial", loc:"Abu Dhabi, UAE", year:"2021",
       role:"Concept design, 3D visualization, interior fit-out and construction",
       media:[
@@ -743,56 +991,72 @@
         { type:"image", src:"la-douce-beauty-center-09.jpg", tag:"Construction Progress" },
       ],
       desc:"A light, airy beauty center in Abu Dhabi with sweeping floor-to-ceiling views. Soft blush fluted counters, a timber-slatted column wrapped around raw concrete, cloud-like mesh pendants and hanging rattan chairs create a calm lounge and coffee bar at the entrance, leading to styling stations with gold-framed arched mirrors, a private make-up suite and marble-clad washrooms. Completed in 2021." },
-    { title:"Elixir Artistic Perfumery", cat:"commercial", loc:"Khobar, Saudi Arabia", year:"",
-      role:"Retail interior design, shop drawings, 3D visualization",
+    { title:"Al Quti Group Corridor", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
       media:[
-        { type:"image", src:"elixir-artistic-perfumery-01.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-02.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-03.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-04.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-05.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-06.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-07.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-08.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-09.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-10.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-11.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-12.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-13.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-14.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-15.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-16.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-17.jpg", tag:"Design Render" },
-        { type:"image", src:"elixir-artistic-perfumery-18.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-cover.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-1.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-4.jpg", tag:"Design Render" },
+        { type:"image", src:"corridor-3.jpg", tag:"Design Render — Detail" },
+        { type:"video", src:"corridor-video-1.mp4", tag:"Site Video" },
       ],
-      desc:"A perfumery boutique in an arched, champagne-brass frontage. A sculpted copper-toned feature wall, a hanging planted ring and vertical brass rods rise above a central display table, with backlit fragrance shelving, low lounge seating and a curved reception counter." },
-    { title:"Pulmicort Exhibition Stand", cat:"commercial", loc:"Dubai, UAE", year:"",
-      role:"Stand design, fabrication and on-site installation",
+      desc:"Corridor and unit-entry design for Al Quti Group in Sharjah — walnut-panelled doorways, brass trim and warm sconce lighting set against a textured wool carpet, designed to feel closer to a boutique hotel than a typical residential hallway." },
+    { title:"Lakehouse Retreat", cat:"residential", loc:"Ontario, Canada", year:"2026",
       media:[
-        { type:"image", src:"pulmicort-exhibition-stand-01.jpg", tag:"Completed Stand" },
-        { type:"image", src:"pulmicort-exhibition-stand-02.jpg", tag:"Completed Stand" },
-        { type:"image", src:"pulmicort-exhibition-stand-03.jpg", tag:"Installation" },
+        { type:"image", src:"lake-cover.jpg", tag:"Design Render — Living Room" },
+        { type:"video", src:"lake-hover-preview.mp4", tag:"Design Walkthrough" },
+        { type:"image", src:"lake-1.jpg", tag:"Design Render — Living Room" },
+        { type:"image", src:"lake-3.jpg", tag:"Design Render — Kitchen" },
+        { type:"image", src:"lake-4.jpg", tag:"Design Render — Detail" },
+        { type:"image", src:"lake-3dsmax.jpg", tag:"3D Modeling Process" },
+        { type:"video", src:"lake-full-walkthrough.mp4", tag:"Full Walkthrough" },
       ],
-      desc:"A branded exhibition stand for Pulmicort Respules at a pharmaceutical exhibition in Dubai. The design is built around the brand's green and white identity: a backlit hexagonal logo sign above a green feature panel, illuminated product light boxes on either side, a compact seating nook and a bold coral kiosk housing an interactive product screen, fabricated and installed on site for a strong presence on the exhibition floor." },
-    { title:"Efreez Beauty Salon — Sharjah", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
+      desc:"A lakeside retreat on the shores of Ontario, designed around uninterrupted water views — green-veined marble, dark walnut millwork and sculptural brass fixtures throughout. Full process shown here from 3D model through lighting studies to a complete rendered walkthrough." },
+    { title:"Efreez Beauty Salon — Dubai", cat:"commercial", loc:"Dubai, UAE", year:"2026",
       media:[
-        { type:"image", src:"efreez-cover.jpg", tag:"Design Render — Reception" },
-        { type:"image", src:"efreez-7.jpg", tag:"Design Render — Reception" },
-        { type:"image", src:"efreez-9.jpg", tag:"Design Render — Reception" },
-        { type:"image", src:"efreez-3.jpg", tag:"Design Render — Salon Floor" },
-        { type:"image", src:"efreez-4.jpg", tag:"Design Render — Salon Floor" },
-        { type:"image", src:"efreez-6.jpg", tag:"Design Render — Salon Floor" },
-        { type:"image", src:"efreez-13.jpg", tag:"Design Render — Salon Floor" },
-        { type:"image", src:"efreez-5.jpg", tag:"Design Render — Nail Bar" },
-        { type:"image", src:"efreez-8.jpg", tag:"Design Render — Nail Bar" },
-        { type:"image", src:"efreez-10.jpg", tag:"Design Render — Pedicure Lounge" },
-        { type:"image", src:"efreez-12.jpg", tag:"Design Render — Overview" },
-        { type:"image", src:"efreez-2.jpg", tag:"Design Render — Moroccan Bath" },
-        { type:"image", src:"efreez-1.jpg", tag:"Design Render — Treatment Room" },
-        { type:"image", src:"efreez-11.jpg", tag:"Design Render — Treatment Room" },
-        { type:"video", src:"efreez-walkthrough.mp4", tag:"Design Walkthrough" },
+        { type:"image", src:"efreez-16.jpg", tag:"Design Render — Reception" },
+        { type:"image", src:"efreez-17.jpg", tag:"Design Render — Salon Floor" },
+        { type:"image", src:"efreez-18.jpg", tag:"Design Render — Styling Stations" },
+        { type:"image", src:"efreez-19.jpg", tag:"Design Render — Signage Detail" },
+        { type:"image", src:"efreez-14.jpg", tag:"Design Render — Styling Chair Detail" },
+        { type:"image", src:"efreez-15.jpg", tag:"Design Render — Amenity Shelving" },
+        { type:"image", src:"efreez-20.jpg", tag:"Design Render — Amenity Detail" },
+        { type:"image", src:"efreez-21.jpg", tag:"Design Render — Reception Detail" },
+        { type:"image", src:"efreez-22.jpg", tag:"Design Render — Product Display" },
+        { type:"image", src:"efreez-23.jpg", tag:"Design Render — Vanity Mirror" },
+        { type:"image", src:"efreez-24.jpg", tag:"Design Render — Arch Detail" },
+        { type:"image", src:"efreez-materials-flatlay.jpg", tag:"Material Palette" },
+        { type:"video", src:"efreez-walkthrough-2.mp4", tag:"Design Walkthrough" },
       ],
-      desc:"The first Efreez Beauty Salon location, in Sharjah — a soft, arched, gallery-like plan in plaster, travertine and perforated cane screens, with a dedicated Moroccan bath, nail bar, pedicure lounge and private treatment rooms, tied together by a single sculptural olive tree at its centre." },
+      desc:"Efreez Beauty Salon's second location, in Dubai — a lighter, gallery-white scheme with fluted brass-and-timber columns, arched backlit mirrors and a run of styling stations, alongside the project's material palette of warm-grey plaster, brushed brass, walnut veneer and boucle upholstery." },
+    { title:"The Crystal Rain Bath", cat:"residential", loc:"Concept", year:"2026",
+      role:"Bathroom design, joinery and lighting concept, 3D visualization",
+      media:[
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-01.jpg", tag:"Design Render — The Vanity" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-02.jpg", tag:"Design Render — The Window" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-03.jpg", tag:"Design Render — The Bath" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-04.jpg", tag:"Design Render — Crystal Rain" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-05.jpg", tag:"Design Render — The Lake View" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-06.jpg", tag:"Design Render — The Shower" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-07.jpg", tag:"Design Render — Marble Island under Crystal Rain" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-08.jpg", tag:"Design Render — The Tub Faces the View" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-09.jpg", tag:"Design Render — Rippled Glass Shower" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-10.jpg", tag:"Design Render — Fluted Stone WC" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-11.jpg", tag:"Design Render — The Pergola Light" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-12.jpg", tag:"Design Render — Detail, Carved Marble Basin" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-13.jpg", tag:"Design Render — Detail, Fluted Marble & Bronze" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-14.jpg", tag:"Design Render — Detail, Lit Niche" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-15.jpg", tag:"Design Render — Detail, Hammered Brass Handle" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-16.jpg", tag:"Design Render — Detail, Chocolate Fluted Tub" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-17.jpg", tag:"Design Render — Detail, Brushed Bronze Flush Plate" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-18.jpg", tag:"Design Render — Fluted Timber Wraps the Room" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-19.jpg", tag:"Design Render — Fluted Marble Turns the Corner" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-20.jpg", tag:"Design Render — Shower Seen from the Bath" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-21.jpg", tag:"Design Render — Niche & Valves" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-22.jpg", tag:"Design Render — Crystal in Front, Tub Behind" },
+        { type:"image", src:"portfolio/crystal-rain-bath/crystal-rain-bath-23.jpg", tag:"Design Render — Fluted Stone, Soft Shadow" },
+        { type:"video", src:"portfolio/crystal-rain-bath/crystal-rain-bath-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A master bath in four zones under a falling curtain of crystal: a veined marble vanity, a chocolate fluted tub facing the lake, a rippled-glass shower with bronze trim and a fluted stone WC. Marble, bronze and fluted timber repeated in one calm room." },
     { title:"Waterfront Residence — Great Room", cat:"residential", loc:"Location TBD", year:"2026",
       media:[
         { type:"image", src:"waterfront-cover.jpg", tag:"Design Render — Living Room, Water View" },
@@ -807,18 +1071,6 @@
         { type:"video", src:"waterfront-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
       desc:"A double-height waterfront great room built around a double-sided fireplace shared between living and dining. Fluted walnut millwork, hand-carved travertine wall panels and a run of sculptural ring chandeliers carry the material language from the dining table through to a sunken, rug-lined lounge, all framed by floor-to-ceiling glazing onto water, palms and rolling hills." },
-    { title:"Desert Modern Residence", cat:"residential", loc:"Palm Springs, California, USA", year:"2026",
-      media:[
-        { type:"image", src:"desert-cover.jpg", tag:"Design Render — Aerial, Pool & Pavilion" },
-        { type:"image", src:"desert-poolside.jpg", tag:"Design Render — Poolside" },
-        { type:"image", src:"desert-living-room.jpg", tag:"Design Render — Living Room" },
-        { type:"image", src:"desert-dusk.jpg", tag:"Design Render — Exterior, Dusk" },
-        { type:"image", src:"desert-lounge-fireplace.jpg", tag:"Design Render — Lounge, Fireplace" },
-        { type:"image", src:"desert-dining.jpg", tag:"Design Render — Dining Room" },
-        { type:"video", src:"desert-walkthrough-1.mp4", tag:"Design Walkthrough" },
-        { type:"video", src:"desert-walkthrough-2.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"A low-slung desert-modern residence set among olive trees and rugged mountains — a hand-troweled plaster shell opens fully behind a deep timber pergola, dissolving the line between an indoor lounge and dining pavilion and a stone-decked pool terrace. Warm travertine paving, oversized terracotta urns and a sculptural fireplace carry the material story from golden-hour daylight through to a glowing, lantern-lit dusk." },
     { title:"Private Dressing Room", cat:"residential", loc:"Ontario, Canada", year:"2026",
       media:[
         { type:"image", src:"dressing-cover.jpg", tag:"Design Render — Overview" },
@@ -850,28 +1102,6 @@
         { type:"video", src:"cliffrest-walkthrough.mp4", tag:"Concept Walkthrough" },
       ],
       desc:"A cliffside restaurant concept carved into the limestone coastline — a glass-fronted dining room set inside a natural cave opens onto a curved infinity pool that spills into the sea below, fed by a cascading cliffside waterfall. A softly lit stone staircase winds down through olive and pine to a private yacht dock, framing every table with an uninterrupted sunset horizon." },
-    { title:"Orla Salon", cat:"commercial", loc:"Al Mizhar, Dubai, UAE", year:"2026",
-      media:[
-        { type:"image", src:"orla-real-2.jpg", tag:"Completed — Pedicure Lounge" },
-        { type:"image", src:"orla-render-9.jpg", tag:"Design Render — Reception" },
-        { type:"image", src:"orla-render-1.jpg", tag:"Design Render — Reception" },
-        { type:"image", src:"orla-pano-5.jpg", tag:"Design Render — Reception, 360°" },
-        { type:"image", src:"orla-pano-1.jpg", tag:"Design Render — Treatment Room, 360°" },
-        { type:"image", src:"orla-render-5.jpg", tag:"Design Render — Treatment Room" },
-        { type:"image", src:"orla-render-6.jpg", tag:"Design Render — Nail Bar" },
-        { type:"image", src:"orla-render-10.jpg", tag:"Design Render — Nail Bar" },
-        { type:"image", src:"orla-render-3.jpg", tag:"Design Render — Wash & Styling" },
-        { type:"image", src:"orla-render-11.jpg", tag:"Design Render — Styling Chairs" },
-        { type:"image", src:"orla-pano-3.jpg", tag:"Design Render — Salon Floor, 360°" },
-        { type:"image", src:"orla-render-2.jpg", tag:"Design Render — Boutique & Dressing" },
-        { type:"image", src:"orla-render-7.jpg", tag:"Design Render — Boutique & Dressing" },
-        { type:"image", src:"orla-render-4.jpg", tag:"Design Render — Pedicure Lounge" },
-        { type:"image", src:"orla-render-8.jpg", tag:"Design Render — Pedicure Lounge" },
-        { type:"image", src:"orla-pano-2.jpg", tag:"Design Render — Lounge, 360°" },
-        { type:"image", src:"orla-pano-4.jpg", tag:"Design Render — Lounge, 360°" },
-        { type:"image", src:"orla-real-1.jpg", tag:"Completed — Styling Chair" },
-      ],
-      desc:"Full design and fit-out for Orla, a beauty salon in the Al Mizhar (Merdif) area of Dubai — a soft, arched concrete-and-travertine shell built around a sculptural stone reception desk, with dedicated nail bar, styling and wash stations, private treatment rooms, a boutique dressing area and a pouf-lined pedicure lounge framed by a rattan-and-greenery screen. Shown here from full 360° design renders through to the finished, opened salon." },
     { title:"The London Cottage — Interior", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
       media:[
         { type:"image", src:"cottage-int-1.jpg", tag:"Design Render — Living Room" },
@@ -883,43 +1113,9 @@
         { type:"image", src:"cottage-int-7.jpg", tag:"Design Render — Dining" },
         { type:"image", src:"cottage-int-8.jpg", tag:"Design Render — Living Room, Overhead" },
         { type:"image", src:"cottage-int-9.jpg", tag:"Design Render — Dining, Wide" },
-        { type:"video", src:"cottage-int-walkthrough-2.mp4", tag:"Interior Walkthrough" },
+        { type:"video", src:"cottage-int-walkthrough.mp4", tag:"Interior Walkthrough" },
       ],
       desc:"The interior concept for a modern cottage-style residence in London, Ontario — a double-height living and dining volume in charcoal stone, warm oak and marble, anchored by a sculptural wave-form pendant light developed from concept sketch through to finished render." },
-    { title:"The London Cottage — Exterior", cat:"residential", loc:"London, Ontario, Canada", year:"2026",
-      media:[
-        { type:"image", src:"cottage-ext-1.jpg", tag:"Design Render — Exterior, Dusk" },
-        { type:"image", src:"cottage-ext-2.jpg", tag:"Design Render — Front Elevation" },
-        { type:"image", src:"cottage-ext-3.jpg", tag:"Design Render — Front Elevation" },
-        { type:"image", src:"cottage-ext-4.jpg", tag:"Design Render — Entrance Detail" },
-        { type:"image", src:"cottage-ext-5.jpg", tag:"Design Render — Garage & Side Elevation" },
-        { type:"image", src:"cottage-ext-6.jpg", tag:"Design Render — Rear Elevation" },
-        { type:"video", src:"cottage-ext-walkthrough.mp4", tag:"Exterior Walkthrough" },
-      ],
-      desc:"The exterior concept for a modern cottage-style residence in London, Ontario — a low-slung dark-clad form with cedar-lined soffits, ribbon lighting and a spiral stair to a rooftop terrace, sitting within a lush, palm-edged garden." },
-    { title:"Classic to Smart Bedroom", cat:"residential", loc:"Private Residence", year:"2024",
-      media:[
-        { type:"image", src:"bedroom-cover.jpg", tag:"Design Render — Modern Concept" },
-        { type:"image", src:"bed-before-1.jpg", tag:"Before — Classic Design" },
-        { type:"image", src:"bed-before-2.jpg", tag:"Before — Classic Design" },
-        { type:"image", src:"bed-before-3.jpg", tag:"Before — Classic Design" },
-        { type:"image", src:"bed-before-4.jpg", tag:"Before — Classic Design" },
-        { type:"image", src:"bed-render-1.jpg", tag:"Design Render — Modern Concept" },
-        { type:"image", src:"bed-render-2.jpg", tag:"Design Render — Modern Concept" },
-        { type:"image", src:"bed-render-3.jpg", tag:"Design Render — Modern Concept" },
-        { type:"image", src:"bed-fitout-1.jpg", tag:"Fit-Out in Progress" },
-        { type:"image", src:"bed-fitout-2.jpg", tag:"Fit-Out in Progress" },
-        { type:"image", src:"bed-fitout-3.jpg", tag:"Fit-Out in Progress" },
-        { type:"image", src:"bed-fitout-4.jpg", tag:"Fit-Out in Progress" },
-        { type:"image", src:"bed-fitout-5.jpg", tag:"Fit-Out in Progress" },
-        { type:"image", src:"bed-fitout-6.jpg", tag:"Fit-Out in Progress" },
-        { type:"image", src:"bed-fitout-7.jpg", tag:"Fit-Out in Progress" },
-        { type:"image", src:"bed-completed-1.jpg", tag:"Completed" },
-        { type:"image", src:"bed-completed-2.jpg", tag:"Completed" },
-        { type:"video", src:"bed-walkthrough-1.mp4", tag:"Completed Walkthrough" },
-        { type:"video", src:"bed-walkthrough-2.mp4", tag:"Completed Walkthrough" },
-      ],
-      desc:"A full bedroom transformation from an ornate, classical scheme — gilded cornicing, carved wood furniture, crystal chandeliers — into a smart, contemporary suite with fluted timber panelling, hidden lighting and integrated smart-home features. Shown here from the original space through concept renders, on-site fit-out, to the finished room." },
     { title:"Bohra Residence Kitchen", cat:"residential", loc:"Sharjah, UAE", year:"2024",
       media:[
         { type:"image", src:"kitchen-cover.jpg", tag:"Design Render" },
@@ -955,12 +1151,26 @@
         { type:"image", src:"niagara-hotel-aerial-night.jpg", tag:"Concept Render — Aerial, Dusk" },
       ],
       desc:"A cliffside hotel and resort concept perched directly above the Horseshoe Falls, its terraced, undulating balconies stepping down the escarpment toward a cantilevered observation deck suspended over the gorge. Shown across daylight and dusk aerials and a cliffside view from the water, showcasing the building's sculptural form against the falls and surrounding cityscape." },
+    { title:"Halah Chocolate Cafe", cat:"hospitality", loc:"Sharjah, UAE", year:"2022",
+      role:"Concept design, 3D visualization, interior fit-out and construction",
+      media:[
+        { type:"image", src:"halah-chocolate-cafe-01.jpg", tag:"Completed Space" },
+        { type:"video", src:"halah-walkthrough.mp4", tag:"Walkthrough" },
+        { type:"image", src:"halah-chocolate-cafe-02.jpg", tag:"Completed Space" },
+        { type:"image", src:"halah-chocolate-cafe-03.jpg", tag:"Completed Space" },
+        { type:"image", src:"halah-chocolate-cafe-04.jpg", tag:"Fit-Out Progress" },
+        { type:"image", src:"halah-chocolate-cafe-05.jpg", tag:"Construction Progress" },
+      ],
+      desc:"A chocolate cafe in Sharjah designed as a playful, pastel dessert parlour. Backlit mint fluted wall panels framed in blush pink, gold-rimmed mirrors and amber glass pendants set the tone, with grey channel-tufted banquettes, blush velvet chairs, marble tables on fluted bases and a golden waffle-pattern feature wall. Completed in 2022." },
   ];
 
   const grid = document.getElementById('projectGrid');
+  const slugOf = p => p.title.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  let visible = projects.slice();
   function renderProjects(filter){
     grid.innerHTML = '';
-    projects.filter(p => filter === 'all' || p.cat === filter).forEach(p => {
+    visible = projects.filter(p => filter === 'all' || p.cat === filter);
+    visible.forEach(p => {
       const previewVideo = p.media.find(m => m.type === 'video');
       const card = document.createElement('div');
       card.className = 'card';
@@ -1035,8 +1245,63 @@
     else { roleEl.style.display = 'none'; }
     buildGrid(p);
     backdrop.classList.add('open');
+    document.querySelector('.modal-scroll').scrollTop = 0;
+    const list = visible.includes(p) ? visible : projects;
+    document.getElementById('projPos').textContent = `${list.indexOf(p) + 1} / ${list.length}`;
+    const h = '#' + slugOf(p);
+    if(location.hash !== h) history.replaceState(null, '', h);
   }
-  function closeModal(){ backdrop.classList.remove('open'); }
+  function closeModal(){
+    backdrop.classList.remove('open');
+    if(location.hash) history.replaceState(null, '', location.pathname + location.search);
+  }
+  function stepProject(d){
+    if(!currentProject) return;
+    const list = visible.includes(currentProject) ? visible : projects;
+    const i = list.indexOf(currentProject);
+    openModal(list[(i + d + list.length) % list.length]);
+  }
+  function toast(msg){
+    let t = document.querySelector('.mk-toast');
+    if(!t){ t = document.createElement('div'); t.className = 'mk-toast'; document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 1800);
+  }
+  async function shareProject(){
+    const url = location.href;
+    if(navigator.share && matchMedia('(pointer:coarse)').matches){
+      try{ await navigator.share({ title: currentProject.title + ' — MK Interior Design Studio', url }); return; }catch(e){ if(e.name === 'AbortError') return; }
+    }
+    try{ await navigator.clipboard.writeText(url); }
+    catch(e){
+      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); }catch(_){} ta.remove();
+    }
+    toast('Link copied');
+  }
+  document.getElementById('projPrev').addEventListener('click', () => stepProject(-1));
+  document.getElementById('projNext').addEventListener('click', () => stepProject(1));
+  document.getElementById('projShare').addEventListener('click', shareProject);
+
+  // swipe: left/right on the lightbox changes image, on the project window changes project
+  function addSwipe(el, onLeft, onRight){
+    let x0 = null, y0 = 0;
+    el.addEventListener('touchstart', e => { if(e.touches.length === 1){ x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; } }, { passive:true });
+    el.addEventListener('touchend', e => {
+      if(x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5){ dx < 0 ? onLeft() : onRight(); }
+    }, { passive:true });
+  }
+
+  // open a project straight from a shared link: portfolio.html#the-gable-house
+  function openFromHash(){
+    const slug = decodeURIComponent(location.hash.slice(1));
+    if(!slug){ if(backdrop.classList.contains('open')) backdrop.classList.remove('open'); return; }
+    const p = projects.find(x => slugOf(x) === slug);
+    if(p && p !== currentProject || p && !backdrop.classList.contains('open')) openModal(p);
+  }
+  window.addEventListener('hashchange', openFromHash);
 
   function renderLightbox(){
     const item = currentProject.media[lbIndex];
@@ -1074,6 +1339,8 @@
   document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); lbNext(); });
   document.getElementById('lbClose').addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+  addSwipe(lightbox, () => lbNext(), () => lbPrev());
+  addSwipe(document.getElementById('modalBox'), () => { if(!lightbox.classList.contains('open')) stepProject(1); }, () => { if(!lightbox.classList.contains('open')) stepProject(-1); });
 
   document.getElementById('modalClose').addEventListener('click', closeModal);
   backdrop.addEventListener('click', e => { if(e.target === backdrop) closeModal(); });
@@ -1086,7 +1353,10 @@
     }
     if(!backdrop.classList.contains('open')) return;
     if(e.key === 'Escape') closeModal();
+    else if(e.key === 'ArrowLeft') stepProject(-1);
+    else if(e.key === 'ArrowRight') stepProject(1);
   });
+  openFromHash();
 
 
   const io = new IntersectionObserver((entries) => {
@@ -1101,5 +1371,47 @@
   }, 2500);
 </script>
 
+<script>
+(function(){
+  var btn=document.getElementById('moreBtn'), menu=document.getElementById('moreMenu'); if(!btn||!menu) return;
+  var t=null;
+  function place(){ var r=btn.getBoundingClientRect(); menu.style.top=(r.bottom+14)+'px'; menu.style.left=Math.min(r.left-24, window.innerWidth-menu.offsetWidth-16)+'px'; }
+  function open(){ clearTimeout(t); place(); menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  function close(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function later(){ clearTimeout(t); t=setTimeout(close,220); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); menu.classList.contains('open')?close():open(); });
+  if(matchMedia('(hover:hover)').matches){
+    [btn,menu].forEach(function(el){ el.addEventListener('mouseenter',open); el.addEventListener('mouseleave',later); });
+  }
+  document.addEventListener('click',function(e){ if(!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  window.addEventListener('resize',function(){ if(menu.classList.contains('open')) place(); });
+  window.addEventListener('scroll',function(){ if(menu.classList.contains('open')) place(); },{passive:true});
+})();
+</script>
+<!-- media protection: blocks right-click / drag / long-press saving of images and videos -->
+<style>
+  img, video, picture, canvas{ -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+</style>
+<script>
+(function(){
+  var MEDIA = 'img, video, picture, canvas, .card, .grid-cell, .lightbox-backdrop, #lbMedia, .hero, .ba, .slide, .show';
+  function isMedia(t){ return t && t.closest && (t.closest('img, video, picture, canvas') || (t.closest(MEDIA) && !t.closest('a[href], button, input, textarea, select'))); }
+  document.addEventListener('contextmenu', function(e){ if(isMedia(e.target)) e.preventDefault(); }, true);
+  document.addEventListener('dragstart', function(e){ if(e.target && e.target.closest && e.target.closest('img, video, picture, canvas')) e.preventDefault(); }, true);
+  function lock(v){
+    if(v.__mkLocked) return; v.__mkLocked = true;
+    var list = (v.getAttribute('controlsList') || '').split(/\s+/).filter(Boolean);
+    ['nodownload','noplaybackrate','noremoteplayback'].forEach(function(x){ if(list.indexOf(x) < 0) list.push(x); });
+    v.setAttribute('controlsList', list.join(' '));
+    v.setAttribute('disablePictureInPicture', ''); v.disablePictureInPicture = true;
+    v.setAttribute('disableRemotePlayback', '');
+  }
+  function scan(root){ (root.querySelectorAll ? root.querySelectorAll('video') : []).forEach(lock); if(root.tagName === 'VIDEO') lock(root); }
+  scan(document);
+  new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType === 1) scan(n); }); }); })
+    .observe(document.documentElement, { childList:true, subtree:true });
+})();
+</script>
 </body>
 </html>

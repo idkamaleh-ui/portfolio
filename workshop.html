@@ -8,6 +8,14 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://mkinteriordesignstudio.com/workshop.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MK Interior Design Studio">
+<meta property="og:title" content="Workshop — MK Interior Design Studio">
+<meta property="og:description" content="Joinery, millwork, exhibition and kiosk builds fabricated in partnership with the Pixel Studio workshop, from drawing to installation.">
+<meta property="og:url" content="https://mkinteriordesignstudio.com/workshop.html">
+<meta property="og:image" content="https://mkinteriordesignstudio.com/portfolio/gable-house/gable-house-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -50,9 +58,11 @@
     white-space:nowrap; flex-shrink:0;
     display:flex; align-items:center; gap:10px;
   }
-  nav .logo img{ height:28px; width:auto; display:block; }
+  nav .logo img{ height:48px; width:auto; display:block; }
+  .logo-sub{ font-family:'Jost', sans-serif; font-size:9.5px; letter-spacing:0.3em; text-transform:uppercase; font-weight:400; }
+  @media (max-width:900px){ nav .logo img{ height:38px; } nav .logo .logo-sub{ font-size:8.5px; letter-spacing:0.24em; } }
   footer .brand{ display:flex; align-items:center; gap:8px; }
-  footer .brand img{ height:18px; width:auto; display:block; }
+  footer .brand img{ height:34px; width:auto; display:block; }
   nav ul{ display:flex; gap:44px; list-style:none; }
   nav ul li a{
     font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:400;
@@ -231,7 +241,7 @@
     display:flex; align-items:center; gap:10px; font-family:'Cormorant Garamond', serif;
     font-size:17px; color:var(--ivory); margin-bottom:22px;
   }
-  .footer-brand .brand img{ height:26px; width:auto; }
+  .footer-brand .brand img{ height:38px; width:auto; }
   .footer-social{ display:flex; gap:14px; }
   .footer-social a{
     width:36px; height:36px; border:1px solid var(--line-dark); border-radius:50%;
@@ -482,37 +492,66 @@
   @media (max-width:1400px){ nav ul{ display:none; } .nav-toggle{ display:flex; } }
   .ws-card.playing .cell-play{ opacity:0; }
   .ws-card.playing video{ filter:brightness(0.95) saturate(1); }
+
+  /* ===== NAV v2: main links + More dropdown + Start a Project button ===== */
+  nav ul.main-nav{ display:flex; align-items:center; gap:38px; list-style:none; }
+  nav ul.main-nav li a, nav ul.main-nav .more-btn{ font-size:14px; letter-spacing:0.16em; text-transform:uppercase; font-weight:400; }
+  nav ul.main-nav .more-btn{ background:none; border:0; color:inherit; font-family:inherit; cursor:pointer; padding:0 0 6px; display:flex; align-items:center; gap:8px; position:relative; }
+  nav ul.main-nav .more-btn::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:currentColor; transition:width .4s ease; }
+  nav ul.main-nav .more-btn:hover::after, nav ul.main-nav .more-btn.active::after{ width:100%; }
+  nav ul.main-nav .more-btn svg{ width:10px; height:10px; transition:transform .3s ease; }
+  nav ul.main-nav .more-btn[aria-expanded="true"] svg{ transform:rotate(180deg); }
+  nav ul.main-nav li a.nav-cta{ border:1px solid var(--gold); padding:12px 22px; margin-left:6px; }
+  nav ul.main-nav li a.nav-cta::after{ display:none; }
+  nav ul.main-nav li a.nav-cta:hover{ background:var(--gold); color:#15161B; }
+  .more-menu{ position:fixed; z-index:120; min-width:220px; background:rgba(16,17,21,0.97); border:1px solid rgba(166,135,90,0.35);
+    padding:10px 0; opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+    box-shadow:0 18px 40px rgba(0,0,0,0.45); }
+  .more-menu.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .more-menu a{ display:block; padding:12px 24px; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:#efebe4; transition:color .2s, background .2s; }
+  .more-menu a:hover, .more-menu a.active{ color:var(--gold); background:rgba(166,135,90,0.08); }
+  .mobile-menu{ gap:22px; overflow-y:auto; padding:90px 0 40px; justify-content:safe center; }
+  .mobile-menu .mm-label{ font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-top:10px; }
+  .mobile-menu a.mm-small{ font-size:23px; opacity:0.85; }
+  nav ul.main-nav li a{ display:inline-block; padding-bottom:6px; }
+  @media (min-width:1101px){ nav ul.main-nav{ display:flex; } nav .nav-toggle{ display:none; } }
+  @media (max-width:1100px){ nav ul.main-nav{ display:none; } nav .nav-toggle{ display:flex; } .more-menu{ display:none; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
-  <ul>
+  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
+  <ul class="main-nav">
     <li><a href="index.html">Home</a></li>
     <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
     <li><a href="site.html">On Site</a></li>
-    <li><a href="workshop.html" class="active">Workshop</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="consultation.html">Start a Project</a></li>
+    <li><button type="button" class="more-btn active" id="moreBtn" aria-haspopup="true" aria-expanded="false" aria-controls="moreMenu">More <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></li>
+    <li><a href="consultation.html" class="nav-cta">Start a Project</a></li>
   </ul>
   <div class="nav-toggle" id="navToggle">
     <span></span><span></span><span></span>
   </div>
 </nav>
+<div class="more-menu" id="moreMenu" role="menu">
+  <a href="about.html" role="menuitem">About</a>
+  <a href="workshop.html" role="menuitem" class="active">Workshop</a>
+  <a href="services.html" role="menuitem">Services</a>
+  <a href="contact.html" role="menuitem">Contact</a>
+  <a href="terms.html" role="menuitem">Terms</a>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="about.html">About</a>
   <a href="workshop.html">Workshop</a>
+  <a href="services.html">Services</a>
   <a href="contact.html">Contact</a>
+  <a href="terms.html">Terms</a>
   <a href="consultation.html">Start a Project</a>
 </div>
 
@@ -763,7 +802,7 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
+      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
       <p style="font-size:13px; color:rgba(239,235,228,0.6); line-height:1.7; max-width:280px; margin-bottom:24px;">Interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.</p>
       <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Follow Us</div>
       <div class="footer-social">
@@ -777,10 +816,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="workshop.html">Workshop</a></li>
+        <li><a href="services.html">Services</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -793,7 +832,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 MK Interior Design Studio. All rights reserved.</span>
+    <span>© 2026 MK Interior Design Studio. All rights reserved. · <a href="terms.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Terms of Use</a> · <a href="privacy.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Privacy Policy</a></span>
     <span>Canada · US · UAE</span>
   </div>
 </footer>
@@ -873,5 +912,47 @@
   document.addEventListener('keydown', e => { if(e.key==='Escape') wsClose(); });
 </script>
 
+<script>
+(function(){
+  var btn=document.getElementById('moreBtn'), menu=document.getElementById('moreMenu'); if(!btn||!menu) return;
+  var t=null;
+  function place(){ var r=btn.getBoundingClientRect(); menu.style.top=(r.bottom+14)+'px'; menu.style.left=Math.min(r.left-24, window.innerWidth-menu.offsetWidth-16)+'px'; }
+  function open(){ clearTimeout(t); place(); menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  function close(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function later(){ clearTimeout(t); t=setTimeout(close,220); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); menu.classList.contains('open')?close():open(); });
+  if(matchMedia('(hover:hover)').matches){
+    [btn,menu].forEach(function(el){ el.addEventListener('mouseenter',open); el.addEventListener('mouseleave',later); });
+  }
+  document.addEventListener('click',function(e){ if(!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  window.addEventListener('resize',function(){ if(menu.classList.contains('open')) place(); });
+  window.addEventListener('scroll',function(){ if(menu.classList.contains('open')) place(); },{passive:true});
+})();
+</script>
+<!-- media protection: blocks right-click / drag / long-press saving of images and videos -->
+<style>
+  img, video, picture, canvas{ -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+</style>
+<script>
+(function(){
+  var MEDIA = 'img, video, picture, canvas, .card, .grid-cell, .lightbox-backdrop, #lbMedia, .hero, .ba, .slide, .show';
+  function isMedia(t){ return t && t.closest && (t.closest('img, video, picture, canvas') || (t.closest(MEDIA) && !t.closest('a[href], button, input, textarea, select'))); }
+  document.addEventListener('contextmenu', function(e){ if(isMedia(e.target)) e.preventDefault(); }, true);
+  document.addEventListener('dragstart', function(e){ if(e.target && e.target.closest && e.target.closest('img, video, picture, canvas')) e.preventDefault(); }, true);
+  function lock(v){
+    if(v.__mkLocked) return; v.__mkLocked = true;
+    var list = (v.getAttribute('controlsList') || '').split(/\s+/).filter(Boolean);
+    ['nodownload','noplaybackrate','noremoteplayback'].forEach(function(x){ if(list.indexOf(x) < 0) list.push(x); });
+    v.setAttribute('controlsList', list.join(' '));
+    v.setAttribute('disablePictureInPicture', ''); v.disablePictureInPicture = true;
+    v.setAttribute('disableRemotePlayback', '');
+  }
+  function scan(root){ (root.querySelectorAll ? root.querySelectorAll('video') : []).forEach(lock); if(root.tagName === 'VIDEO') lock(root); }
+  scan(document);
+  new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType === 1) scan(n); }); }); })
+    .observe(document.documentElement, { childList:true, subtree:true });
+})();
+</script>
 </body>
 </html>

@@ -8,6 +8,14 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://mkinteriordesignstudio.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MK Interior Design Studio">
+<meta property="og:title" content="MK Interior Design Studio — Interior Design, London Ontario">
+<meta property="og:description" content="MK Interior Design Studio — interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.">
+<meta property="og:url" content="https://mkinteriordesignstudio.com/">
+<meta property="og:image" content="https://mkinteriordesignstudio.com/flo-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -50,9 +58,11 @@
     white-space:nowrap; flex-shrink:0;
     display:flex; align-items:center; gap:10px;
   }
-  nav .logo img{ height:28px; width:auto; display:block; }
+  nav .logo img{ height:48px; width:auto; display:block; }
+  .logo-sub{ font-family:'Jost', sans-serif; font-size:9.5px; letter-spacing:0.3em; text-transform:uppercase; font-weight:400; }
+  @media (max-width:900px){ nav .logo img{ height:38px; } nav .logo .logo-sub{ font-size:8.5px; letter-spacing:0.24em; } }
   footer .brand{ display:flex; align-items:center; gap:8px; }
-  footer .brand img{ height:18px; width:auto; display:block; }
+  footer .brand img{ height:34px; width:auto; display:block; }
   nav ul{ display:flex; gap:44px; list-style:none; }
   nav ul li a{
     font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:400;
@@ -111,6 +121,40 @@
     margin-bottom:18px; display:block;
   }
   .hero-sub{ max-width:280px; font-size:14px; line-height:1.8; font-weight:300; color:rgba(239,235,228,0.85); }
+
+  /* hero CTAs */
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+  .hcta{ display:inline-block; padding:15px 30px; border:1px solid var(--gold); color:var(--ivory);
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase; transition:background .3s, color .3s; }
+  .hcta:hover{ background:var(--gold); color:#15161B; }
+  .hcta.solid{ background:var(--gold); color:#15161B; }
+  .hcta.solid:hover{ background:transparent; color:var(--ivory); }
+
+  /* before / after slider (suggestion) */
+  .ba-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:34px; }
+  .ba-head em{ color:var(--gold); }
+  .ba-tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+  .ba-tab{ background:none; border:1px solid rgba(239,235,228,0.25); color:var(--ivory); font-family:inherit;
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase; padding:11px 18px; cursor:pointer; transition:border-color .25s, color .25s; }
+  .ba-tab.active, .ba-tab:hover{ border-color:var(--gold); color:var(--gold); }
+  .ba{ position:relative; width:100%; max-width:1280px; margin:0 auto; overflow:hidden; cursor:ew-resize;
+    user-select:none; -webkit-user-select:none; touch-action:pan-y; background:#000; outline:none; }
+  .ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+  .ba-after{ clip-path:inset(0 0 0 50%); }
+  .ba-handle{ position:absolute; top:0; bottom:0; left:50%; width:2px; background:var(--gold); transform:translateX(-1px); pointer-events:none; }
+  .ba-handle i{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:52px; height:52px; border-radius:50%;
+    background:var(--gold); color:#15161B; display:flex; align-items:center; justify-content:center; font-style:normal;
+    font-size:16px; letter-spacing:2px; box-shadow:0 6px 24px rgba(0,0,0,.35); }
+  .ba:focus-visible .ba-handle i{ outline:2px solid var(--ivory); outline-offset:3px; }
+  .ba-lbl{ position:absolute; top:16px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ivory);
+    background:rgba(21,22,27,0.6); padding:7px 12px; pointer-events:none; }
+  .ba-lbl.l{ left:16px; } .ba-lbl.r{ right:16px; }
+  .ba-link{ display:block; max-width:1280px; margin:18px auto 0; text-align:right; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--gold); }
+  @media (max-width:900px){
+    .hero-ctas{ margin-top:24px; } .hcta{ padding:13px 22px; }
+    .ba-handle i{ width:44px; height:44px; }
+  }
 
   /* SECTION SHARED */
   section{ position:relative; padding:150px 60px; }
@@ -261,7 +305,7 @@
     display:flex; align-items:center; gap:10px; font-family:'Cormorant Garamond', serif;
     font-size:17px; color:var(--ivory); margin-bottom:22px;
   }
-  .footer-brand .brand img{ height:26px; width:auto; }
+  .footer-brand .brand img{ height:38px; width:auto; }
   .footer-social{ display:flex; gap:14px; }
   .footer-social a{
     width:36px; height:36px; border:1px solid var(--line-dark); border-radius:50%;
@@ -448,37 +492,84 @@
   .pt-tag{ position:absolute; left:18px; bottom:18px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; padding:8px 14px; background:rgba(0,0,0,0.6); color:var(--ivory); }
   @media (max-width:900px){ .pt-grid{ grid-template-columns:1fr; gap:40px; } .pt-media{ order:-1; } }
   @media (max-width:560px){ .pt-list{ grid-template-columns:1fr; } }
+
+  /* ===== NAV v2: main links + More dropdown + Start a Project button ===== */
+  nav ul.main-nav{ display:flex; align-items:center; gap:38px; list-style:none; }
+  nav ul.main-nav li a, nav ul.main-nav .more-btn{ font-size:14px; letter-spacing:0.16em; text-transform:uppercase; font-weight:400; }
+  nav ul.main-nav .more-btn{ background:none; border:0; color:inherit; font-family:inherit; cursor:pointer; padding:0 0 6px; display:flex; align-items:center; gap:8px; position:relative; }
+  nav ul.main-nav .more-btn::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:currentColor; transition:width .4s ease; }
+  nav ul.main-nav .more-btn:hover::after, nav ul.main-nav .more-btn.active::after{ width:100%; }
+  nav ul.main-nav .more-btn svg{ width:10px; height:10px; transition:transform .3s ease; }
+  nav ul.main-nav .more-btn[aria-expanded="true"] svg{ transform:rotate(180deg); }
+  nav ul.main-nav li a.nav-cta{ border:1px solid var(--gold); padding:12px 22px; margin-left:6px; }
+  nav ul.main-nav li a.nav-cta::after{ display:none; }
+  nav ul.main-nav li a.nav-cta:hover{ background:var(--gold); color:#15161B; }
+  .more-menu{ position:fixed; z-index:120; min-width:220px; background:rgba(16,17,21,0.97); border:1px solid rgba(166,135,90,0.35);
+    padding:10px 0; opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+    box-shadow:0 18px 40px rgba(0,0,0,0.45); }
+  .more-menu.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .more-menu a{ display:block; padding:12px 24px; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:#efebe4; transition:color .2s, background .2s; }
+  .more-menu a:hover, .more-menu a.active{ color:var(--gold); background:rgba(166,135,90,0.08); }
+  .mobile-menu{ gap:22px; overflow-y:auto; padding:90px 0 40px; justify-content:safe center; }
+  .mobile-menu .mm-label{ font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-top:10px; }
+  .mobile-menu a.mm-small{ font-size:23px; opacity:0.85; }
+  nav ul.main-nav li a{ display:inline-block; padding-bottom:6px; }
+  @media (min-width:1101px){ nav ul.main-nav{ display:flex; } nav .nav-toggle{ display:none; } }
+  @media (max-width:1100px){ nav ul.main-nav{ display:none; } nav .nav-toggle{ display:flex; } .more-menu{ display:none; } }
+
+  /* ===== home teasers: workshop / services / about / contact ===== */
+  .hm-sec{ padding-top:40px; }
+  .pt-grid.rev > :first-child{ order:2; }
+  .hm-services{ list-style:none; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line-dark); margin:0 0 44px; }
+  .hm-services li{ border-bottom:1px solid var(--line-dark); padding:22px 24px 22px 0; display:flex; gap:16px; align-items:baseline;
+    font-family:'Cormorant Garamond', serif; font-size:22px; color:var(--ivory); line-height:1.25; }
+  .hm-services li span{ font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.14em; color:var(--gold); min-width:22px; }
+  .hm-about{ display:grid; grid-template-columns:340px 1fr; gap:70px; align-items:center; max-width:1100px; }
+  .hm-about .ph{ aspect-ratio:372/393; overflow:hidden; background:#0a0a0c; box-shadow:0 30px 80px rgba(0,0,0,.6); }
+  .hm-about .ph img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.9); }
+  .hm-about .who{ font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:16px; }
+  .hm-contact{ display:flex; justify-content:center; flex-wrap:wrap; gap:14px 34px; margin-top:34px; font-size:13px; letter-spacing:0.08em; color:rgba(239,235,228,0.7); }
+  .hm-contact a{ color:inherit; border:0 !important; padding:0 !important; background:none !important; font-size:13px !important; letter-spacing:0.08em !important; text-transform:none !important; }
+  .hm-contact a:hover{ color:var(--gold) !important; }
+  @media (max-width:1000px){ .hm-services{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:900px){ .pt-grid.rev > :first-child{ order:0; } .hm-about{ grid-template-columns:1fr; gap:36px; } .hm-about .ph{ max-width:340px; } }
+  @media (max-width:560px){ .hm-services{ grid-template-columns:1fr; } .hm-services li{ font-size:20px; padding:16px 0; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
-  <ul>
+  <div class="logo"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
+  <ul class="main-nav">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="process.html">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
     <li><a href="site.html">On Site</a></li>
-    <li><a href="workshop.html">Workshop</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="consultation.html">Start a Project</a></li>
+    <li><button type="button" class="more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false" aria-controls="moreMenu">More <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></li>
+    <li><a href="consultation.html" class="nav-cta">Start a Project</a></li>
   </ul>
   <div class="nav-toggle" id="navToggle">
     <span></span><span></span><span></span>
   </div>
 </nav>
+<div class="more-menu" id="moreMenu" role="menu">
+  <a href="about.html" role="menuitem">About</a>
+  <a href="workshop.html" role="menuitem">Workshop</a>
+  <a href="services.html" role="menuitem">Services</a>
+  <a href="contact.html" role="menuitem">Contact</a>
+  <a href="terms.html" role="menuitem">Terms</a>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="process.html">Process</a>
   <a href="portfolio.html">Portfolio</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
   <a href="site.html">On Site</a>
+  <a href="about.html">About</a>
   <a href="workshop.html">Workshop</a>
+  <a href="services.html">Services</a>
   <a href="contact.html">Contact</a>
+  <a href="terms.html">Terms</a>
   <a href="consultation.html">Start a Project</a>
 </div>
 
@@ -492,6 +583,10 @@
     <div>
       <span class="hero-eyebrow">Interior Design Studio</span>
       <h1>Interiors of<br>quiet confidence</h1>
+      <div class="hero-ctas">
+        <a href="process.html" class="hcta">See how we work</a>
+        <a href="consultation.html" class="hcta solid">Start a project</a>
+      </div>
     </div>
     <p class="hero-sub">Interior design and 3D visualization for homes, hospitality and commercial spaces — designed with restraint, carried through to a finished, built result.</p>
   </div>
@@ -520,6 +615,75 @@
   </div>
 </section>
 
+<!-- BEFORE / AFTER -->
+<section class="dark ba-sec" style="padding-top:40px;">
+  <div class="section-label"><span class="rule"></span><span>Clay to Final</span></div>
+  <div class="ba-head" data-reveal>
+    <h2 class="pt-title">Same camera. Same geometry.<br><em>Drag to see the finish arrive.</em></h2>
+    <div class="ba-tabs">
+      <button class="ba-tab active" data-pane="kitchen">Kitchen</button>
+      <button class="ba-tab" data-pane="dining">Lakeside Dining</button>
+      <button class="ba-tab" data-pane="living">Lakeside Great Room</button>
+      <button class="ba-tab" data-pane="flo">Flo Boutique</button>
+      <button class="ba-tab" data-pane="cedar">Cedar House</button>
+      <button class="ba-tab" data-pane="pavilion">Pavilion House</button>
+    </div>
+  </div>
+  <div class="ba-pane" data-pane="kitchen">
+    <div class="ba" tabindex="0" role="slider" aria-label="Clay model versus final render, Travertine Kitchen" aria-valuemin="0" aria-valuemax="100" style="aspect-ratio:1080/640;">
+      <img src="portfolio/before-after/kitchen-clay.jpg" alt="Travertine Kitchen, clay model" draggable="false">
+      <img class="ba-after" src="portfolio/before-after/kitchen-final.jpg" alt="Travertine Kitchen, final render" draggable="false">
+      <span class="ba-lbl l">Clay model</span><span class="ba-lbl r">Final render</span>
+      <span class="ba-handle"><i>‹ ›</i></span>
+    </div>
+    <a class="ba-link" href="portfolio.html#the-travertine-kitchen">Open the Travertine Kitchen &rarr;</a>
+  </div>
+    <div class="ba-pane" data-pane="dining" hidden>
+    <div class="ba" tabindex="0" role="slider" aria-label="Clay model versus final render, Lakeside Dining" aria-valuemin="0" aria-valuemax="100" style="aspect-ratio:1448/1086;">
+      <img src="portfolio/before-after/dining-clay.jpg" alt="Lakeside Dining, clay model" draggable="false" loading="lazy">
+      <img class="ba-after" src="portfolio/before-after/dining-final.jpg" alt="Lakeside Dining, final render" draggable="false" loading="lazy">
+      <span class="ba-lbl l">Clay model</span><span class="ba-lbl r">Final render</span>
+      <span class="ba-handle"><i>‹ ›</i></span>
+    </div>
+    <a class="ba-link" href="portfolio.html#lakeside-residence-great-room" style="">Open the Lakeside Residence &rarr;</a>
+  </div>
+  <div class="ba-pane" data-pane="living" hidden>
+    <div class="ba" tabindex="0" role="slider" aria-label="Clay model versus final render, Lakeside Great Room" aria-valuemin="0" aria-valuemax="100" style="aspect-ratio:1448/1086;">
+      <img src="portfolio/before-after/living-clay.jpg" alt="Lakeside Great Room, clay model" draggable="false" loading="lazy">
+      <img class="ba-after" src="portfolio/before-after/living-final.jpg" alt="Lakeside Great Room, final render" draggable="false" loading="lazy">
+      <span class="ba-lbl l">Clay model</span><span class="ba-lbl r">Final render</span>
+      <span class="ba-handle"><i>‹ ›</i></span>
+    </div>
+    <a class="ba-link" href="portfolio.html#lakeside-residence-great-room" style="">Open the Lakeside Residence &rarr;</a>
+  </div>
+  <div class="ba-pane" data-pane="flo" hidden>
+    <div class="ba" tabindex="0" role="slider" aria-label="Clay model versus final render, Flo Boutique" aria-valuemin="0" aria-valuemax="100" style="aspect-ratio:1532/1026;">
+      <img src="portfolio/before-after/flo-clay.jpg" alt="Flo Boutique, clay model" draggable="false" loading="lazy">
+      <img class="ba-after" src="portfolio/before-after/flo-final.jpg" alt="Flo Boutique, final render" draggable="false" loading="lazy">
+      <span class="ba-lbl l">Clay model</span><span class="ba-lbl r">Final render</span>
+      <span class="ba-handle"><i>‹ ›</i></span>
+    </div>
+    <a class="ba-link" href="portfolio.html#flo-boutique" style="">Open Flo Boutique &rarr;</a>
+  </div>
+  <div class="ba-pane" data-pane="cedar" hidden>
+    <div class="ba" tabindex="0" role="slider" aria-label="Clay model versus final render, Cedar House" aria-valuemin="0" aria-valuemax="100" style="aspect-ratio:1/1;max-width:820px;">
+      <img src="portfolio/before-after/cedar-clay.jpg" alt="Cedar House, clay model" draggable="false" loading="lazy">
+      <img class="ba-after" src="portfolio/before-after/cedar-final.jpg" alt="Cedar House, final render" draggable="false" loading="lazy">
+      <span class="ba-lbl l">Clay model</span><span class="ba-lbl r">Final render</span>
+      <span class="ba-handle"><i>‹ ›</i></span>
+    </div>
+    <a class="ba-link" href="portfolio.html#the-cedar-house" style="max-width:820px;">Open the Cedar House &rarr;</a>
+  </div>
+  <div class="ba-pane" data-pane="pavilion" hidden>
+    <div class="ba" tabindex="0" role="slider" aria-label="Clay model versus final render, Pavilion House" aria-valuemin="0" aria-valuemax="100" style="aspect-ratio:1/1;max-width:820px;">
+      <img src="portfolio/before-after/pavilion-clay.jpg" alt="Pavilion House, clay model" draggable="false" loading="lazy">
+      <img class="ba-after" src="portfolio/before-after/pavilion-final.jpg" alt="Pavilion House, final render" draggable="false" loading="lazy">
+      <span class="ba-lbl l">Clay model</span><span class="ba-lbl r">Final render</span>
+      <span class="ba-handle"><i>‹ ›</i></span>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURED WORK -->
 <section id="work" class="dark" style="padding-top:60px;">
   <div class="section-label"><span class="rule"></span><span>Featured Work</span></div>
@@ -538,6 +702,44 @@
   </div>
 </section>
 
+<!-- WORKSHOP (teaser) -->
+<section class="dark hm-sec" id="home-workshop">
+  <div class="section-label"><span class="rule"></span><span>Workshop</span></div>
+  <div class="pt-grid rev">
+    <div data-reveal>
+      <h2 class="pt-title">From drawing to joinery.</h2>
+      <p class="pt-text">Millwork, furniture and fitted pieces are built in our partner workshop from the same drawings we issue, then checked before they reach site.</p>
+      <a href="workshop.html" class="pt-btn">Inside the Workshop &rarr;</a>
+    </div>
+    <a href="workshop.html" class="pt-media" data-reveal aria-label="Inside the workshop">
+      <video class="hm-autoplay" src="workshop-hero.mp4" poster="workshop-img-01.jpg" muted loop playsinline preload="none"></video>
+      <span class="pt-tag">In the workshop</span>
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES (teaser) -->
+<section class="dark hm-sec" id="home-services">
+  <div class="section-label"><span class="rule"></span><span>Services</span></div>
+  <h2 class="pt-title" data-reveal>Take one stage, or all of them.</h2>
+  <ul class="hm-services" data-reveal><li><span>01</span>Space Planning &amp; Layout</li><li><span>02</span>Concept, Materials &amp; Selections</li><li><span>03</span>3D Modeling &amp; Renders</li><li><span>04</span>Walkthrough Films</li><li><span>05</span>Live Design Sessions</li><li><span>06</span>Marketing Films &amp; Social Content</li><li><span>07</span>BOQ &amp; Quantity Takeoff</li><li><span>08</span>Construction &amp; Shop Drawings</li><li><span>09</span>Site Coordination &amp; PM</li></ul>
+  <a href="services.html" class="pt-btn" data-reveal>View All Services &rarr;</a>
+</section>
+
+<!-- ABOUT (teaser) -->
+<section class="dark hm-sec" id="home-about">
+  <div class="section-label"><span class="rule"></span><span>About</span></div>
+  <div class="hm-about" data-reveal>
+    <a href="about.html" class="ph" aria-label="About MK Interior Design Studio"><img src="mahmoud-portrait.jpg" alt="Mahmoud Kamaleh, founder of MK Interior Design Studio" loading="lazy" decoding="async"></a>
+    <div>
+      <span class="who">Founder — Mahmoud Kamaleh</span>
+      <h2 class="pt-title">Design that can actually be built.</h2>
+      <p class="pt-text">MK Interior Design Studio is based in London, Ontario. Ten years of design, 3D visualization and construction documentation across Canada and the UAE, now working with builders and developers who need drawings, renders and films their trades and buyers can rely on.</p>
+      <a href="about.html" class="pt-btn">More About MK &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- CREDIBILITY -->
 <section class="dark" style="padding-top:0; padding-bottom:0;">
   <div class="credibility-line" data-reveal>
@@ -552,12 +754,18 @@
 <section class="dark closing-cta">
   <p class="serif" data-reveal>Have a space in mind?</p>
   <a href="consultation.html" data-reveal>Start a Project →</a>
+  <div class="hm-contact" data-reveal>
+    <a href="mailto:info@mkinteriordesignstudio.com">info@mkinteriordesignstudio.com</a>
+    <a href="tel:+15484680887">+1 548 468 0887</a>
+    <span>London, Ontario, Canada</span>
+    <a href="contact.html">All contact details &rarr;</a>
+  </div>
 </section>
 
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio logo">MK Interior Design Studio</div>
+      <div class="brand"><img src="mk-logo.png" alt="MK Interior Design Studio"><span class="logo-sub">Interior Design Studio</span></div>
       <p style="font-size:13px; color:rgba(239,235,228,0.6); line-height:1.7; max-width:280px; margin-bottom:24px;">Interior design and 3D visualization for homes, hospitality and commercial spaces across Canada, the US and the UAE.</p>
       <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Follow Us</div>
       <div class="footer-social">
@@ -571,10 +779,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="site.html">On Site</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="workshop.html">Workshop</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="private.html">Private</a></li>
       </ul>
     </div>
@@ -588,7 +796,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 MK Interior Design Studio. All rights reserved.</span>
+    <span>© 2026 MK Interior Design Studio. All rights reserved. · <a href="terms.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Terms of Use</a> · <a href="privacy.html" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Privacy Policy</a></span>
     <span>Canada · US · UAE</span>
   </div>
 </footer>
@@ -678,40 +886,37 @@
   });
   playHero(0);
 
+  // before / after slider
+  document.querySelectorAll('.ba').forEach(ba => {
+    const after = ba.querySelector('.ba-after'), handle = ba.querySelector('.ba-handle');
+    const set = pct => { pct = Math.max(0, Math.min(100, pct)); after.style.clipPath = `inset(0 0 0 ${pct}%)`; handle.style.left = pct + '%'; ba.setAttribute('aria-valuenow', Math.round(pct)); };
+    const fromEvent = e => { const r = ba.getBoundingClientRect(); return (e.clientX - r.left) / r.width * 100; };
+    let drag = false, touched = false;
+    ba.addEventListener('pointerdown', e => { drag = true; touched = true; ba.setPointerCapture(e.pointerId); set(fromEvent(e)); });
+    ba.addEventListener('pointermove', e => { if(drag) set(fromEvent(e)); });
+    ['pointerup','pointercancel'].forEach(t => ba.addEventListener(t, () => drag = false));
+    ba.addEventListener('keydown', e => {
+      const v = parseFloat(handle.style.left) || 50;
+      if(e.key === 'ArrowLeft'){ set(v - 5); e.preventDefault(); }
+      if(e.key === 'ArrowRight'){ set(v + 5); e.preventDefault(); }
+    });
+    set(50);
+    // one gentle hint sweep the first time it scrolls into view
+    new IntersectionObserver((en, ob) => {
+      if(!en[0].isIntersecting) return; ob.disconnect();
+      if(touched) return;
+      let t0 = null;
+      const run = ts => { if(touched) return; t0 = t0 || ts; const t = (ts - t0) / 1600; if(t >= 1){ set(50); return; }
+        set(50 + Math.sin(t * Math.PI * 2) * 22); requestAnimationFrame(run); };
+      setTimeout(() => requestAnimationFrame(run), 400);
+    }, { threshold: 0.6 }).observe(ba);
+  });
+  document.querySelectorAll('.ba-tab').forEach(tab => tab.addEventListener('click', () => {
+    document.querySelectorAll('.ba-tab').forEach(t => t.classList.toggle('active', t === tab));
+    document.querySelectorAll('.ba-pane').forEach(p => p.hidden = p.dataset.pane !== tab.dataset.pane);
+  }));
+
   const projects = [
-    { title:"Flo Boutique", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
-      media:[
-        { type:"image", src:"flo-cover.jpg", tag:"Completed — Storefront" },
-        { type:"image", src:"flo-interior-1.jpg", tag:"Completed — Reception" },
-        { type:"image", src:"flo-overhead.jpg", tag:"Completed — Overhead" },
-        { type:"image", src:"flo-sign.jpg", tag:"Completed — Signage Detail" },
-        { type:"image", src:"flo-bouquet.jpg", tag:"Completed — Detail" },
-        { type:"image", src:"flo-shelving-1.jpg", tag:"Completed — Display Shelving" },
-        { type:"image", src:"flo-shelving-2.jpg", tag:"Completed — Display Shelving" },
-        { type:"image", src:"flo-shelving-3.jpg", tag:"Completed — Display Shelving" },
-        { type:"image", src:"flo-window-detail.jpg", tag:"Completed — Facade Detail" },
-        { type:"image", src:"flo-column-detail.jpg", tag:"Completed — Interior Detail" },
-        { type:"image", src:"flo-corridor.jpg", tag:"Completed — Corridor" },
-        { type:"video", src:"flo-walkthrough.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"A boutique flower shop set within a mall storefront — an arched bronze-framed glass front opens onto a warm, plaster-lined interior anchored by a book-matched stone reception counter and a backlit circular 'flo' emblem. Curved display shelving in soft cream plaster, brass trim and layered ambient lighting carry the material story from the entrance through to a private corridor lined with dried and fresh floral arrangements." },
-    { title:"Efreez Beauty Salon — Dubai", cat:"commercial", loc:"Dubai, UAE", year:"2026",
-      media:[
-        { type:"image", src:"efreez-16.jpg", tag:"Design Render — Reception" },
-        { type:"image", src:"efreez-17.jpg", tag:"Design Render — Salon Floor" },
-        { type:"image", src:"efreez-18.jpg", tag:"Design Render — Styling Stations" },
-        { type:"image", src:"efreez-19.jpg", tag:"Design Render — Signage Detail" },
-        { type:"image", src:"efreez-14.jpg", tag:"Design Render — Styling Chair Detail" },
-        { type:"image", src:"efreez-15.jpg", tag:"Design Render — Amenity Shelving" },
-        { type:"image", src:"efreez-20.jpg", tag:"Design Render — Amenity Detail" },
-        { type:"image", src:"efreez-21.jpg", tag:"Design Render — Reception Detail" },
-        { type:"image", src:"efreez-22.jpg", tag:"Design Render — Product Display" },
-        { type:"image", src:"efreez-23.jpg", tag:"Design Render — Vanity Mirror" },
-        { type:"image", src:"efreez-24.jpg", tag:"Design Render — Arch Detail" },
-        { type:"image", src:"efreez-materials-flatlay.jpg", tag:"Material Palette" },
-        { type:"video", src:"efreez-walkthrough-2.mp4", tag:"Design Walkthrough" },
-      ],
-      desc:"Efreez Beauty Salon's second location, in Dubai — a lighter, gallery-white scheme with fluted brass-and-timber columns, arched backlit mirrors and a run of styling stations, alongside the project's material palette of warm-grey plaster, brushed brass, walnut veneer and boucle upholstery." },
     { title:"Lakeside Residence — Great Room", cat:"residential", loc:"Ontario, Canada", year:"2026",
       media:[
         { type:"image", src:"lakeside-cover.jpg", tag:"Design Render — Living Room Overview" },
@@ -732,6 +937,43 @@
         { type:"video", src:"lakeside-walkthrough.mp4", tag:"Design Walkthrough" },
       ],
       desc:"A double-height great room for a lakeside residence set against a mountain backdrop — a sculptural woven-glass ribbon chandelier drifts above a circular arrangement of boucle sofas and a pair of calacatta viola marble coffee tables on hammered-bronze bases. Warm walnut millwork, brushed brass detailing and a book-matched marble dining table carry the material story through to an open kitchen with a sculpted brass hood, all framed by floor-to-ceiling glazing onto the water." },
+    { title:"The Travertine Kitchen", cat:"residential", loc:"Concept", year:"2026",
+      role:"Kitchen design, material palette, clay-to-final 3D visualization",
+      media:[
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-01.jpg", tag:"Design Render — Frame 01, The Island" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-02.jpg", tag:"Design Render — Frame 02, The Hood" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-03.jpg", tag:"Design Render — Frame 03, The Corner" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-04.jpg", tag:"Design Render — Frame 04, The Glow" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-05.jpg", tag:"Design Render — Frame 05, The Symmetry" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-06.jpg", tag:"Design Render — Detail, Monolithic Travertine" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-07.jpg", tag:"Design Render — Detail, Aged Bronze Hood" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-08.jpg", tag:"Design Render — Detail, Linear Pendants" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-09.jpg", tag:"Design Render — Detail, Floating Shelves" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-10.jpg", tag:"Design Render — Detail, Bronze Tap & Carved Sink" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-11.jpg", tag:"Design Render — Materials Applied" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-12.jpg", tag:"Design Render — Warm LED Lighting" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-13.jpg", tag:"Design Render — Final Frame" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-14.jpg", tag:"Design Render — Clay Model" },
+        { type:"image", src:"portfolio/travertine-kitchen/travertine-kitchen-15.jpg", tag:"Design Render — Frame 06, The Clay" },
+        { type:"video", src:"portfolio/travertine-kitchen/travertine-kitchen-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A calm show kitchen in honed travertine, aged bronze and white oak: a monolithic rounded island, a hand-brushed bronze hood, floating shelves lit from below and linear pendants. Developed from a clay model to the final render." },
+    { title:"Flo Boutique", cat:"commercial", loc:"Sharjah, UAE", year:"2026",
+      media:[
+        { type:"image", src:"flo-cover.jpg", tag:"Completed — Storefront" },
+        { type:"image", src:"flo-interior-1.jpg", tag:"Completed — Reception" },
+        { type:"image", src:"flo-overhead.jpg", tag:"Completed — Overhead" },
+        { type:"image", src:"flo-sign.jpg", tag:"Completed — Signage Detail" },
+        { type:"image", src:"flo-bouquet.jpg", tag:"Completed — Detail" },
+        { type:"image", src:"flo-shelving-1.jpg", tag:"Completed — Display Shelving" },
+        { type:"image", src:"flo-shelving-2.jpg", tag:"Completed — Display Shelving" },
+        { type:"image", src:"flo-shelving-3.jpg", tag:"Completed — Display Shelving" },
+        { type:"image", src:"flo-window-detail.jpg", tag:"Completed — Facade Detail" },
+        { type:"image", src:"flo-column-detail.jpg", tag:"Completed — Interior Detail" },
+        { type:"image", src:"flo-corridor.jpg", tag:"Completed — Corridor" },
+        { type:"video", src:"flo-walkthrough.mp4", tag:"Design Walkthrough" },
+      ],
+      desc:"A boutique flower shop set within a mall storefront — an arched bronze-framed glass front opens onto a warm, plaster-lined interior anchored by a book-matched stone reception counter and a backlit circular 'flo' emblem. Curved display shelving in soft cream plaster, brass trim and layered ambient lighting carry the material story from the entrance through to a private corridor lined with dried and fresh floral arrangements." },
   ];
 
   const onSiteVideos = [
@@ -905,5 +1147,56 @@
     v.addEventListener('timeupdate',()=>{ const t=v.currentTime; const l=L.find(x=>t<x[0]); if(l && tag.textContent!==l[1]) tag.textContent=l[1]; }); })();
 </script>
 
+<script>
+(function(){
+  var btn=document.getElementById('moreBtn'), menu=document.getElementById('moreMenu'); if(!btn||!menu) return;
+  var t=null;
+  function place(){ var r=btn.getBoundingClientRect(); menu.style.top=(r.bottom+14)+'px'; menu.style.left=Math.min(r.left-24, window.innerWidth-menu.offsetWidth-16)+'px'; }
+  function open(){ clearTimeout(t); place(); menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  function close(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function later(){ clearTimeout(t); t=setTimeout(close,220); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); menu.classList.contains('open')?close():open(); });
+  if(matchMedia('(hover:hover)').matches){
+    [btn,menu].forEach(function(el){ el.addEventListener('mouseenter',open); el.addEventListener('mouseleave',later); });
+  }
+  document.addEventListener('click',function(e){ if(!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  window.addEventListener('resize',function(){ if(menu.classList.contains('open')) place(); });
+  window.addEventListener('scroll',function(){ if(menu.classList.contains('open')) place(); },{passive:true});
+})();
+</script>
+<script>
+  // home teaser videos: play only while on screen
+  (function(){
+    var vids=document.querySelectorAll('video.hm-autoplay'); if(!vids.length) return;
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ var v=e.target;
+      if(e.isIntersecting){ if(v.preload==='none'){ v.preload='auto'; } v.play().catch(function(){}); } else v.pause(); }); },{threshold:0.35});
+    vids.forEach(function(v){ io.observe(v); });
+  })();
+</script>
+<!-- media protection: blocks right-click / drag / long-press saving of images and videos -->
+<style>
+  img, video, picture, canvas{ -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+</style>
+<script>
+(function(){
+  var MEDIA = 'img, video, picture, canvas, .card, .grid-cell, .lightbox-backdrop, #lbMedia, .hero, .ba, .slide, .show';
+  function isMedia(t){ return t && t.closest && (t.closest('img, video, picture, canvas') || (t.closest(MEDIA) && !t.closest('a[href], button, input, textarea, select'))); }
+  document.addEventListener('contextmenu', function(e){ if(isMedia(e.target)) e.preventDefault(); }, true);
+  document.addEventListener('dragstart', function(e){ if(e.target && e.target.closest && e.target.closest('img, video, picture, canvas')) e.preventDefault(); }, true);
+  function lock(v){
+    if(v.__mkLocked) return; v.__mkLocked = true;
+    var list = (v.getAttribute('controlsList') || '').split(/\s+/).filter(Boolean);
+    ['nodownload','noplaybackrate','noremoteplayback'].forEach(function(x){ if(list.indexOf(x) < 0) list.push(x); });
+    v.setAttribute('controlsList', list.join(' '));
+    v.setAttribute('disablePictureInPicture', ''); v.disablePictureInPicture = true;
+    v.setAttribute('disableRemotePlayback', '');
+  }
+  function scan(root){ (root.querySelectorAll ? root.querySelectorAll('video') : []).forEach(lock); if(root.tagName === 'VIDEO') lock(root); }
+  scan(document);
+  new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType === 1) scan(n); }); }); })
+    .observe(document.documentElement, { childList:true, subtree:true });
+})();
+</script>
 </body>
 </html>
