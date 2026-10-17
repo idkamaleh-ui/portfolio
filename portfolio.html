@@ -1249,11 +1249,11 @@
     const list = visible.includes(p) ? visible : projects;
     document.getElementById('projPos').textContent = `${list.indexOf(p) + 1} / ${list.length}`;
     const h = '#' + slugOf(p);
-    if(location.hash !== h) history.replaceState(null, '', h);
+    backdrop.dataset.url = h;
+    if(history.state && history.state.mkOverlay === 'modalBackdrop' && location.hash !== h) history.replaceState(history.state, '', h);
   }
   function closeModal(){
     backdrop.classList.remove('open');
-    if(location.hash) history.replaceState(null, '', location.pathname + location.search);
   }
   function stepProject(d){
     if(!currentProject) return;
@@ -1387,6 +1387,44 @@
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
   window.addEventListener('resize',function(){ if(menu.classList.contains('open')) place(); });
   window.addEventListener('scroll',function(){ if(menu.classList.contains('open')) place(); },{passive:true});
+})();
+</script>
+<script>
+/* Back button closes pop-ups: opening a project, image or video adds a history step,
+   so the phone/browser Back button closes it instead of leaving the page. */
+(function(){
+  var CLOSE={modalBackdrop:'modalClose', lightboxBackdrop:'lbClose', lb:'lbClose', wsLightbox:'wsClose'};
+  var stack=[], popping=false, skip=0;
+  Object.keys(CLOSE).forEach(function(id){
+    var el=document.getElementById(id); if(!el) return;
+    var was=el.classList.contains('open');
+    if(was){
+      if(el.dataset.url && location.hash===el.dataset.url) history.replaceState(history.state,'',location.pathname+location.search);
+      stack.push(id); history.pushState({mkOverlay:id},'',el.dataset.url || location.href);
+    }
+    new MutationObserver(function(){
+      var now=el.classList.contains('open'); if(now===was) return; was=now;
+      if(now){
+        var url=el.dataset.url || location.href;
+        if(el.dataset.url && !stack.length && location.hash && location.hash===el.dataset.url){
+          history.replaceState(history.state,'',location.pathname+location.search);
+        }
+        stack.push(id); history.pushState({mkOverlay:id},'',url);
+      } else {
+        var i=stack.lastIndexOf(id); if(i<0) return;
+        var n=stack.length-i; stack.splice(i);
+        if(!popping){ skip++; history.go(-n); }
+      }
+    }).observe(el,{attributes:true, attributeFilter:['class']});
+  });
+  window.addEventListener('popstate',function(){
+    if(skip>0){ skip--; return; }
+    if(!stack.length) return;
+    var id=stack[stack.length-1], btn=document.getElementById(CLOSE[id]);
+    popping=true;
+    if(btn) btn.click(); else document.getElementById(id).classList.remove('open');
+    setTimeout(function(){ popping=false; },0);
+  });
 })();
 </script>
 <!-- media protection: blocks right-click / drag / long-press saving of images and videos -->
