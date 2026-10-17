@@ -535,6 +535,7 @@
   @media (max-width:900px){ .pt-grid.rev > :first-child{ order:0; } .hm-about{ grid-template-columns:1fr; gap:36px; } .hm-about .ph{ max-width:340px; } }
   @media (max-width:560px){ .hm-services{ grid-template-columns:1fr; } .hm-services li{ font-size:20px; padding:16px 0; } }
 </style>
+<script>function posterOf(s){return "posters/"+String(s).replace(/^\.?\//,"").replace(/\//g,"__").replace(/\.[a-z0-9]+$/i,".jpg");}</script>
 </head>
 <body>
 
@@ -992,7 +993,7 @@
       card.className = 'card';
       card.innerHTML = `
         <img src="${p.media[0].src}" alt="${p.title}" loading="lazy" decoding="async">
-        ${previewVideo ? `<video src="${previewVideo.src}" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s;"></video>` : ''}
+        ${previewVideo ? `<video src="${previewVideo.src}" poster="${posterOf(previewVideo.src)}" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s;"></video>` : ''}
         <div class="card-overlay">
           <span class="tag">${p.cat}</span>
           <h3>${p.title}</h3>
@@ -1028,7 +1029,7 @@
     card.href = 'site.html';
     card.className = 'card';
     card.innerHTML = `
-      <video src="${v.src}" muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="${v.src}" poster="${posterOf(v.src)}" muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       <div class="card-overlay">
         <span class="tag">On-Site</span>
         <h3>${v.title}</h3>
@@ -1058,7 +1059,7 @@
       cell.className = 'grid-cell';
       cell.innerHTML = `
         ${item.type === 'video'
-          ? `<video src="${item.src}" muted playsinline preload="metadata"></video><div class="cell-play"></div>`
+          ? `<video src="${item.src}" poster="${posterOf(item.src)}" muted playsinline preload="metadata"></video><div class="cell-play"></div>`
           : `<img src="${item.src}" alt="${project.title}" loading="lazy" decoding="async">`}
         ${item.tag ? `<span class="cell-tag">${item.tag}</span>` : ''}`;
       cell.addEventListener('click', () => openLightbox(idx));
